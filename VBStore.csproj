@@ -231,9 +231,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\assets\1054931_zoom out_minimize_reduce_icon.png" />
     <Content Include="images\assets\10559954_flood_relief_funding_emergency_fund_icon.png" />
     <Content Include="images\assets\1282956_close_delete_deny_no_out_icon.png" />
     <Content Include="images\assets\1976053_home_home page_homepage_homepages_icon.png" />
+    <Content Include="images\assets\299088_bag_icon.png" />
     <Content Include="images\assets\3209198_episode_event_front_statement_version_icon.png" />
     <Content Include="images\assets\3994371_eye_hidden_hide_invisible_private_icon.png" />
     <Content Include="images\assets\61630_i_icon.png" />
@@ -241,6 +243,7 @@
     <Content Include="images\assets\8680185_notification_fill_icon.png" />
     <Content Include="images\assets\9004860_arrow_direction_left_back_icon.png" />
     <Content Include="images\assets\9104276_scan_barcode_qr_qr code_scanner_icon.png" />
+    <Content Include="images\assets\9165585_zoom_out_1_icon.png" />
     <Content Include="images\assets\Banking and Finance Trade Show Banner in Orange Pastel Purple Dynamic Illustrative Style.png" />
     <Content Include="images\assets\Untitled.png" />
     <Content Include="images\assets\user.png" />
