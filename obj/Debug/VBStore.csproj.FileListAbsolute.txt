@@ -78,3 +78,15 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.csproj.CoreCompileInputs.cache
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.csproj.CopyComplete
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.exe
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.pdb
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\AForge.Video.DirectShow.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\AForge.Video.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\BarcodeLib.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\Emgu.CV.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\Emgu.CV.ML.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\Emgu.CV.UI.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\Emgu.Util.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\QRCoder.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.presentation.dll
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.xml
+C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.presentation.xml
