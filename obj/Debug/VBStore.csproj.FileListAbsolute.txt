@@ -90,3 +90,15 @@ C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.dll
 C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.presentation.dll
 C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.xml
 C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.presentation.xml
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.qrcodeForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.customerForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.daquyForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.trangsucForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themTSForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.chitietTSForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.SuaTSForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.XoaTSForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themDQFrom.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.chitietDQForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.suaDQForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoaDQForm.resources

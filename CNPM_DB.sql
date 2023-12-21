@@ -1,7 +1,6 @@
-﻿CREATE DATABASE CNPM_DB
-GO
+﻿
 -----------------------
-USE CNPM_DB
+USE vbstore
 GO
 -----------------------
 CREATE TABLE DONVITINH(
