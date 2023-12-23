@@ -2,14 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 
 namespace VBStore
 {
     public partial class daquyForm : Form
     {
         private string sdt;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
 
         public daquyForm()
         {

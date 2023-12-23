@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace VBStore
 {
-    public partial class chitietDQForm : Form
+    public partial class chitietCustomerForm : Form
     {
-        private string maSanPham;
+        private string maKhachHang;
         private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
 
-        public chitietDQForm(string maSP)
+        public chitietCustomerForm(string maKH)
         {
             InitializeComponent();
-            maSanPham = maSP;
-            LoadProductDetails();
+            maKhachHang = maKH;
+            LoadCustomerDetails();
         }
 
-        private void LoadProductDetails()
+        private void LoadCustomerDetails()
         {
             try
             {
@@ -25,25 +25,22 @@ namespace VBStore
                 {
                     connection.Open();
 
-                    string query = "SELECT SANPHAM.*, LOAISANPHAM.TENLOAISANPHAM " +
-                                   "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MASANPHAM = @MaSanPham";
-
+                    string query = "SELECT * " +
+                                   "FROM KHACHHANG " + 
+                                   "WHERE KHACHHANG.MAKHACHHANG = @MaKhachHang";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@MaSanPham", maSanPham);
-
+                        command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 // Hiển thị chi tiết sản phẩm và loại sản phẩm trên Form
-                                txtMaSP.Text = reader["MASANPHAM"].ToString();
-                                txtTenSP.Text = reader["TENSP"].ToString();
-                                txtDonGiaBan.Text = reader["DONGIABAN"].ToString();
-                                txtDonGiaMua.Text = reader["DONGIAMUA"].ToString();
-                                txtSoLuongTon.Text = reader["SOLUONGTON"].ToString();
-                                txtLoaiSP.Text = reader["TENLOAISANPHAM"].ToString();
+                                txtMaKH.Text = reader["MAKHACHHANG"].ToString();
+                                txtTenKH.Text = reader["TENKH"].ToString();
+                                txtDiaChi.Text = reader["DIACHI"].ToString();
+                                txtSDT.Text = reader["SDT"].ToString();
+                                txtEmail.Text = reader["EMAIL"].ToString();
                                 // Thêm các control khác tương ứng
                             }
                         }
@@ -55,10 +52,14 @@ namespace VBStore
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void createBtn_Click(object sender, EventArgs e)
+        private void createBtn_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

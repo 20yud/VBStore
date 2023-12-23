@@ -16,7 +16,7 @@ namespace VBStore
     {
         private string sdt;
         private Form currentFormChild;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
         private string imagesDirectory = @"C:\Workspace\c#\cnpm\VBStore\images\poster";
         private List<string> imagePaths = new List<string>();
         private int currentImageIndex = 0;
@@ -79,7 +79,7 @@ namespace VBStore
 
                     if (count > 0)
                     {
-                        customerForm cusForm = new customerForm(sdt);
+                        themCustomerForm cusForm = new themCustomerForm(sdt);
                         OpenChildFrom(cusForm);
                         
                     }
@@ -161,5 +161,22 @@ namespace VBStore
             trangsucForm trangsuc = new trangsucForm();
             OpenChildFrom(trangsuc);
         }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            customerForm khachhang = new customerForm();
+            OpenChildFrom(khachhang);
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

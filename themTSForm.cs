@@ -14,7 +14,7 @@ namespace VBStore
 {
     public partial class ThemTSForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
 
         public ThemTSForm()
         {

@@ -2,14 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+
 
 namespace VBStore
 {
     public partial class trangsucForm : Form
     {
         private string sdt;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
 
         public trangsucForm()
         {
@@ -24,7 +24,7 @@ namespace VBStore
         private void LoadProducts()
         {
             try
-            {
+            { 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();

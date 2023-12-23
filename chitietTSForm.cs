@@ -8,7 +8,7 @@ namespace VBStore
     public partial class chitietTSForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
 
         public chitietTSForm(string maSP)
         {
@@ -59,6 +59,11 @@ namespace VBStore
         private void createBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
