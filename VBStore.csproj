@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>VBStore</RootNamespace>
     <AssemblyName>VBStore</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,7 +64,7 @@
       <HintPath>..\..\test\Camera\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net461\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -78,22 +79,22 @@
       <HintPath>packages\Microsoft.Identity.Client.Extensions.Msal.2.19.3\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.24.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.24.0\lib\net461\Microsoft.IdentityModel.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.24.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.24.0\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Logging, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Logging.6.24.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.24.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Protocols.6.24.0\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.6.24.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.24.0\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+      <HintPath>packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.24.0\lib\net461\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
     <Reference Include="QRCoder">
       <HintPath>..\..\test\BarCode-QRCode\QRCoder.dll</HintPath>
@@ -115,7 +116,7 @@
     </Reference>
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.24.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.24.0\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
@@ -139,11 +140,6 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
@@ -156,8 +152,8 @@
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
@@ -176,8 +172,6 @@
     </Reference>
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
@@ -240,6 +234,12 @@
     </Compile>
     <Compile Include="daquyForm.Designer.cs">
       <DependentUpon>daquyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dichvuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dichvuForm.Designer.cs">
+      <DependentUpon>dichvuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
@@ -315,6 +315,9 @@
     <EmbeddedResource Include="daquyForm.resx">
       <DependentUpon>daquyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dichvuForm.resx">
+      <DependentUpon>dichvuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +332,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="qrcodeForm.resx">
       <DependentUpon>qrcodeForm.cs</DependentUpon>

@@ -102,3 +102,26 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themDQFrom.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.chitietDQForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.suaDQForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoaDQForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.AssemblyReference.cache
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.exe.config
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.chitietDQForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.chitietTSForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.customerForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.daquyForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.mainForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.loginForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.Properties.Resources.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.qrcodeForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.suaDQForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.SuaTSForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.themDQFrom.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.ThemTSForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.trangsucForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.xoaDQForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.XoaTSForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.GenerateResource.cache
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.CoreCompileInputs.cache
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.exe
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.pdb
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.ServiceForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.dichvuForm.resources

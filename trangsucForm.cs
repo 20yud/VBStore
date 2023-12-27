@@ -9,7 +9,7 @@ namespace VBStore
     public partial class trangsucForm : Form
     {
         private string sdt;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
 
         public trangsucForm()
         {
@@ -115,6 +115,21 @@ namespace VBStore
             {
                 MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

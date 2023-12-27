@@ -8,7 +8,7 @@ namespace VBStore
     public partial class suaDQForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
 
         public suaDQForm(string maSP)
         {
@@ -140,6 +140,11 @@ namespace VBStore
         private void createBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void suaDQForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

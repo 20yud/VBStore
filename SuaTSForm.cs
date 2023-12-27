@@ -8,8 +8,7 @@ namespace VBStore
     public partial class SuaTSForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
-
+        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
         public SuaTSForm(string maSP)
         {
             InitializeComponent();
@@ -158,6 +157,9 @@ namespace VBStore
             this.Close();
         }
 
-       
+        private void SuaTSForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

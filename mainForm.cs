@@ -16,8 +16,8 @@ namespace VBStore
     {
         private string sdt;
         private Form currentFormChild;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
-        private string imagesDirectory = @"C:\Workspace\c#\cnpm\VBStore\images\poster";
+        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
+        private string imagesDirectory = @"D:\document\Năm 3\cnpm\đồ án\VBStore\images\poster";
         private List<string> imagePaths = new List<string>();
         private int currentImageIndex = 0;
         public mainForm()
@@ -160,6 +160,17 @@ namespace VBStore
         {
             trangsucForm trangsuc = new trangsucForm();
             OpenChildFrom(trangsuc);
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            dichvuForm dichvu = new dichvuForm();
+            OpenChildFrom(dichvu);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
