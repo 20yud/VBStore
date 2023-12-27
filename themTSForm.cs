@@ -14,11 +14,13 @@ namespace VBStore
 {
     public partial class ThemTSForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public ThemTSForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
             LoadLoaiSanPham(); // Load danh sách loại sản phẩm vào ListBox
         }
 

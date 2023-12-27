@@ -102,3 +102,5 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themDQFrom.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.chitietDQForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.suaDQForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoaDQForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.muahangForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.thanhtoanForm.resources

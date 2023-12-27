@@ -8,13 +8,15 @@ namespace VBStore
     public partial class suaDQForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public suaDQForm(string maSP)
         {
             InitializeComponent();
             maSanPham = maSP;
             LoadProductDetails();
+            connectionString = dbHelper.ConnectionString;
         }
 
         private void LoadProductDetails()

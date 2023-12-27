@@ -8,12 +8,14 @@ namespace VBStore
     public partial class xoaDQForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public xoaDQForm(string maSP)
         {
             InitializeComponent();
             maSanPham = maSP;
+            connectionString = dbHelper.ConnectionString;
             LoadProductDetails();
         }
 

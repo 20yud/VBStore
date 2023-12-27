@@ -16,13 +16,15 @@ namespace VBStore
     {
         private string sdt;
         private Form currentFormChild;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
         private string imagesDirectory = @"C:\Workspace\c#\cnpm\VBStore\images\poster";
         private List<string> imagePaths = new List<string>();
         private int currentImageIndex = 0;
         public mainForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
         }
 
         private void OpenChildFrom(Form childForm)
@@ -34,8 +36,8 @@ namespace VBStore
             currentFormChild = childForm;
             childForm.TopLevel = false;
             childForm.Dock = DockStyle.Fill;
-            mainPanel.Controls.Add(childForm);
-            mainPanel.Tag = childForm;
+            panel6.Controls.Add(childForm);
+            panel6.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -81,6 +83,7 @@ namespace VBStore
                     {
                         customerForm cusForm = new customerForm(sdt);
                         OpenChildFrom(cusForm);
+
                         
                     }
                     else
@@ -91,55 +94,13 @@ namespace VBStore
             }
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            // Switch to the next image
-            currentImageIndex++;
-            if (currentImageIndex >= imagePaths.Count)
-            {
-                // Restart from the first image if all images have been shown
-                currentImageIndex = 0;
-            }
-
-            // Display the next image
-            pictureBox1.Image = Image.FromFile(imagePaths[currentImageIndex]);
-        }
-
-        private void LoadImages()
-        {
-            // Check if the directory exists
-            if (Directory.Exists(imagesDirectory))
-            {
-                // Get all image files from the specified directory
-                string[] imageFiles = Directory.GetFiles(imagesDirectory, "*.png");
-
-                // Populate the imagePaths list with the paths of image files
-                imagePaths.AddRange(imageFiles);
-
-                // Display the first image
-                if (imagePaths.Count > 0)
-                {
-                    pictureBox1.Image = Image.FromFile(imagePaths[0]);
-                    pictureBox1.SizeMode=PictureBoxSizeMode.StretchImage;
-                }
-
-                // Start the timer to switch images every 30 seconds
-                timer1.Start();
-            }
-            else
-            {
-                MessageBox.Show("Image directory not found.", "Error");
-            }
-        }
+        
 
         private void mainForm_Load(object sender, EventArgs e)
         {
             // Set up the timer
             timer1.Interval = 10000; // 30 seconds
-            timer1.Tick += Timer1_Tick;
-
-            // Load initial images into pictureBox1
-            LoadImages();
+            
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -160,6 +121,28 @@ namespace VBStore
         {
             trangsucForm trangsuc = new trangsucForm();
             OpenChildFrom(trangsuc);
+        }
+
+        private void panelcustomer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelgem_Click(object sender, EventArgs e)
+        {
+            daquyForm daquy = new daquyForm();
+            OpenChildFrom(daquy);
+        }
+
+        private void paneljewelry_Click(object sender, EventArgs e)
+        {
+            trangsucForm trangsuc = new trangsucForm();
+            OpenChildFrom(trangsuc);
+        }
+
+        private void panelservice_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,17 +13,21 @@ namespace VBStore
 {
     public partial class customerForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        
+        private string sdt;
+        private string tenKH;
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
+        
         public customerForm()
         {
             InitializeComponent();
         }
-
-        private string sdt;
         public customerForm(string sdt)
         {
             InitializeComponent();
             this.sdt = sdt;
+            connectionString = dbHelper.ConnectionString;
         }
 
         private void customerForm_Load(object sender, EventArgs e)
@@ -48,11 +52,14 @@ namespace VBStore
                             emailTextBox.Text = reader.GetString(reader.GetOrdinal("EMAIL"));
                             addressTextBox.Text = reader.GetString(reader.GetOrdinal("DIACHI"));
                         }
+                        
                     }
                 }
             }
 
             // Update the tag values with the current data
+            tenKH = nameTextBox.Text;
+            sdt = phoneNumberTextBox.Text;
             nameTextBox.Tag = nameTextBox.Text;
             phoneNumberTextBox.Tag = phoneNumberTextBox.Text;
             emailTextBox.Tag = emailTextBox.Text;
@@ -207,6 +214,13 @@ namespace VBStore
                     }
                 }
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            muahangForm muahangForm = new muahangForm(sdt,tenKH);
+            muahangForm.Show();
+            this.Close();
         }
     }
 }
