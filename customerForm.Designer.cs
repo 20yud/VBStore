@@ -40,6 +40,7 @@ namespace VBStore
             this.editBtn = new Guna.UI2.WinForms.Guna2Button();
             this.createBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.findTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace VBStore
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.findTextBox);
             this.panel1.Controls.Add(this.delBtn);
             this.panel1.Controls.Add(this.detailBtn);
             this.panel1.Controls.Add(this.editBtn);
@@ -67,10 +69,10 @@ namespace VBStore
             this.delBtn.FillColor = System.Drawing.Color.OrangeRed;
             this.delBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.ForeColor = System.Drawing.Color.Black;
-            this.delBtn.Location = new System.Drawing.Point(644, 15);
+            this.delBtn.Location = new System.Drawing.Point(647, 30);
             this.delBtn.Margin = new System.Windows.Forms.Padding(4);
             this.delBtn.Name = "delBtn";
-            this.delBtn.Size = new System.Drawing.Size(145, 48);
+            this.delBtn.Size = new System.Drawing.Size(138, 39);
             this.delBtn.TabIndex = 7;
             this.delBtn.Text = "XÓA";
             this.delBtn.Click += new System.EventHandler(this.delBtn_Click_1);
@@ -84,10 +86,10 @@ namespace VBStore
             this.detailBtn.FillColor = System.Drawing.Color.Gray;
             this.detailBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailBtn.ForeColor = System.Drawing.Color.Black;
-            this.detailBtn.Location = new System.Drawing.Point(247, 15);
+            this.detailBtn.Location = new System.Drawing.Point(245, 30);
             this.detailBtn.Margin = new System.Windows.Forms.Padding(4);
             this.detailBtn.Name = "detailBtn";
-            this.detailBtn.Size = new System.Drawing.Size(145, 48);
+            this.detailBtn.Size = new System.Drawing.Size(138, 39);
             this.detailBtn.TabIndex = 6;
             this.detailBtn.Text = "CHI TIẾT";
             this.detailBtn.Click += new System.EventHandler(this.detailBtn_Click_1);
@@ -101,10 +103,10 @@ namespace VBStore
             this.editBtn.FillColor = System.Drawing.Color.LightSeaGreen;
             this.editBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.Black;
-            this.editBtn.Location = new System.Drawing.Point(439, 15);
+            this.editBtn.Location = new System.Drawing.Point(439, 30);
             this.editBtn.Margin = new System.Windows.Forms.Padding(4);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(145, 48);
+            this.editBtn.Size = new System.Drawing.Size(138, 39);
             this.editBtn.TabIndex = 5;
             this.editBtn.Text = "SỬA";
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
@@ -118,10 +120,10 @@ namespace VBStore
             this.createBtn.FillColor = System.Drawing.Color.Lime;
             this.createBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createBtn.ForeColor = System.Drawing.Color.Black;
-            this.createBtn.Location = new System.Drawing.Point(67, 15);
+            this.createBtn.Location = new System.Drawing.Point(56, 30);
             this.createBtn.Margin = new System.Windows.Forms.Padding(4);
             this.createBtn.Name = "createBtn";
-            this.createBtn.Size = new System.Drawing.Size(145, 48);
+            this.createBtn.Size = new System.Drawing.Size(138, 39);
             this.createBtn.TabIndex = 4;
             this.createBtn.Text = "THÊM";
             this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
@@ -179,6 +181,27 @@ namespace VBStore
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // findTextBox
+            // 
+            this.findTextBox.BorderRadius = 20;
+            this.findTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.findTextBox.DefaultText = "";
+            this.findTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.findTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.findTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextBox.Location = new System.Drawing.Point(932, 15);
+            this.findTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.findTextBox.Name = "findTextBox";
+            this.findTextBox.PasswordChar = '\0';
+            this.findTextBox.PlaceholderText = "Tên sản phẩm";
+            this.findTextBox.SelectedText = "";
+            this.findTextBox.Size = new System.Drawing.Size(386, 54);
+            this.findTextBox.TabIndex = 13;
+            // 
             // customerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -213,5 +236,6 @@ namespace VBStore
         private Guna.UI2.WinForms.Guna2Button editBtn;
         private Guna.UI2.WinForms.Guna2Button createBtn;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2TextBox findTextBox;
     }
 }

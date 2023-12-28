@@ -13,8 +13,9 @@ namespace VBStore
         public chitietDVForm(string maDV)
         {
             InitializeComponent();
-            maLoaiDV = maDV;
             connectionString = dbHelper.ConnectionString;
+            maLoaiDV = maDV;
+            
             LoadCTDV();
         }
 

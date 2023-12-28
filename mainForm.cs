@@ -35,10 +35,10 @@ namespace VBStore
             }
             currentFormChild = childForm;
             childForm.TopLevel = false;
-            childForm.Dock = DockStyle.Fill;
-            panel6.Controls.Add(childForm);
-            panel6.Tag = childForm;
+            childForm.Dock = DockStyle.Fill; // Đảm bảo childForm fill hết panel6
+            mainPanel.Controls.Add(childForm);
             childForm.BringToFront();
+            childForm.WindowState = FormWindowState.Maximized; // Mở childForm ở kích thước lớn nhất
             childForm.Show();
         }
 
@@ -47,17 +47,7 @@ namespace VBStore
             this.Close();
         }
 
-        private void inoutBtn_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                WindowState = FormWindowState.Normal;
-            }
-        }
+       
 
         private void findcusBtn_Click(object sender, EventArgs e)
         {
@@ -81,10 +71,11 @@ namespace VBStore
 
                     if (count > 0)
                     {
-                        customerForm cusForm = new customerForm(sdt);
+                        findcusForm cusForm = new findcusForm(sdt);
                         OpenChildFrom(cusForm);
+                        backBtn.Visible = true;
+                        titlelabel.Text = "Thông tin khách hàng";
 
-                        
                     }
                     else
                     {
@@ -98,51 +89,151 @@ namespace VBStore
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            // Set up the timer
-            timer1.Interval = 10000; // 30 seconds
-            
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
             if (currentFormChild != null)
             {
-                currentFormChild.Close();
+                backBtn.Visible = true;
+            }
+            timer1.Interval = 10000;
+            coutnKH();
+            countDQTS();
+            countDVF();
+
+            
+        }
+        void coutnKH()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Tạo câu truy vấn SQL để đếm số lượng khách hàng
+                string query = "SELECT COUNT(*) FROM KHACHHANG";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Thực thi câu truy vấn và trả về số lượng khách hàng
+                    int count = (int)command.ExecuteScalar();
+                    countKH.Text = count.ToString(); // Gán kết quả vào Label countKH
+                }
             }
         }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
+        void countDQTS()
         {
-            daquyForm daquy = new daquyForm();
-            OpenChildFrom(daquy);
-        }
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+                // Create SQL query to count the number of products for each product type
+                string query = "SELECT MALOAISANPHAM, COUNT(*) FROM SANPHAM GROUP BY MALOAISANPHAM";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    int totalCountDQ = 0;
+                    int totalCountTS = 0;
+
+                    while (reader.Read())
+                    {
+                        string maLoaiSanPham = reader.GetString(0);
+                        int count = reader.GetInt32(1);
+
+                        // Update total counts based on product type
+                        if (maLoaiSanPham == "LSP001" || maLoaiSanPham == "LSP002" || maLoaiSanPham == "LSP003" || maLoaiSanPham == "LSP004")
+                        {
+                            totalCountDQ += count;
+                        }
+                        else if (maLoaiSanPham == "LSP005")
+                        {
+                            totalCountTS += count;
+                        }
+                    }
+
+                    // Assign the total counts to the respective labels
+                    countDQ.Text = totalCountDQ.ToString();
+                    countTS.Text = totalCountTS.ToString();
+                }
+            }
+        }
+        void countDVF()
         {
-            trangsucForm trangsuc = new trangsucForm();
-            OpenChildFrom(trangsuc);
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Tạo câu truy vấn SQL để đếm số lượng dịch vụ
+                string query = "SELECT COUNT(*) FROM DICHVU";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Thực thi câu truy vấn và trả về số lượng dịch vụ
+                    int count = (int)command.ExecuteScalar();
+                    countDV.Text = count.ToString(); // Gán kết quả vào Label countDV
+                }
+            }
         }
-
-        private void panelcustomer_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void panelgem_Click(object sender, EventArgs e)
         {
-            daquyForm daquy = new daquyForm();
-            OpenChildFrom(daquy);
+            daquyForm gemForm = new daquyForm();
+            OpenChildFrom(gemForm);
+            backBtn.Visible = true;
+            titlelabel.Text = "Đá Quý";
         }
 
         private void paneljewelry_Click(object sender, EventArgs e)
         {
             trangsucForm trangsuc = new trangsucForm();
             OpenChildFrom(trangsuc);
+            backBtn.Visible = true;
+            titlelabel.Text = "Trang Sức";
+        }
+
+        private void mainForm_ClientSizeChanged(object sender, EventArgs e)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.WindowState = this.WindowState; // Đặt trạng thái cửa sổ của childForm giống với mainForm
+                if (this.WindowState == FormWindowState.Maximized || this.WindowState == FormWindowState.Normal)
+                {
+                    if(numberTextBox.Text != null)
+                    {
+                        findcusBtn_Click(findcusBtn, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close();
+            }
+            backBtn.Visible = false;
+            titlelabel.Text = "VBStore";
+            coutnKH();
+            countDQTS();
+            countDVF();
+        }
+
+        private void panelcustomer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelcustomer_Click_1(object sender, EventArgs e)
+        {
+            customerForm customerForm = new customerForm(sdt);
+            OpenChildFrom(customerForm);
+            backBtn.Visible = true;
+            titlelabel.Text = "Danh sách khách hàng";
         }
 
         private void panelservice_Click(object sender, EventArgs e)
         {
-
+            dichvuForm dichVu = new dichvuForm();
+            OpenChildFrom(dichVu);
+            backBtn.Visible = true;
+            titlelabel.Text = "Dịch Vụ";
         }
     }
 }

@@ -233,6 +233,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="banhangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banhangForm.Designer.cs">
+      <DependentUpon>banhangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildFormUtility.cs" />
     <Compile Include="chitietCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +282,12 @@
     </Compile>
     <Compile Include="dichvuForm.designer.cs">
       <DependentUpon>dichvuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="findcusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="findcusForm.Designer.cs">
+      <DependentUpon>findcusForm.cs</DependentUpon>
     </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
@@ -386,6 +399,9 @@
     <Compile Include="XoaTSForm.Designer.cs">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="banhangForm.resx">
+      <DependentUpon>banhangForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chitietCustomerForm.resx">
       <DependentUpon>chitietCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dichvuForm.resx">
       <DependentUpon>dichvuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="findcusForm.resx">
+      <DependentUpon>findcusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -497,11 +516,13 @@
     <Content Include="images\assets\61630_i_icon.png" />
     <Content Include="images\assets\7390270_digital_payment_transfer_finance_dollar_icon.png" />
     <Content Include="images\assets\8680185_notification_fill_icon.png" />
+    <Content Include="images\assets\9004860_arrow_direction_left_back_icon %281%29.png" />
     <Content Include="images\assets\9004860_arrow_direction_left_back_icon.png" />
     <Content Include="images\assets\9042869_phone_icon.png" />
     <Content Include="images\assets\9104276_scan_barcode_qr_qr code_scanner_icon.png" />
     <Content Include="images\assets\9165585_zoom_out_1_icon.png" />
     <Content Include="images\assets\Banking and Finance Trade Show Banner in Orange Pastel Purple Dynamic Illustrative Style.png" />
+    <Content Include="images\assets\hotel.png" />
     <Content Include="images\assets\icons8-arrow-30.png" />
     <Content Include="images\assets\icons8-contact-100.png" />
     <Content Include="images\assets\icons8-coupon-100.png" />
@@ -511,6 +532,7 @@
     <Content Include="images\assets\icons8-user-100.png" />
     <Content Include="images\assets\Untitled.png" />
     <Content Include="images\assets\user.png" />
+    <Content Include="images\ico\ring_love_diamond_icon-icons.com_51094.ico" />
     <Content Include="images\poster\Brown and Gold Elegant Jewelry %28Poster%29.png" />
     <Content Include="images\poster\Jewelry Poster .png" />
     <Content Include="images\V %281%29.png" />

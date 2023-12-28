@@ -14,9 +14,10 @@ namespace VBStore
         public suaDQForm(string maSP)
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
             maSanPham = maSP;
             LoadProductDetails();
-            connectionString = dbHelper.ConnectionString;
+            
         }
 
         private void LoadProductDetails()

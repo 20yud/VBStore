@@ -120,3 +120,5 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dichvuForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.suaDVForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themDVForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoaDVForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.banhangForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.findcusForm.resources

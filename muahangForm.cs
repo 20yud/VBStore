@@ -204,7 +204,7 @@ namespace VBStore
                     if (result != null)
                     {
                         string decoded = result.ToString().Trim();
-                        label3.Text = decoded;
+                        
                         qrstring = decoded;
                         imgQRCode.Dispose();
 

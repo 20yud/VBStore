@@ -34,12 +34,12 @@ namespace VBStore
                         {
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
-                            guna2DataGridView3.DataSource = dataTable;
+                            guna2DataGridView1.DataSource = dataTable;
 
                             // Đặt tên cho các cột
-                            guna2DataGridView3.Columns[0].HeaderText = "Mã dịch vụ";
-                            guna2DataGridView3.Columns[1].HeaderText = "Tên dịch vụ";
-                            guna2DataGridView3.Columns[2].HeaderText = "Đơn giá";
+                            guna2DataGridView1.Columns[0].HeaderText = "Mã dịch vụ";
+                            guna2DataGridView1.Columns[1].HeaderText = "Tên dịch vụ";
+                            guna2DataGridView1.Columns[2].HeaderText = "Đơn giá";
                         }
                     }
                 }
@@ -59,9 +59,9 @@ namespace VBStore
 
         private void delBtn_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView3.SelectedRows.Count > 0)
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                DataGridViewRow selectedRow = guna2DataGridView3.SelectedRows[0];
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
                 string maDichVu = selectedRow.Cells["Mã dịch vụ"].Value.ToString();
 
                 // Truyền mã sản phẩm vào Form XoaTSForm khi mở Form này
@@ -77,9 +77,9 @@ namespace VBStore
 
         private void detailBtn_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView3.SelectedRows.Count > 0)
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                string maDichVu = guna2DataGridView3.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
+                string maDichVu = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
                 chitietDVForm chiTietForm = new chitietDVForm(maDichVu);
                 chiTietForm.ShowDialog();
             }
@@ -96,9 +96,9 @@ namespace VBStore
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView3.SelectedRows.Count > 0)
+            if (guna2DataGridView1.SelectedRows.Count > 0)
             {
-                string maSanPham = guna2DataGridView3.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
+                string maSanPham = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
                 suaDVForm suaDV = new suaDVForm(maSanPham);
                 suaDV.ShowDialog();
                 dis(); // Sau khi sửa thông tin, load lại dữ liệu

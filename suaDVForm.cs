@@ -14,8 +14,9 @@ namespace VBStore
         public suaDVForm(string maDV)
         {
             InitializeComponent();
-            maLoaiDV = maDV;
             connectionString = dbHelper.ConnectionString;
+            maLoaiDV = maDV;
+            
             LoadCTDV();
         }
 

@@ -11,6 +11,7 @@ namespace VBStore
         private string sdt;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private ChildFormUtility childFormUtility;
         public customerForm()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace VBStore
             InitializeComponent();
             this.sdt = sdt;
             connectionString = dbHelper.ConnectionString;
+            childFormUtility = new ChildFormUtility(this);
         }
 
         private void customerForm_Load(object sender, EventArgs e)
@@ -87,6 +89,7 @@ namespace VBStore
                 string maKhachHang = guna2DataGridView1.SelectedRows[0].Cells["Mã khách hàng"].Value.ToString();
                 chitietCustomerForm chiTietCustomerForm = new chitietCustomerForm(maKhachHang);
                 chiTietCustomerForm.ShowDialog();
+               
             }
             else
             {

@@ -61,9 +61,8 @@
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.Yellow;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1332, 871);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1125, 663);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // guna2Button2
@@ -75,10 +74,9 @@
             this.guna2Button2.FillColor = System.Drawing.Color.AntiqueWhite;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(722, 564);
-            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button2.Location = new System.Drawing.Point(672, 484);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(204, 87);
+            this.guna2Button2.Size = new System.Drawing.Size(153, 71);
             this.guna2Button2.TabIndex = 50;
             this.guna2Button2.Text = "TRỞ VỀ";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -92,10 +90,9 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Lime;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(396, 564);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button1.Location = new System.Drawing.Point(427, 484);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(204, 87);
+            this.guna2Button1.Size = new System.Drawing.Size(153, 71);
             this.guna2Button1.TabIndex = 10;
             this.guna2Button1.Text = "THÊM";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -103,41 +100,37 @@
             // addressTextBox
             // 
             this.addressTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTextBox.Location = new System.Drawing.Point(429, 436);
-            this.addressTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.addressTextBox.Location = new System.Drawing.Point(452, 380);
             this.addressTextBox.Multiline = true;
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(497, 36);
+            this.addressTextBox.Size = new System.Drawing.Size(374, 30);
             this.addressTextBox.TabIndex = 9;
             // 
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTextBox.Location = new System.Drawing.Point(429, 362);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.emailTextBox.Location = new System.Drawing.Point(452, 320);
             this.emailTextBox.Multiline = true;
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(497, 36);
+            this.emailTextBox.Size = new System.Drawing.Size(374, 30);
             this.emailTextBox.TabIndex = 8;
             // 
             // phoneNumberTextBox
             // 
             this.phoneNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(429, 284);
-            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(452, 257);
             this.phoneNumberTextBox.Multiline = true;
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
-            this.phoneNumberTextBox.Size = new System.Drawing.Size(497, 36);
+            this.phoneNumberTextBox.Size = new System.Drawing.Size(374, 30);
             this.phoneNumberTextBox.TabIndex = 7;
             // 
             // nameTextBox
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBox.Location = new System.Drawing.Point(429, 191);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.nameTextBox.Location = new System.Drawing.Point(452, 181);
             this.nameTextBox.Multiline = true;
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(497, 36);
+            this.nameTextBox.Size = new System.Drawing.Size(374, 30);
             this.nameTextBox.TabIndex = 6;
             // 
             // label5
@@ -145,10 +138,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(141, 442);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(236, 385);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 31);
+            this.label5.Size = new System.Drawing.Size(96, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Địa Chỉ:";
             // 
@@ -157,10 +149,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(141, 368);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(236, 325);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 31);
+            this.label4.Size = new System.Drawing.Size(77, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Email:";
             // 
@@ -169,10 +160,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(141, 290);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(236, 262);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(207, 31);
+            this.label3.Size = new System.Drawing.Size(168, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Số Điện Thoại:";
             // 
@@ -181,10 +171,9 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(141, 197);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(236, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(240, 31);
+            this.label2.Size = new System.Drawing.Size(194, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên Khách Hàng:";
             // 
@@ -193,22 +182,21 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(387, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(420, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(489, 52);
+            this.label1.Size = new System.Drawing.Size(389, 39);
             this.label1.TabIndex = 1;
             this.label1.Text = "Thông Tin Khách Hàng";
             // 
             // themCustomerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 871);
+            this.ClientSize = new System.Drawing.Size(1125, 663);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "themCustomerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "customerForm";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();

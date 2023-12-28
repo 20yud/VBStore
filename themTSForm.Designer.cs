@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 91);
+            this.label1.Location = new System.Drawing.Point(290, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 24);
             this.label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(139, 144);
+            this.label2.Location = new System.Drawing.Point(290, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 24);
             this.label2.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(139, 201);
+            this.label3.Location = new System.Drawing.Point(290, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 24);
             this.label3.TabIndex = 2;
@@ -78,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(139, 248);
+            this.label4.Location = new System.Drawing.Point(290, 287);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 24);
             this.label4.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(139, 293);
+            this.label5.Location = new System.Drawing.Point(290, 332);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 24);
             this.label5.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(139, 352);
+            this.label6.Location = new System.Drawing.Point(290, 391);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(149, 24);
             this.label6.TabIndex = 5;
@@ -113,7 +113,7 @@
             this.createBtn.FillColor = System.Drawing.Color.Lime;
             this.createBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createBtn.ForeColor = System.Drawing.Color.Black;
-            this.createBtn.Location = new System.Drawing.Point(344, 401);
+            this.createBtn.Location = new System.Drawing.Point(495, 440);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(109, 39);
             this.createBtn.TabIndex = 6;
@@ -123,7 +123,7 @@
             // txtTenSP
             // 
             this.txtTenSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenSP.Location = new System.Drawing.Point(314, 83);
+            this.txtTenSP.Location = new System.Drawing.Point(465, 122);
             this.txtTenSP.Multiline = true;
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(282, 32);
@@ -132,7 +132,7 @@
             // txtMaSP
             // 
             this.txtMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSP.Location = new System.Drawing.Point(314, 136);
+            this.txtMaSP.Location = new System.Drawing.Point(465, 175);
             this.txtMaSP.Multiline = true;
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(282, 32);
@@ -141,7 +141,7 @@
             // txtDonGiaMua
             // 
             this.txtDonGiaMua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGiaMua.Location = new System.Drawing.Point(314, 248);
+            this.txtDonGiaMua.Location = new System.Drawing.Point(465, 287);
             this.txtDonGiaMua.Multiline = true;
             this.txtDonGiaMua.Name = "txtDonGiaMua";
             this.txtDonGiaMua.Size = new System.Drawing.Size(282, 32);
@@ -150,7 +150,7 @@
             // txtDonGiaBan
             // 
             this.txtDonGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGiaBan.Location = new System.Drawing.Point(314, 293);
+            this.txtDonGiaBan.Location = new System.Drawing.Point(465, 332);
             this.txtDonGiaBan.Multiline = true;
             this.txtDonGiaBan.Name = "txtDonGiaBan";
             this.txtDonGiaBan.Size = new System.Drawing.Size(282, 32);
@@ -159,7 +159,7 @@
             // txtSoLuongTon
             // 
             this.txtSoLuongTon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLuongTon.Location = new System.Drawing.Point(314, 344);
+            this.txtSoLuongTon.Location = new System.Drawing.Point(465, 383);
             this.txtSoLuongTon.Multiline = true;
             this.txtSoLuongTon.Name = "txtSoLuongTon";
             this.txtSoLuongTon.Size = new System.Drawing.Size(282, 32);
@@ -175,7 +175,7 @@
             this.cmbLoaiSP.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbLoaiSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbLoaiSP.ItemHeight = 30;
-            this.cmbLoaiSP.Location = new System.Drawing.Point(314, 189);
+            this.cmbLoaiSP.Location = new System.Drawing.Point(465, 228);
             this.cmbLoaiSP.Name = "cmbLoaiSP";
             this.cmbLoaiSP.Size = new System.Drawing.Size(282, 36);
             this.cmbLoaiSP.TabIndex = 26;
@@ -189,7 +189,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.AntiqueWhite;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(487, 401);
+            this.guna2Button1.Location = new System.Drawing.Point(638, 440);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(109, 39);
             this.guna2Button1.TabIndex = 49;
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 479);
+            this.ClientSize = new System.Drawing.Size(1125, 663);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.cmbLoaiSP);
             this.Controls.Add(this.txtSoLuongTon);
@@ -215,7 +215,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ThemTSForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "themTSForm";
             this.ResumeLayout(false);
             this.PerformLayout();

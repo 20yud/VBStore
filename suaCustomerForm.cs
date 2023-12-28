@@ -19,8 +19,9 @@ namespace VBStore
         public suaCustomerForm(string maKH)
         {
             InitializeComponent();
-            maKhachHang = maKH;
             connectionString = dbHelper.ConnectionString; // Move this line before LoadCustomerDetails
+            maKhachHang = maKH;
+            
             LoadCustomerDetails();
 
         }
@@ -118,6 +119,11 @@ namespace VBStore
             return !string.IsNullOrEmpty(txtTenKH.Text) && !string.IsNullOrEmpty(txtDiaChi.Text) &&
                    !string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtSDT.Text);
             // Thêm kiểm tra cho các control khác nếu cần
+        }
+
+        private void createBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

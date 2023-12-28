@@ -13,9 +13,10 @@ namespace VBStore
         public chitietCustomerForm(string maKH)
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
             maKhachHang = maKH;
             LoadCustomerDetails();
-            connectionString = dbHelper.ConnectionString;
+            
 
         }
 
@@ -59,9 +60,6 @@ namespace VBStore
             this.Close();
         }
 
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
