@@ -9,7 +9,7 @@ namespace VBStore
     public partial class customerForm : Form
     {
         private string sdt;
-        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=CNPM_DB;Integrated Security=True";
         public customerForm()
         {
             InitializeComponent();
