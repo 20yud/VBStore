@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,10 +10,13 @@ namespace VBStore
     public partial class customerForm : Form
     {
         private string sdt;
-        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=CNPM_DB;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
         public customerForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
+
         }
 
         private void customerForm_Load(object sender, EventArgs e)
@@ -64,57 +68,5 @@ namespace VBStore
         }
 
 
-        private void createBtn_Click(object sender, EventArgs e)
-        {
-            themCustomerForm themCustomerForm = new themCustomerForm();
-            themCustomerForm.ShowDialog();
-        }
-
-
-        private void detailBtn_Click_1(object sender, EventArgs e)
-        {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
-            {
-                string maKhachHang = guna2DataGridView1.SelectedRows[0].Cells["Mã khách hàng"].Value.ToString();
-                chitietCustomerForm chiTietCustomerForm = new chitietCustomerForm(maKhachHang);
-                chiTietCustomerForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một khách hàng để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
-            {
-                string maKhachHang = guna2DataGridView1.SelectedRows[0].Cells["Mã khách hàng"].Value.ToString();
-                suaCustomerForm suaCustomerForm = new suaCustomerForm(maKhachHang);
-                suaCustomerForm.ShowDialog();
-                loadCustomer(); // Sau khi sửa thông tin, load lại dữ liệu
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một khách hàng để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void delBtn_Click_1(object sender, EventArgs e)
-        {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
-                string maKhachHang = selectedRow.Cells["Mã khách hàng"].Value.ToString();
-
-                // Truyền mã sản phẩm vào Form XoaTSForm khi mở Form này
-                xoaCustomerForm xoaCustomerForm = new xoaCustomerForm(maKhachHang);
-                xoaCustomerForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một khách hàng để xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
     }
 }

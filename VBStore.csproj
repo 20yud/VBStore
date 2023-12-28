@@ -217,12 +217,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="chitietCustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="chitietCustomerForm.Designer.cs">
-      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="chitietDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,24 +235,13 @@
     <Compile Include="customerForm.Designer.cs">
       <DependentUpon>customerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="suaCustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="suaCustomerForm.Designer.cs">
-      <DependentUpon>suaCustomerForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="themCustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="themCustomerForm.Designer.cs">
-      <DependentUpon>themCustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="daquyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="daquyForm.Designer.cs">
       <DependentUpon>daquyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="dbhelper.cs" />
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +253,12 @@
     </Compile>
     <Compile Include="loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="muahangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="muahangForm.Designer.cs">
+      <DependentUpon>muahangForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,6 +280,10 @@
     <Compile Include="SuaTSForm.Designer.cs">
       <DependentUpon>SuaTSForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="thanhtoanForm.cs" />
+    <Compile Include="thanhtoanForm.Designer.cs">
+      <DependentUpon>thanhtoanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="themDQFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,12 +302,6 @@
     <Compile Include="trangsucForm.Designer.cs">
       <DependentUpon>trangsucForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="xoaCustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="xoaCustomerForm.Designer.cs">
-      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="xoaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,9 +314,6 @@
     <Compile Include="XoaTSForm.Designer.cs">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="chitietCustomerForm.resx">
-      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="chitietDQForm.resx">
       <DependentUpon>chitietDQForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,12 +323,6 @@
     <EmbeddedResource Include="customerForm.resx">
       <DependentUpon>customerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="suaCustomerForm.resx">
-      <DependentUpon>suaCustomerForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="themCustomerForm.resx">
-      <DependentUpon>themCustomerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="daquyForm.resx">
       <DependentUpon>daquyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="muahangForm.resx">
+      <DependentUpon>muahangForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -372,6 +353,9 @@
     <EmbeddedResource Include="SuaTSForm.resx">
       <DependentUpon>SuaTSForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="thanhtoanForm.resx">
+      <DependentUpon>thanhtoanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="themDQFrom.resx">
       <DependentUpon>themDQFrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,9 +364,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trangsucForm.resx">
       <DependentUpon>trangsucForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="xoaCustomerForm.resx">
-      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xoaDQForm.resx">
       <DependentUpon>xoaDQForm.cs</DependentUpon>
@@ -422,6 +403,13 @@
     <Content Include="images\assets\9104276_scan_barcode_qr_qr code_scanner_icon.png" />
     <Content Include="images\assets\9165585_zoom_out_1_icon.png" />
     <Content Include="images\assets\Banking and Finance Trade Show Banner in Orange Pastel Purple Dynamic Illustrative Style.png" />
+    <Content Include="images\assets\icons8-arrow-30.png" />
+    <Content Include="images\assets\icons8-contact-100.png" />
+    <Content Include="images\assets\icons8-coupon-100.png" />
+    <Content Include="images\assets\icons8-crest-65.png" />
+    <Content Include="images\assets\icons8-gem-100.png" />
+    <Content Include="images\assets\icons8-service-100.png" />
+    <Content Include="images\assets\icons8-user-100.png" />
     <Content Include="images\assets\Untitled.png" />
     <Content Include="images\assets\user.png" />
     <Content Include="images\poster\Brown and Gold Elegant Jewelry %28Poster%29.png" />
