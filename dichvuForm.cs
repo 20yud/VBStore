@@ -1,25 +1,23 @@
 ﻿using System;
 using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace VBStore
 {
     public partial class dichvuForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public dichvuForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
+            dis();
         }
 
-        private void dichvuForm_Load(object sender, EventArgs e)
-        {
-            LoadServices(); // Load service data when the form is loaded
-        }
-
-        private void LoadServices()
+        private void dis()
         {
             try
             {
@@ -27,11 +25,8 @@ namespace VBStore
                 {
                     connection.Open();
 
-                    // Modify the query based on your database structure and requirements
-                    string query = "SELECT MADICHVU AS 'Mã dịch vụ', " +
-                                   "TENDICHVU AS 'Tên dịch vụ', " +
-                                   "GIA AS 'Giá' " +
-                                   "FROM DICHVU";
+                    // Thay đổi câu truy vấn và cách hiển thị dữ liệu
+                    string query = "SELECT MALOAIDICHVU AS 'Mã dịch vụ', TENDICHVU AS 'Tên dịch vụ', DONGIA AS 'Đơn giá' FROM DICHVU";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -39,15 +34,12 @@ namespace VBStore
                         {
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
-                            guna2DataGridView1.DataSource = dataTable;
+                            guna2DataGridView3.DataSource = dataTable;
 
-                            // Set column headers
-                            if (guna2DataGridView1.Columns.Count >= 3)
-                            {
-                                guna2DataGridView1.Columns[0].HeaderText = "Mã dịch vụ";
-                                guna2DataGridView1.Columns[1].HeaderText = "Tên dịch vụ";
-                                guna2DataGridView1.Columns[2].HeaderText = "Giá";
-                            }
+                            // Đặt tên cho các cột
+                            guna2DataGridView3.Columns[0].HeaderText = "Mã dịch vụ";
+                            guna2DataGridView3.Columns[1].HeaderText = "Tên dịch vụ";
+                            guna2DataGridView3.Columns[2].HeaderText = "Đơn giá";
                         }
                     }
                 }
@@ -60,18 +52,36 @@ namespace VBStore
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-            ThemDichVuForm themDichVuForm = new ThemDichVuForm();
-            themDichVuForm.ShowDialog();
-            LoadServices(); // Reload data after adding a new service
+            themDVForm themDV = new themDVForm();
+            themDV.ShowDialog();
+            dis();
+        }
+
+        private void delBtn_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView3.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = guna2DataGridView3.SelectedRows[0];
+                string maDichVu = selectedRow.Cells["Mã dịch vụ"].Value.ToString();
+
+                // Truyền mã sản phẩm vào Form XoaTSForm khi mở Form này
+                xoaDVForm xoaDV = new xoaDVForm(maDichVu);
+                xoaDV.ShowDialog();
+                dis();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void detailBtn_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
+            if (guna2DataGridView3.SelectedRows.Count > 0)
             {
-                string maDichVu = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
-                ChiTietDichVuForm chiTietDichVuForm = new ChiTietDichVuForm(maDichVu);
-                chiTietDichVuForm.ShowDialog();
+                string maDichVu = guna2DataGridView3.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
+                chitietDVForm chiTietForm = new chitietDVForm(maDichVu);
+                chiTietForm.ShowDialog();
             }
             else
             {
@@ -79,41 +89,24 @@ namespace VBStore
             }
         }
 
+        private void guna2DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
+            if (guna2DataGridView3.SelectedRows.Count > 0)
             {
-                string maDichVu = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
-                SuaDichVuForm suaDichVuForm = new SuaDichVuForm(maDichVu);
-                suaDichVuForm.ShowDialog();
-                LoadServices(); // Reload data after editing a service
+                string maSanPham = guna2DataGridView3.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
+                suaDVForm suaDV = new suaDVForm(maSanPham);
+                suaDV.ShowDialog();
+                dis(); // Sau khi sửa thông tin, load lại dữ liệu
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một dịch vụ để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn một sản phẩm để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void delBtn_Click(object sender, EventArgs e)
-        {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
-                string maDichVu = selectedRow.Cells["Mã dịch vụ"].Value.ToString();
-
-                // Pass the service code to the XoaDichVuForm when opening this form
-                XoaDichVuForm xoaDichVuForm = new XoaDichVuForm(maDichVu);
-                xoaDichVuForm.ShowDialog();
-                LoadServices(); // Reload data after deleting a service
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một dịch vụ để xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        // Other event handlers can be added as needed
-
-        // ...
     }
 }

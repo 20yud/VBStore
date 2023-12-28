@@ -14,11 +14,13 @@ namespace VBStore
 {
     public partial class ThemTSForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public ThemTSForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
             LoadLoaiSanPham(); // Load danh sách loại sản phẩm vào ListBox
         }
 

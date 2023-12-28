@@ -14,12 +14,15 @@ namespace VBStore
 {
     public partial class themDQFrom : Form
     {
-        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public themDQFrom()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
             LoadLoaiSanPham(); // Load danh sách loại sản phẩm vào ListBox
+
         }
 
         private void LoadLoaiSanPham()
@@ -128,6 +131,66 @@ namespace VBStore
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDonGiaBan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDonGiaMua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaSP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenSP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSoLuongTon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void themDQFrom_Load(object sender, EventArgs e)

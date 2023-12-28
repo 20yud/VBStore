@@ -102,18 +102,97 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themDQFrom.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.chitietDQForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.suaDQForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoaDQForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.muahangForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.thanhtoanForm.resources
+<<<<<<< HEAD
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\VBStore.exe.config
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\VBStore.exe
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\VBStore.pdb
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Azure.Core.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Azure.Identity.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Guna.UI2.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Data.SqlClient.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Identity.Client.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Buffers.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Memory.Data.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Memory.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Numerics.Vectors.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.AccessControl.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.Permissions.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.Principal.Windows.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Text.Encodings.Web.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Text.Json.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.ValueTuple.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\zxing.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\zxing.presentation.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Azure.Core.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Azure.Identity.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Data.SqlClient.pdb
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Identity.Client.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Buffers.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Memory.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Memory.Data.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Numerics.Vectors.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.AccessControl.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.Permissions.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Security.Principal.Windows.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Text.Encodings.Web.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Text.Json.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\System.ValueTuple.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\zxing.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\zxing.presentation.xml
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\document\Năm 3\cnpm\đồ án\VBStore\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.AssemblyReference.cache
-D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.exe.config
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.chitietDQForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.chitietTSForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.customerForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.daquyForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.mainForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.loginForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.muahangForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.Properties.Resources.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.qrcodeForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.suaDQForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.SuaTSForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.thanhtoanForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.themDQFrom.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.ThemTSForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.trangsucForm.resources
@@ -121,7 +200,115 @@ D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.xoaDQForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.XoaTSForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.GenerateResource.cache
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.CoreCompileInputs.cache
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.csproj.CopyComplete
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.exe
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.pdb
-D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.ServiceForm.resources
 D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.dichvuForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.chitietDVForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.themDVForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.suaDVForm.resources
+D:\document\Năm 3\cnpm\đồ án\VBStore\obj\Debug\VBStore.xoaDVForm.resources
+=======
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.csproj.AssemblyReference.cache
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.chitietDQForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.chitietTSForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.customerForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.daquyForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.mainForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.loginForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.muahangForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.Properties.Resources.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.qrcodeForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.suaDQForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.SuaTSForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.thanhtoanForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.themDQFrom.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.ThemTSForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.trangsucForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.xoaDQForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.XoaTSForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.csproj.GenerateResource.cache
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.csproj.CoreCompileInputs.cache
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.exe
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.pdb
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.chitietCustomerForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.suaCustomerForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.themCustomerForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.xoaCustomerForm.resources
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\VBStore.exe.config
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\VBStore.exe
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\VBStore.pdb
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Azure.Core.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Azure.Identity.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Guna.UI2.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Data.SqlClient.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Identity.Client.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Logging.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Buffers.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Memory.Data.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Memory.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Numerics.Vectors.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.AccessControl.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.Permissions.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.Principal.Windows.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Text.Encodings.Web.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Text.Json.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.ValueTuple.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\zxing.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\zxing.presentation.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Azure.Core.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Azure.Identity.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Data.SqlClient.pdb
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Identity.Client.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Buffers.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Memory.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Memory.Data.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Numerics.Vectors.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.AccessControl.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.Permissions.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Security.Principal.Windows.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Text.Encodings.Web.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Text.Json.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\System.ValueTuple.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\zxing.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\zxing.presentation.xml
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+D:\CNPM\Đồ án\CNPM\VBStore\obj\Debug\VBStore.csproj.CopyComplete
+>>>>>>> eee0f3cbec031856c40aafa202ce4b90b1cc09da

@@ -8,12 +8,19 @@ namespace VBStore
     public partial class SuaTSForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
+
         public SuaTSForm(string maSP)
         {
             InitializeComponent();
             maSanPham = maSP;
+            connectionString = dbHelper.ConnectionString;
             LoadProductDetails();
+<<<<<<< HEAD
+=======
+
+>>>>>>> eee0f3cbec031856c40aafa202ce4b90b1cc09da
         }
 
         private void LoadProductDetails()
@@ -157,9 +164,6 @@ namespace VBStore
             this.Close();
         }
 
-        private void SuaTSForm_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

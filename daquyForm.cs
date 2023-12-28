@@ -9,11 +9,13 @@ namespace VBStore
     public partial class daquyForm : Form
     {
         private string sdt;
-        private string connectionString = "Data Source=DESKTOP-KRAFR0M\\MSSQLSERVER1;Initial Catalog=vbstore;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public daquyForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
         }
 
         private void daquyForm_Load(object sender, EventArgs e)
@@ -36,7 +38,11 @@ namespace VBStore
                                    "DONGIAMUA AS 'Đơn giá mua', " +
                                    "SOLUONGTON AS 'Số lượng tồn' " +
                                    "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP03')";
+<<<<<<< HEAD
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP1','LSP2','LSP3')";
+=======
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP2','LSP3','LSP4')";
+>>>>>>> eee0f3cbec031856c40aafa202ce4b90b1cc09da
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -115,6 +121,63 @@ namespace VBStore
             {
                 MessageBox.Show("Vui lòng chọn một sản phẩm để xóa.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        
+        private void findTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Dynamically adjust the SQL query based on the entered text
+                    string query = "SELECT SANPHAM.MASANPHAM AS 'Mã sản phẩm', " +
+                                   "TENSP AS 'Tên sản phẩm', " +
+                                   "DONGIABAN AS 'Đơn giá bán', " +
+                                   "DONGIAMUA AS 'Đơn giá mua', " +
+                                   "SOLUONGTON AS 'Số lượng tồn' " +
+                                   "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP2','LSP3','LSP4')";
+
+                    // Check if the findTextBox is not empty
+                    if (!string.IsNullOrEmpty(findTextBox.Text))
+                    {
+                        // Add a condition to filter based on the product name
+                        query += $" AND TENSP LIKE '%{findTextBox.Text}%'";
+                    }
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            guna2DataGridView1.DataSource = dataTable;
+
+                            // Set column headers as before
+                            if (guna2DataGridView1.Columns.Count >= 5)
+                            {
+                                guna2DataGridView1.Columns[0].HeaderText = "Mã sản phẩm";
+                                guna2DataGridView1.Columns[1].HeaderText = "Tên sản phẩm";
+                                guna2DataGridView1.Columns[2].HeaderText = "Đơn giá bán";
+                                guna2DataGridView1.Columns[3].HeaderText = "Đơn giá mua";
+                                guna2DataGridView1.Columns[4].HeaderText = "Số lượng tồn";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

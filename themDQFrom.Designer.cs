@@ -53,6 +53,7 @@
             this.txtSoLuongTon.Name = "txtSoLuongTon";
             this.txtSoLuongTon.Size = new System.Drawing.Size(375, 38);
             this.txtSoLuongTon.TabIndex = 24;
+            this.txtSoLuongTon.TextChanged += new System.EventHandler(this.txtSoLuongTon_TextChanged);
             // 
             // txtDonGiaBan
             // 
@@ -63,6 +64,7 @@
             this.txtDonGiaBan.Name = "txtDonGiaBan";
             this.txtDonGiaBan.Size = new System.Drawing.Size(375, 38);
             this.txtDonGiaBan.TabIndex = 23;
+            this.txtDonGiaBan.TextChanged += new System.EventHandler(this.txtDonGiaBan_TextChanged);
             // 
             // txtDonGiaMua
             // 
@@ -73,6 +75,7 @@
             this.txtDonGiaMua.Name = "txtDonGiaMua";
             this.txtDonGiaMua.Size = new System.Drawing.Size(375, 38);
             this.txtDonGiaMua.TabIndex = 22;
+            this.txtDonGiaMua.TextChanged += new System.EventHandler(this.txtDonGiaMua_TextChanged);
             // 
             // txtMaSP
             // 
@@ -83,6 +86,7 @@
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(375, 38);
             this.txtMaSP.TabIndex = 21;
+            this.txtMaSP.TextChanged += new System.EventHandler(this.txtMaSP_TextChanged);
             // 
             // txtTenSP
             // 
@@ -93,6 +97,7 @@
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(375, 38);
             this.txtTenSP.TabIndex = 20;
+            this.txtTenSP.TextChanged += new System.EventHandler(this.txtTenSP_TextChanged);
             // 
             // createBtn
             // 
@@ -121,6 +126,7 @@
             this.label6.Size = new System.Drawing.Size(184, 29);
             this.label6.TabIndex = 18;
             this.label6.Text = "Số Lượng Tồn:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -132,6 +138,7 @@
             this.label5.Size = new System.Drawing.Size(166, 29);
             this.label5.TabIndex = 17;
             this.label5.Text = "Đơn Giá Bán:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -143,6 +150,7 @@
             this.label4.Size = new System.Drawing.Size(170, 29);
             this.label4.TabIndex = 16;
             this.label4.Text = "Đơn Giá Mua:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -154,6 +162,7 @@
             this.label3.Size = new System.Drawing.Size(195, 29);
             this.label3.TabIndex = 15;
             this.label3.Text = "Loại Sản Phẩm:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -165,6 +174,7 @@
             this.label2.Size = new System.Drawing.Size(180, 29);
             this.label2.TabIndex = 14;
             this.label2.Text = "Mã Sản Phẩm:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -176,6 +186,7 @@
             this.label1.Size = new System.Drawing.Size(191, 29);
             this.label1.TabIndex = 13;
             this.label1.Text = "Tên Sản Phẩm:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmbLoaiSP
             // 
@@ -192,6 +203,7 @@
             this.cmbLoaiSP.Name = "cmbLoaiSP";
             this.cmbLoaiSP.Size = new System.Drawing.Size(375, 36);
             this.cmbLoaiSP.TabIndex = 25;
+            this.cmbLoaiSP.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiSP_SelectedIndexChanged);
             // 
             // guna2Button1
             // 

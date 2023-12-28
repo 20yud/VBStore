@@ -8,12 +8,14 @@ namespace VBStore
     public partial class XoaTSForm : Form
     {
         private string maSanPham;
-        private string connectionString = "Data Source=DESKTOP-DF0UTEB\\MIND;Initial Catalog=QLVB;Integrated Security=True";
+        private string connectionString;
+        dbhelper dbHelper = new dbhelper();
 
         public XoaTSForm(string maSP)
         {
             InitializeComponent();
             maSanPham = maSP;
+            connectionString = dbHelper.ConnectionString;
             LoadProductDetails();
         }
 
@@ -102,11 +104,6 @@ namespace VBStore
         private void createBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void XoaTSForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

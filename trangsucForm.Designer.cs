@@ -34,6 +34,7 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.findTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.delBtn = new Guna.UI2.WinForms.Guna2Button();
             this.detailBtn = new Guna.UI2.WinForms.Guna2Button();
             this.editBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -50,7 +51,7 @@
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2GradientPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1332, 871);
             this.guna2GradientPanel1.TabIndex = 0;
@@ -85,7 +86,7 @@
             this.guna2DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(0, 94);
-            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2DataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
@@ -117,17 +118,41 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.findTextBox);
             this.panel1.Controls.Add(this.delBtn);
             this.panel1.Controls.Add(this.detailBtn);
             this.panel1.Controls.Add(this.editBtn);
             this.panel1.Controls.Add(this.createBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1332, 94);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // findTextBox
+            // 
+            this.findTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.findTextBox.BorderRadius = 20;
+            this.findTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.findTextBox.DefaultText = "";
+            this.findTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.findTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.findTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextBox.Location = new System.Drawing.Point(817, 15);
+            this.findTextBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.findTextBox.Name = "findTextBox";
+            this.findTextBox.PasswordChar = '\0';
+            this.findTextBox.PlaceholderText = "Tên sản phẩm";
+            this.findTextBox.SelectedText = "";
+            this.findTextBox.Size = new System.Drawing.Size(515, 66);
+            this.findTextBox.TabIndex = 13;
+            this.findTextBox.TextChanged += new System.EventHandler(this.findTextBox_TextChanged);
             // 
             // delBtn
             // 
@@ -139,7 +164,7 @@
             this.delBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.ForeColor = System.Drawing.Color.Black;
             this.delBtn.Location = new System.Drawing.Point(644, 15);
-            this.delBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.delBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(145, 48);
             this.delBtn.TabIndex = 7;
@@ -156,7 +181,7 @@
             this.detailBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailBtn.ForeColor = System.Drawing.Color.Black;
             this.detailBtn.Location = new System.Drawing.Point(247, 15);
-            this.detailBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.detailBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.detailBtn.Name = "detailBtn";
             this.detailBtn.Size = new System.Drawing.Size(145, 48);
             this.detailBtn.TabIndex = 6;
@@ -173,7 +198,7 @@
             this.editBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.Black;
             this.editBtn.Location = new System.Drawing.Point(439, 15);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(145, 48);
             this.editBtn.TabIndex = 5;
@@ -190,7 +215,7 @@
             this.createBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createBtn.ForeColor = System.Drawing.Color.Black;
             this.createBtn.Location = new System.Drawing.Point(67, 15);
-            this.createBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.createBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(145, 48);
             this.createBtn.TabIndex = 4;
@@ -204,9 +229,8 @@
             this.ClientSize = new System.Drawing.Size(1332, 871);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "trangsucForm";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "trangsucForm";
             this.Load += new System.EventHandler(this.trangsucForm_Load);
             this.guna2GradientPanel1.ResumeLayout(false);
@@ -225,5 +249,6 @@
         private Guna.UI2.WinForms.Guna2Button editBtn;
         private Guna.UI2.WinForms.Guna2Button createBtn;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2TextBox findTextBox;
     }
 }
