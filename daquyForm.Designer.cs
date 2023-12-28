@@ -39,6 +39,7 @@
             this.detailBtn = new Guna.UI2.WinForms.Guna2Button();
             this.editBtn = new Guna.UI2.WinForms.Guna2Button();
             this.createBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnQR = new Guna.UI2.WinForms.Guna2Button();
             this.panelDaquy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -114,6 +115,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnQR);
             this.panel1.Controls.Add(this.findTextBox);
             this.panel1.Controls.Add(this.delBtn);
             this.panel1.Controls.Add(this.detailBtn);
@@ -157,7 +159,7 @@
             this.delBtn.FillColor = System.Drawing.Color.OrangeRed;
             this.delBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delBtn.ForeColor = System.Drawing.Color.Black;
-            this.delBtn.Location = new System.Drawing.Point(479, 12);
+            this.delBtn.Location = new System.Drawing.Point(357, 12);
             this.delBtn.Name = "delBtn";
             this.delBtn.Size = new System.Drawing.Size(109, 39);
             this.delBtn.TabIndex = 3;
@@ -173,7 +175,7 @@
             this.detailBtn.FillColor = System.Drawing.Color.Gray;
             this.detailBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.detailBtn.ForeColor = System.Drawing.Color.Black;
-            this.detailBtn.Location = new System.Drawing.Point(181, 12);
+            this.detailBtn.Location = new System.Drawing.Point(127, 12);
             this.detailBtn.Name = "detailBtn";
             this.detailBtn.Size = new System.Drawing.Size(109, 39);
             this.detailBtn.TabIndex = 2;
@@ -189,7 +191,7 @@
             this.editBtn.FillColor = System.Drawing.Color.LightSeaGreen;
             this.editBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.Color.Black;
-            this.editBtn.Location = new System.Drawing.Point(325, 12);
+            this.editBtn.Location = new System.Drawing.Point(242, 12);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(109, 39);
             this.editBtn.TabIndex = 1;
@@ -205,12 +207,28 @@
             this.createBtn.FillColor = System.Drawing.Color.Lime;
             this.createBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createBtn.ForeColor = System.Drawing.Color.Black;
-            this.createBtn.Location = new System.Drawing.Point(46, 12);
+            this.createBtn.Location = new System.Drawing.Point(12, 12);
             this.createBtn.Name = "createBtn";
             this.createBtn.Size = new System.Drawing.Size(109, 39);
             this.createBtn.TabIndex = 0;
             this.createBtn.Text = "THÊM";
             this.createBtn.Click += new System.EventHandler(this.createBtn_Click);
+            // 
+            // btnQR
+            // 
+            this.btnQR.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnQR.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnQR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnQR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnQR.FillColor = System.Drawing.Color.OrangeRed;
+            this.btnQR.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQR.ForeColor = System.Drawing.Color.Black;
+            this.btnQR.Location = new System.Drawing.Point(472, 12);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(109, 39);
+            this.btnQR.TabIndex = 15;
+            this.btnQR.Text = "TẢI QR";
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
             // daquyForm
             // 
@@ -239,5 +257,6 @@
         private Guna.UI2.WinForms.Guna2Button createBtn;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2TextBox findTextBox;
+        private Guna.UI2.WinForms.Guna2Button btnQR;
     }
 }

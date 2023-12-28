@@ -50,6 +50,9 @@
     <Reference Include="BarcodeLib">
       <HintPath>..\..\test\BarCode-QRCode\BarcodeLib.dll</HintPath>
     </Reference>
+    <Reference Include="CloudinaryDotNet, Version=1.24.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>packages\CloudinaryDotNet.1.24.0\lib\net452\CloudinaryDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV">
       <HintPath>..\..\test\Camera\Emgu.CV.dll</HintPath>
     </Reference>
@@ -95,8 +98,16 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
-    <Reference Include="QRCoder">
-      <HintPath>..\..\test\BarCode-QRCode\QRCoder.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCodeDecoderLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QRCodeDecoderLibrary.2.0.1\lib\net462\QRCodeDecoderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -192,6 +203,11 @@
     <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -217,11 +233,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chitietCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chitietCustomerForm.designer.cs">
+      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="chitietDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="chitietDQForm.Designer.cs">
       <DependentUpon>chitietDQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chitietDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chitietDVForm.designer.cs">
+      <DependentUpon>chitietDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="chitietTSForm.cs">
       <SubType>Form</SubType>
@@ -242,6 +270,12 @@
       <DependentUpon>daquyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dbhelper.cs" />
+    <Compile Include="dichvuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dichvuForm.designer.cs">
+      <DependentUpon>dichvuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,11 +302,23 @@
     <Compile Include="qrcodeForm.Designer.cs">
       <DependentUpon>qrcodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="suaCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suaCustomerForm.designer.cs">
+      <DependentUpon>suaCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="suaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="suaDQForm.Designer.cs">
       <DependentUpon>suaDQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="suaDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suaDVForm.designer.cs">
+      <DependentUpon>suaDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SuaTSForm.cs">
       <SubType>Form</SubType>
@@ -286,11 +332,23 @@
     <Compile Include="thanhtoanForm.Designer.cs">
       <DependentUpon>thanhtoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="themCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themCustomerForm.designer.cs">
+      <DependentUpon>themCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="themDQFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="themDQFrom.Designer.cs">
       <DependentUpon>themDQFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="themDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themDVForm.designer.cs">
+      <DependentUpon>themDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="themTSForm.cs">
       <SubType>Form</SubType>
@@ -304,11 +362,23 @@
     <Compile Include="trangsucForm.Designer.cs">
       <DependentUpon>trangsucForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="xoaCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xoaCustomerForm.designer.cs">
+      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="xoaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="xoaDQForm.Designer.cs">
       <DependentUpon>xoaDQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xoaDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xoaDVForm.designer.cs">
+      <DependentUpon>xoaDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="XoaTSForm.cs">
       <SubType>Form</SubType>
@@ -316,8 +386,14 @@
     <Compile Include="XoaTSForm.Designer.cs">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="chitietCustomerForm.resx">
+      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chitietDQForm.resx">
       <DependentUpon>chitietDQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chitietDVForm.resx">
+      <DependentUpon>chitietDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="chitietTSForm.resx">
       <DependentUpon>chitietTSForm.cs</DependentUpon>
@@ -327,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="daquyForm.resx">
       <DependentUpon>daquyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dichvuForm.resx">
+      <DependentUpon>dichvuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -349,8 +428,14 @@
     <EmbeddedResource Include="qrcodeForm.resx">
       <DependentUpon>qrcodeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="suaCustomerForm.resx">
+      <DependentUpon>suaCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="suaDQForm.resx">
       <DependentUpon>suaDQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suaDVForm.resx">
+      <DependentUpon>suaDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaTSForm.resx">
       <DependentUpon>SuaTSForm.cs</DependentUpon>
@@ -358,8 +443,14 @@
     <EmbeddedResource Include="thanhtoanForm.resx">
       <DependentUpon>thanhtoanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="themCustomerForm.resx">
+      <DependentUpon>themCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="themDQFrom.resx">
       <DependentUpon>themDQFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="themDVForm.resx">
+      <DependentUpon>themDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="themTSForm.resx">
       <DependentUpon>themTSForm.cs</DependentUpon>
@@ -367,8 +458,14 @@
     <EmbeddedResource Include="trangsucForm.resx">
       <DependentUpon>trangsucForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="xoaCustomerForm.resx">
+      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xoaDQForm.resx">
       <DependentUpon>xoaDQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xoaDVForm.resx">
+      <DependentUpon>xoaDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XoaTSForm.resx">
       <DependentUpon>XoaTSForm.cs</DependentUpon>

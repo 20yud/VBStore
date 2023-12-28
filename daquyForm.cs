@@ -3,6 +3,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using System.Net;
 
 namespace VBStore
 {
@@ -11,7 +13,7 @@ namespace VBStore
         private string sdt;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
-
+        
         public daquyForm()
         {
             InitializeComponent();
@@ -20,7 +22,9 @@ namespace VBStore
 
         private void daquyForm_Load(object sender, EventArgs e)
         {
+            
             LoadProducts(); // Gọi phương thức để load dữ liệu sản phẩm
+            
         }
 
         private void LoadProducts()
@@ -38,7 +42,7 @@ namespace VBStore
                                    "DONGIAMUA AS 'Đơn giá mua', " +
                                    "SOLUONGTON AS 'Số lượng tồn' " +
                                    "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP1')";
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004')";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -135,7 +139,7 @@ namespace VBStore
                                    "DONGIAMUA AS 'Đơn giá mua', " +
                                    "SOLUONGTON AS 'Số lượng tồn' " +
                                    "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP1')";
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004')";
 
                     // Check if the findTextBox is not empty
                     if (!string.IsNullOrEmpty(findTextBox.Text))
@@ -168,6 +172,63 @@ namespace VBStore
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnQR_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                // Lấy mã sản phẩm từ hàng được chọn
+                string maSanPham = guna2DataGridView1.SelectedRows[0].Cells["Mã sản phẩm"].Value.ToString();
+
+                // Khởi tạo biến qrImageUrl để lưu URL ảnh QR
+                string qrImageUrl = string.Empty;
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        // Truy vấn SQL để lấy URL ảnh QR dựa trên MASANPHAM
+                        string query = "SELECT MAQR FROM SANPHAM WHERE MASANPHAM = @MaSanPham";
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@MaSanPham", maSanPham);
+                            qrImageUrl = command.ExecuteScalar()?.ToString();
+                        }
+                    }
+
+                    if (!string.IsNullOrEmpty(qrImageUrl))
+                    {
+                        // Tạo thư mục nếu chưa tồn tại
+                        string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "qrcode");
+                        Directory.CreateDirectory(folderPath);
+
+                        // Tạo đường dẫn tới tệp ảnh QR trên máy tính
+                        string qrImagePath = Path.Combine(folderPath, maSanPham + ".png");
+
+                        // Tải ảnh QR về máy tính
+                        using (WebClient webClient = new WebClient())
+                        {
+                            webClient.DownloadFile(qrImageUrl, qrImagePath);
+                        }
+
+                        MessageBox.Show($"Ảnh QR đã được tải xuống và lưu tại: {qrImagePath}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy URL ảnh QR cho sản phẩm này.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để tải QR.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
