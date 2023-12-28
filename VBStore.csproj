@@ -217,6 +217,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chitietCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chitietCustomerForm.designer.cs">
+      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="chitietDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,12 @@
     <Compile Include="qrcodeForm.Designer.cs">
       <DependentUpon>qrcodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="suaCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suaCustomerForm.Designer.cs">
+      <DependentUpon>suaCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="suaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +297,12 @@
     </Compile>
     <Compile Include="thanhtoanForm.Designer.cs">
       <DependentUpon>thanhtoanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="themCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themCustomerForm.Designer.cs">
+      <DependentUpon>themCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="themDQFrom.cs">
       <SubType>Form</SubType>
@@ -304,6 +322,12 @@
     <Compile Include="trangsucForm.Designer.cs">
       <DependentUpon>trangsucForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="xoaCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xoaCustomerForm.Designer.cs">
+      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="xoaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +340,9 @@
     <Compile Include="XoaTSForm.Designer.cs">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="chitietCustomerForm.resx">
+      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chitietDQForm.resx">
       <DependentUpon>chitietDQForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -349,6 +376,9 @@
     <EmbeddedResource Include="qrcodeForm.resx">
       <DependentUpon>qrcodeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="suaCustomerForm.resx">
+      <DependentUpon>suaCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="suaDQForm.resx">
       <DependentUpon>suaDQForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +388,9 @@
     <EmbeddedResource Include="thanhtoanForm.resx">
       <DependentUpon>thanhtoanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="themCustomerForm.resx">
+      <DependentUpon>themCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="themDQFrom.resx">
       <DependentUpon>themDQFrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -366,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="trangsucForm.resx">
       <DependentUpon>trangsucForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xoaCustomerForm.resx">
+      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xoaDQForm.resx">
       <DependentUpon>xoaDQForm.cs</DependentUpon>

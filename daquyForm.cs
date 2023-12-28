@@ -38,7 +38,7 @@ namespace VBStore
                                    "DONGIAMUA AS 'Đơn giá mua', " +
                                    "SOLUONGTON AS 'Số lượng tồn' " +
                                    "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP1')";
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP2','LSP3','LSP4')";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -135,7 +135,7 @@ namespace VBStore
                                    "DONGIAMUA AS 'Đơn giá mua', " +
                                    "SOLUONGTON AS 'Số lượng tồn' " +
                                    "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP1')";
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP2','LSP3','LSP4')";
 
                     // Check if the findTextBox is not empty
                     if (!string.IsNullOrEmpty(findTextBox.Text))

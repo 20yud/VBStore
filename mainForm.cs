@@ -83,8 +83,6 @@ namespace VBStore
                     {
                         customerForm cusForm = new customerForm(sdt);
                         OpenChildFrom(cusForm);
-
-                        
                     }
                     else
                     {
@@ -125,7 +123,8 @@ namespace VBStore
 
         private void panelcustomer_Click(object sender, EventArgs e)
         {
-
+            customerForm khachhang = new customerForm();
+            OpenChildFrom(khachhang);
         }
 
         private void panelgem_Click(object sender, EventArgs e)
@@ -140,9 +139,6 @@ namespace VBStore
             OpenChildFrom(trangsuc);
         }
 
-        private void panelservice_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

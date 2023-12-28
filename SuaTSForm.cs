@@ -15,8 +15,9 @@ namespace VBStore
         {
             InitializeComponent();
             maSanPham = maSP;
-            LoadProductDetails();
             connectionString = dbHelper.ConnectionString;
+            LoadProductDetails();
+
         }
 
         private void LoadProductDetails()

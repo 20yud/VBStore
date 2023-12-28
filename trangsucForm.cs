@@ -38,7 +38,7 @@ namespace VBStore
                                    "DONGIAMUA AS 'Đơn giá mua', " +
                                    "SOLUONGTON AS 'Số lượng tồn' " +
                                    "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP2', 'LSP3')";
+                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP5')";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
