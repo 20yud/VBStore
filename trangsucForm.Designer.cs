@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -211,10 +212,15 @@
             this.findTextBox.TabIndex = 13;
             this.findTextBox.TextChanged += new System.EventHandler(this.findTextBox_TextChanged);
             // 
+=======
+            this.SuspendLayout();
+            // 
+>>>>>>> d822c7d932ee142545e658ee1075a420737c13df
             // trangsucForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(999, 708);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -224,6 +230,12 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+=======
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "trangsucForm";
+            this.Text = "trangsucForm";
+            this.Load += new System.EventHandler(this.trangsucForm_Load);
+>>>>>>> d822c7d932ee142545e658ee1075a420737c13df
             this.ResumeLayout(false);
 
         }

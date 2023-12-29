@@ -380,6 +380,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="qrcodeForm.resx">
       <DependentUpon>qrcodeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,6 +420,11 @@
     <EmbeddedResource Include="XoaTSForm.resx">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="trangsucForm.resx">
+      <DependentUpon>trangsucForm.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> d822c7d932ee142545e658ee1075a420737c13df
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

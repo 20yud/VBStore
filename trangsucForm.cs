@@ -2,8 +2,12 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+<<<<<<< HEAD
 using System.Data.SqlClient;
 
+=======
+//testgf
+>>>>>>> d822c7d932ee142545e658ee1075a420737c13df
 namespace VBStore
 {
     public partial class trangsucForm : Form
@@ -168,6 +172,11 @@ namespace VBStore
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void trangsucForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
