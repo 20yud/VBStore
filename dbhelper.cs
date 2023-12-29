@@ -8,7 +8,7 @@ namespace VBStore
 {
     public class dbhelper
     {
-        private string connectionString = "Data Source=DESKTOP-C753LHT\\SQLEXPRESS;Initial Catalog=CNPM_DB;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-59ANJ2R\\SQLEXPRESS03;Initial Catalog=CNPM;Integrated Security=True";
 
         public string ConnectionString
         {

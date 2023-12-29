@@ -200,6 +200,7 @@
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -316,6 +317,12 @@
     <Compile Include="themTSForm.Designer.cs">
       <DependentUpon>themTSForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="thongkeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongkeForm.Designer.cs">
+      <DependentUpon>thongkeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="trangsucForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +403,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="themTSForm.resx">
       <DependentUpon>themTSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thongkeForm.resx">
+      <DependentUpon>thongkeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trangsucForm.resx">
       <DependentUpon>trangsucForm.cs</DependentUpon>

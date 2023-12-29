@@ -215,5 +215,10 @@ namespace VBStore
                 }
             }
         }
+
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
