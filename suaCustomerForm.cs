@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace VBStore
 {
@@ -16,15 +10,15 @@ namespace VBStore
         private string maKhachHang;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+
         public suaCustomerForm(string maKH)
         {
             InitializeComponent();
-            connectionString = dbHelper.ConnectionString; // Move this line before LoadCustomerDetails
+            connectionString = dbHelper.ConnectionString;
             maKhachHang = maKH;
-            
             LoadCustomerDetails();
-
         }
+
         private void LoadCustomerDetails()
         {
             try
@@ -43,13 +37,11 @@ namespace VBStore
                         {
                             if (reader.Read())
                             {
-                                // Hiển thị chi tiết sản phẩm và loại sản phẩm trên Form
                                 txtMaKH.Text = reader["MAKHACHHANG"].ToString();
                                 txtTenKH.Text = reader["TENKH"].ToString();
                                 txtDiaChi.Text = reader["DIACHI"].ToString();
                                 txtSDT.Text = reader["SDT"].ToString();
                                 txtEmail.Text = reader["EMAIL"].ToString();
-                                // Thêm các control khác tương ứng
                             }
                         }
                     }
@@ -63,24 +55,21 @@ namespace VBStore
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (IsDataValid()) // Kiểm tra xem đã nhập đủ dữ liệu hay không
+            if (IsDataValid())
             {
-                // Thực hiện cập nhật dữ liệu vào cơ sở dữ liệu
                 if (UpdateCustomerData())
                 {
                     MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Đóng Form sau khi cập nhật thành công
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Lỗi khi cập nhật dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Vui lòng nhập đủ thông tin cần cập nhật!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            
         }
+
         private bool UpdateCustomerData()
         {
             try
@@ -94,31 +83,67 @@ namespace VBStore
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Đặt giá trị cho các tham số
                         command.Parameters.AddWithValue("@TenKH", txtTenKH.Text);
                         command.Parameters.AddWithValue("@DiaChi", txtDiaChi.Text);
                         command.Parameters.AddWithValue("@SDT", txtSDT.Text);
                         command.Parameters.AddWithValue("@Email", txtEmail.Text);
                         command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
 
-                        // Thực hiện câu lệnh SQL
                         int rowsAffected = command.ExecuteNonQuery();
-                        return rowsAffected > 0; // Trả về true nếu có ít nhất một dòng bị ảnh hưởng (cập nhật thành công)
+                        return rowsAffected > 0;
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; // Trả về false nếu có lỗi xảy ra
+                return false;
             }
         }
+
         private bool IsDataValid()
         {
-            // Kiểm tra xem đã nhập đủ thông tin hay không
-            return !string.IsNullOrEmpty(txtTenKH.Text) && !string.IsNullOrEmpty(txtDiaChi.Text) &&
-                   !string.IsNullOrEmpty(txtEmail.Text) && !string.IsNullOrEmpty(txtSDT.Text);
-            // Thêm kiểm tra cho các control khác nếu cần
+            if (string.IsNullOrEmpty(txtTenKH.Text) || string.IsNullOrEmpty(txtDiaChi.Text) ||
+                string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtSDT.Text))
+            {
+                return false;
+            }
+
+            // Kiểm tra ràng buộc: email và sdt không trùng với khách hàng khác
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT COUNT(*) " +
+                                   "FROM KHACHHANG " +
+                                   "WHERE MAKHACHHANG != @MaKhachHang " +
+                                   "AND (EMAIL = @Email OR SDT = @SDT)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
+                        command.Parameters.AddWithValue("@Email", txtEmail.Text);
+                        command.Parameters.AddWithValue("@SDT", txtSDT.Text);
+
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Email hoặc SĐT đã tồn tại cho khách hàng khác!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         private void createBtn_Click(object sender, EventArgs e)

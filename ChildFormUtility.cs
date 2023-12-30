@@ -27,7 +27,6 @@ public class ChildFormUtility
         childForm.Dock = DockStyle.Fill;
         mainForm.Controls.Add(childForm);
         childForm.BringToFront();
-
         childForm.Show();
     }
 }

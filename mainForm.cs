@@ -9,22 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace VBStore
 {
     public partial class mainForm : Form
     {
         private string sdt;
+        private string tenKH;
         private Form currentFormChild;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
         private string imagesDirectory = @"C:\Workspace\c#\cnpm\VBStore\images\poster";
         private List<string> imagePaths = new List<string>();
         private int currentImageIndex = 0;
+        private ChildFormUtility childFormUtility;
         public mainForm()
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
+            label21.Text = "Dịch Vụ \n Đã Đặt";
+            childFormUtility = new ChildFormUtility(this);
+           
         }
 
         private void OpenChildFrom(Form childForm)
@@ -97,9 +103,67 @@ namespace VBStore
             coutnKH();
             countDQTS();
             countDVF();
+            pie_load();
+            countDVBb();
+            countDMH();
+            countDBH();
+            countHT();
 
-            
+
+
         }
+            void pie_load()
+            {
+                DataTable dataTable = new DataTable();
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        string query = @"
+                            SELECT
+                                CASE WHEN MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004') THEN N'Đá Quý'
+                                     WHEN MALOAISANPHAM = 'LSP005' THEN N'Trang Sức'
+                                END AS ProductType,
+                                SUM(SOLUONGTON) AS TOTAL_SOLUONGTON
+                            FROM
+                                SANPHAM
+                            WHERE
+                                MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004', 'LSP005')
+                            GROUP BY
+                                CASE WHEN MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004') THEN N'Đá Quý'
+                                     WHEN MALOAISANPHAM = 'LSP005' THEN N'Trang Sức'
+                                END";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                            {
+                                adapter.Fill(dataTable);
+                            }
+                        }
+                    }
+
+                    Series pieSeries = new Series("DoanhThuTheoThang_Tron");
+                    pieSeries.ChartType = SeriesChartType.Pie;
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        string productType = row["ProductType"].ToString();
+                        double totalQuantity = Convert.ToDouble(row["TOTAL_SOLUONGTON"]);
+
+                        pieSeries.Points.AddXY(productType, totalQuantity);
+                    }
+
+                    ChartBDT.Series.Add(pieSeries);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         void coutnKH()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -160,14 +224,82 @@ namespace VBStore
             {
                 connection.Open();
 
-                // Tạo câu truy vấn SQL để đếm số lượng dịch vụ
+                
                 string query = "SELECT COUNT(*) FROM DICHVU";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    // Thực thi câu truy vấn và trả về số lượng dịch vụ
+                   
                     int count = (int)command.ExecuteScalar();
-                    countDV.Text = count.ToString(); // Gán kết quả vào Label countDV
+                    countDV.Text = count.ToString(); 
+                }
+            }
+        }
+        void countDVBb()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+
+                string query = "SELECT COUNT(*) FROM PHIEUDICHVU";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    int count = (int)command.ExecuteScalar();
+                    countBDV.Text = count.ToString();
+                }
+            }
+        }
+        void countDMH()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+
+                string query = "SELECT COUNT(*) FROM PHIEUMUAHANG";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    int count = (int)command.ExecuteScalar();
+                    cDMH.Text = count.ToString();
+                }
+            }
+        }
+        void countDBH()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+
+                string query = "SELECT COUNT(*) FROM PHIEUBANHANG";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    int count = (int)command.ExecuteScalar();
+                    cDBHH.Text = count.ToString();
+                }
+            }
+        }
+        void countHT()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+
+                string query = "SELECT COUNT(*) FROM BAOCAOTON";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    int count = (int)command.ExecuteScalar();
+                    cBCT.Text = count.ToString();
                 }
             }
         }
@@ -191,13 +323,12 @@ namespace VBStore
         {
             if (currentFormChild != null)
             {
-                currentFormChild.WindowState = this.WindowState; // Đặt trạng thái cửa sổ của childForm giống với mainForm
-                if (this.WindowState == FormWindowState.Maximized || this.WindowState == FormWindowState.Normal)
+                currentFormChild.WindowState = this.WindowState; // Set childForm's window state to match mainForm
+
+                // Check if the currentFormChild is an instance of findcusForm
+                if (currentFormChild is findcusForm)
                 {
-                    if(numberTextBox.Text != null)
-                    {
-                        findcusBtn_Click(findcusBtn, EventArgs.Empty);
-                    }
+                    findcusBtn_Click(findcusBtn, EventArgs.Empty); // Call the method only when findcusForm is displayed
                 }
             }
         }
@@ -234,6 +365,87 @@ namespace VBStore
             OpenChildFrom(dichVu);
             backBtn.Visible = true;
             titlelabel.Text = "Dịch Vụ";
+        }
+
+        private void guna2CustomGradientPanel7_Click(object sender, EventArgs e)
+        {
+            dichvubookedForm dichvubookedForm = new dichvubookedForm();
+            OpenChildFrom(dichvubookedForm); 
+            backBtn.Visible = true;
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel6_Click(object sender, EventArgs e)
+        {
+            dmhForm dmhform = new dmhForm();
+            OpenChildFrom(dmhform);
+            backBtn.Visible = true;
+        }
+
+        private void guna2CustomGradientPanel5_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void guna2CustomGradientPanel5_Click(object sender, EventArgs e)
+        {
+            dbhForm dbhform = new dbhForm();
+            OpenChildFrom(dbhform);
+            backBtn.Visible = true;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void muahangBtn_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(numberTextBox.Text)) // Check if the numberTextBox is not empty
+            {
+                sdt = numberTextBox.Text; // Assign the value from numberTextBox to sdt
+                gettenkh();
+                muahangForm muahang = new muahangForm(sdt, tenKH);
+                OpenChildFrom(muahang);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập số điện thoại");
+            }
+        }
+        void gettenkh()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT TENKH FROM KHACHHANG WHERE SDT = @PhoneNumber";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Update the parameter with the current phone number (sdt)
+                    command.Parameters.AddWithValue("@PhoneNumber", sdt);  // Use the updated sdt value
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tenKH = reader.GetString(reader.GetOrdinal("TENKH"));
+                           
+                        }
+
+                    }
+                }
+            }
         }
     }
 }

@@ -90,7 +90,6 @@ C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.dll
 C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.presentation.dll
 C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.xml
 C:\Workspace\c#\cnpm\VBStore\bin\Debug\zxing.presentation.xml
-C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.qrcodeForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.customerForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.daquyForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.trangsucForm.resources
@@ -122,3 +121,12 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themDVForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoaDVForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.banhangForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.findcusForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xacnhanbanForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xacnhanmuaForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dungDVForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xacnhanDVForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dichvubookedForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.capnhapdvForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dmhForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dbhForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.bctonForm.resources

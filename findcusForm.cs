@@ -18,6 +18,7 @@ namespace VBStore
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
         private ChildFormUtility childFormUtility;
+        private string maKH;
         public findcusForm()
         {
             InitializeComponent();
@@ -30,10 +31,6 @@ namespace VBStore
             childFormUtility = new ChildFormUtility(this);
         }
 
-        private void btnMuahang_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void findcusForm_Load(object sender, EventArgs e)
         {
@@ -41,7 +38,7 @@ namespace VBStore
             {
                 connection.Open();
 
-                string query = "SELECT TENKH, DIACHI, SDT, EMAIL FROM KHACHHANG WHERE SDT = @PhoneNumber";
+                string query = "SELECT MAKHACHHANG, TENKH, DIACHI, SDT, EMAIL FROM KHACHHANG WHERE SDT = @PhoneNumber";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -52,39 +49,44 @@ namespace VBStore
                     {
                         if (reader.Read())
                         {
+                            maKH = reader.GetString(reader.GetOrdinal("MAKHACHHANG"));
                             nameTextBox.Text = reader.GetString(reader.GetOrdinal("TENKH"));
                             phoneNumberTextBox.Text = reader.GetString(reader.GetOrdinal("SDT"));
                             emailTextBox.Text = reader.GetString(reader.GetOrdinal("EMAIL"));
                             addressTextBox.Text = reader.GetString(reader.GetOrdinal("DIACHI"));
-                            tenKH=nameTextBox.Text;
+                            tenKH = nameTextBox.Text;
                         }
 
                     }
                 }
             }
 
-            // Update the tag values with the current data
-            tenKH = nameTextBox.Text;
-            sdt = phoneNumberTextBox.Text;
-            nameTextBox.Tag = nameTextBox.Text;
-            phoneNumberTextBox.Tag = phoneNumberTextBox.Text;
-            emailTextBox.Tag = emailTextBox.Text;
-            addressTextBox.Tag = addressTextBox.Text;
 
-            WindowState = FormWindowState.Maximized;
         }
 
         private void muahangBtn_Click(object sender, EventArgs e)
         {
-            muahangForm muahangForm = new muahangForm(sdt,tenKH);
+            muahangForm muahangForm = new muahangForm(sdt, tenKH);
             childFormUtility.OpenChildForm(muahangForm);
         }
 
         private void capnhapBtn_Click(object sender, EventArgs e)
         {
-            suaCustomerForm suaCustomerform = new suaCustomerForm(tenKH);
+            suaCustomerForm suaCustomerform = new suaCustomerForm(maKH);
             suaCustomerform.ShowDialog();
             suaCustomerform.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void dichvuBtn_Click(object sender, EventArgs e)
+        {
+            dungDVForm dungDV = new dungDVForm(sdt);
+            childFormUtility.OpenChildForm(dungDV);
+        }
+
+        private void btnMuahang_Click(object sender, EventArgs e)
+        {
+            banhangForm banhang = new banhangForm(sdt);
+            childFormUtility.OpenChildForm(banhang);
         }
     }
 }

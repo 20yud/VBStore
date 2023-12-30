@@ -28,6 +28,9 @@ namespace VBStore
         FilterInfoCollection cameras;
         VideoCaptureDevice cam;
         BarcodeLib.Barcode code128;
+        private bool qrCodeReadSuccessfully = false;
+
+
 
         public muahangForm()
         {
@@ -112,21 +115,21 @@ namespace VBStore
                 string maSanPham = selectedRow["MASANPHAM"].ToString();
                 int soLuongTon = Convert.ToInt32(selectedRow["SOLUONGTON"]);
 
-                
-                int soLuongThem = 1; 
+
+                int soLuongThem = 1;
                 DataRow existingRow = dtGioHang.AsEnumerable().FirstOrDefault(row => row["MASANPHAM"].ToString() == maSanPham);
                 if (existingRow != null)
                 {
-                    
+
                     soLuongThem = Convert.ToInt32(existingRow["SOLUONG"]) + 1;
                 }
 
                 if (soLuongThem <= soLuongTon)
                 {
-                    
+
                     if (existingRow != null)
                     {
-                      
+
                         existingRow["SOLUONG"] = soLuongThem;
                         existingRow["THANHTIEN"] = Convert.ToDecimal(existingRow["SOLUONG"]) * Convert.ToDecimal(existingRow["DONGIABAN"]);
                     }
@@ -157,7 +160,7 @@ namespace VBStore
 
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
-            thanhtoanForm thanhToanForm = new thanhtoanForm(sdt, tenKH);
+            xacnhanmuaForm thanhToanForm = new xacnhanmuaForm(sdt);
 
             // Gán giỏ hàng từ muahangForm sang thanhtoanForm
             thanhToanForm.GioHangThanhToan = dtGioHang;
@@ -170,6 +173,7 @@ namespace VBStore
         private void muahangForm_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            timer3.Enabled = true;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -191,34 +195,6 @@ namespace VBStore
         {
             if (cam != null && cam.IsRunning) cam.Stop();
         }
-
-        void Giaima()
-        {
-            Bitmap imgQRCode = (Bitmap)pictureBox1.Image;
-            if (imgQRCode != null)
-            {
-                try
-                {
-                    ZXing.BarcodeReader Reader = new ZXing.BarcodeReader();
-                    Result result = Reader.Decode(imgQRCode);
-                    if (result != null)
-                    {
-                        string decoded = result.ToString().Trim();
-                        
-                        qrstring = decoded;
-                        imgQRCode.Dispose();
-
-                        // Gọi hàm để xử lý thông tin từ mã QR
-                        ExtractQRCodeInformation(qrstring);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message + "");
-                }
-            }
-        }
-
         private void ExtractQRCodeInformation(string qrstring)
         {
             // Kết nối cơ sở dữ liệu và thực hiện truy vấn để lấy thông tin từ qrstring
@@ -232,9 +208,10 @@ namespace VBStore
                     cmd.Parameters.AddWithValue("@MaSP", qrstring); // Sử dụng qrstring làm tham số truy vấn
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    // Đọc thông tin sản phẩm từ truy vấn
+                    // Kiểm tra xem có dòng dữ liệu từ truy vấn không
                     if (reader.Read())
                     {
+                        // Dữ liệu sản phẩm có tồn tại
                         string maSP = reader["MASANPHAM"].ToString();
                         string tenSP = reader["TENSP"].ToString();
                         decimal dongiaBan = Convert.ToDecimal(reader["DONGIABAN"]);
@@ -247,6 +224,7 @@ namespace VBStore
                         {
                             // Nếu sản phẩm đã tồn tại trong giỏ hàng, lấy số lượng đã thêm
                             soLuongThem = Convert.ToInt32(existingRow["SOLUONG"]) + 1;
+                            timer3.Start();
                         }
 
                         if (soLuongThem <= soLuongTon)
@@ -257,6 +235,7 @@ namespace VBStore
                                 // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng
                                 existingRow["SOLUONG"] = soLuongThem;
                                 existingRow["THANHTIEN"] = Convert.ToDecimal(existingRow["SOLUONG"]) * dongiaBan;
+                                timer3.Start();
                             }
                             else
                             {
@@ -269,12 +248,20 @@ namespace VBStore
                                 newRow["THANHTIEN"] = dongiaBan * soLuongThem; // Tính thành tiền cho sản phẩm
 
                                 dtGioHang.Rows.Add(newRow);
+                                timer3.Start();
                             }
                         }
                         else
                         {
                             MessageBox.Show("Số lượng tồn không đủ cho việc thêm sản phẩm này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            timer3.Start();
                         }
+                    }
+                    else
+                    {
+                        // Dữ liệu sản phẩm không tồn tại
+                        MessageBox.Show("Mã QR không hợp lệ. Sản phẩm không tồn tại trong cơ sở dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        timer3.Start();
                     }
 
                     reader.Close();
@@ -288,9 +275,55 @@ namespace VBStore
         }
 
 
+        void Giaima()
+        {
+            Bitmap imgQRCode = (Bitmap)pictureBox1.Image;
+            if (imgQRCode != null && !qrCodeReadSuccessfully)
+            {
+                try
+                {
+                    ZXing.BarcodeReader Reader = new ZXing.BarcodeReader();
+                    Result result = Reader.Decode(imgQRCode);
+                    if (result != null)
+                    {
+                        string decoded = result.ToString().Trim();
+                        qrstring = decoded;
+                        imgQRCode.Dispose();
+
+                        // Gọi hàm để xử lý thông tin từ mã QR
+                        ExtractQRCodeInformation(qrstring);
+
+                        // Đánh dấu rằng đã đọc thành công mã QR
+                        qrCodeReadSuccessfully = true;
+
+                        // Dừng Timer1
+                        timer1.Stop();
+
+                        // Bắt đầu đợi 5 giây trước khi tiếp tục đọc mã QR mới
+                        timer3.Start();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message + "");
+                }
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             Giaima();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            timer3.Stop();
+
+            // Đặt lại biến đánh dấu cho mã QR đã được đọc
+            qrCodeReadSuccessfully = false;
+
+            // Bắt đầu lại Timer1 để tiếp tục đọc mã QR
+            timer1.Start();
         }
     }
 }

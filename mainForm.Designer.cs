@@ -29,96 +29,105 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.titlelabel = new System.Windows.Forms.Label();
             this.numberTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.findcusBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.backBtn = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.mainPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.ChartBDT = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.cDMH = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.cDBHH = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cDBH = new System.Windows.Forms.Label();
             this.panelcustomer = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.countKH = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel7 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.countBDV = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelgem = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.countDQ = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelservice = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.countDV = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.paneljewelry = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.countTS = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel8 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.cBCT = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox16 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.findcusBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.backBtn = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).BeginInit();
             this.mainPanel.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartBDT)).BeginInit();
             this.panel3.SuspendLayout();
-            this.guna2CustomGradientPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             this.guna2CustomGradientPanel6.SuspendLayout();
+            this.guna2CustomGradientPanel5.SuspendLayout();
+            this.panelcustomer.SuspendLayout();
+            this.guna2CustomGradientPanel7.SuspendLayout();
+            this.panelgem.SuspendLayout();
+            this.panelservice.SuspendLayout();
+            this.paneljewelry.SuspendLayout();
+            this.guna2CustomGradientPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
-            this.panelcustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2CustomGradientPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).BeginInit();
-            this.panelgem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
-            this.panelservice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
-            this.paneljewelry.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
-            this.guna2CustomGradientPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -133,6 +142,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1240, 52);
             this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel1
             // 
@@ -140,7 +150,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(315, 52);
+            this.panel1.Size = new System.Drawing.Size(550, 52);
             this.panel1.TabIndex = 12;
             // 
             // titlelabel
@@ -168,56 +178,23 @@
             this.numberTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.numberTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numberTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.numberTextBox.Location = new System.Drawing.Point(331, 0);
+            this.numberTextBox.Location = new System.Drawing.Point(582, 0);
             this.numberTextBox.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.numberTextBox.Name = "numberTextBox";
             this.numberTextBox.PasswordChar = '\0';
             this.numberTextBox.PlaceholderText = "Nhập số điện thoại khách hàng";
             this.numberTextBox.SelectedText = "";
-            this.numberTextBox.Size = new System.Drawing.Size(386, 52);
+            this.numberTextBox.Size = new System.Drawing.Size(372, 52);
             this.numberTextBox.TabIndex = 11;
-            // 
-            // findcusBtn
-            // 
-            this.findcusBtn.BackColor = System.Drawing.Color.Transparent;
-            this.findcusBtn.BorderRadius = 20;
-            this.findcusBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.findcusBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.findcusBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.findcusBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.findcusBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.findcusBtn.FillColor = System.Drawing.Color.Yellow;
-            this.findcusBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findcusBtn.ForeColor = System.Drawing.Color.Black;
-            this.findcusBtn.Image = ((System.Drawing.Image)(resources.GetObject("findcusBtn.Image")));
-            this.findcusBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.findcusBtn.Location = new System.Drawing.Point(717, 0);
-            this.findcusBtn.Name = "findcusBtn";
-            this.findcusBtn.Size = new System.Drawing.Size(195, 52);
-            this.findcusBtn.TabIndex = 10;
-            this.findcusBtn.Text = "Tìm SĐT";
-            this.findcusBtn.Click += new System.EventHandler(this.findcusBtn_Click);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.backBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(912, 0);
+            this.panel4.Location = new System.Drawing.Point(1149, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 52);
+            this.panel4.Size = new System.Drawing.Size(91, 52);
             this.panel4.TabIndex = 9;
-            // 
-            // backBtn
-            // 
-            this.backBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
-            this.backBtn.Location = new System.Drawing.Point(279, 0);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(49, 52);
-            this.backBtn.TabIndex = 4;
-            this.backBtn.TabStop = false;
-            this.backBtn.Visible = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // mainPanel
             // 
@@ -234,17 +211,57 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(765, 708);
             this.panel5.TabIndex = 20;
             // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 338);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(765, 370);
+            this.panel7.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.ChartBDT);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(765, 338);
+            this.panel6.TabIndex = 0;
+            // 
+            // ChartBDT
+            // 
+            this.ChartBDT.BackColor = System.Drawing.Color.Transparent;
+            this.ChartBDT.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.ChartBDT.ChartAreas.Add(chartArea1);
+            this.ChartBDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Name = "Legend1";
+            this.ChartBDT.Legends.Add(legend1);
+            this.ChartBDT.Location = new System.Drawing.Point(0, 0);
+            this.ChartBDT.Name = "ChartBDT";
+            this.ChartBDT.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChartBDT.Series.Add(series1);
+            this.ChartBDT.Size = new System.Drawing.Size(765, 338);
+            this.ChartBDT.TabIndex = 0;
+            this.ChartBDT.Text = "chart1";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.guna2CustomGradientPanel5);
             this.panel3.Controls.Add(this.guna2CustomGradientPanel6);
+            this.panel3.Controls.Add(this.guna2CustomGradientPanel5);
             this.panel3.Controls.Add(this.panelcustomer);
             this.panel3.Controls.Add(this.guna2CustomGradientPanel7);
             this.panel3.Controls.Add(this.panelgem);
@@ -257,88 +274,6 @@
             this.panel3.Size = new System.Drawing.Size(475, 708);
             this.panel3.TabIndex = 19;
             // 
-            // guna2CustomGradientPanel5
-            // 
-            this.guna2CustomGradientPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2CustomGradientPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel5.BorderRadius = 20;
-            this.guna2CustomGradientPanel5.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2CustomGradientPanel5.Controls.Add(this.guna2PictureBox9);
-            this.guna2CustomGradientPanel5.Controls.Add(this.label13);
-            this.guna2CustomGradientPanel5.Controls.Add(this.label14);
-            this.guna2CustomGradientPanel5.Controls.Add(this.label15);
-            this.guna2CustomGradientPanel5.Controls.Add(this.guna2PictureBox10);
-            this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.guna2CustomGradientPanel5.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(249, 514);
-            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(211, 159);
-            this.guna2CustomGradientPanel5.TabIndex = 24;
-            // 
-            // guna2PictureBox9
-            // 
-            this.guna2PictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox9.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox9.Image")));
-            this.guna2PictureBox9.ImageRotate = 0F;
-            this.guna2PictureBox9.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox9.Name = "guna2PictureBox9";
-            this.guna2PictureBox9.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox9.TabIndex = 4;
-            this.guna2PictureBox9.TabStop = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(45, 129);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(78, 25);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Chi Tiết";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(18, 13);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 40);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "0";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(3, 63);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 30);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Liên hệ";
-            // 
-            // guna2PictureBox10
-            // 
-            this.guna2PictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox10.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox10.Image")));
-            this.guna2PictureBox10.ImageRotate = 0F;
-            this.guna2PictureBox10.Location = new System.Drawing.Point(132, 32);
-            this.guna2PictureBox10.Name = "guna2PictureBox10";
-            this.guna2PictureBox10.Size = new System.Drawing.Size(76, 72);
-            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox10.TabIndex = 0;
-            this.guna2PictureBox10.TabStop = false;
-            // 
             // guna2CustomGradientPanel6
             // 
             this.guna2CustomGradientPanel6.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -347,7 +282,7 @@
             this.guna2CustomGradientPanel6.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2CustomGradientPanel6.Controls.Add(this.guna2PictureBox11);
             this.guna2CustomGradientPanel6.Controls.Add(this.label16);
-            this.guna2CustomGradientPanel6.Controls.Add(this.label17);
+            this.guna2CustomGradientPanel6.Controls.Add(this.cDMH);
             this.guna2CustomGradientPanel6.Controls.Add(this.label18);
             this.guna2CustomGradientPanel6.Controls.Add(this.guna2PictureBox12);
             this.guna2CustomGradientPanel6.FillColor = System.Drawing.Color.Purple;
@@ -358,19 +293,7 @@
             this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
             this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(211, 159);
             this.guna2CustomGradientPanel6.TabIndex = 26;
-            // 
-            // guna2PictureBox11
-            // 
-            this.guna2PictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox11.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox11.Image")));
-            this.guna2PictureBox11.ImageRotate = 0F;
-            this.guna2PictureBox11.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox11.Name = "guna2PictureBox11";
-            this.guna2PictureBox11.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox11.TabIndex = 4;
-            this.guna2PictureBox11.TabStop = false;
+            this.guna2CustomGradientPanel6.Click += new System.EventHandler(this.guna2CustomGradientPanel6_Click);
             // 
             // label16
             // 
@@ -384,17 +307,17 @@
             this.label16.TabIndex = 3;
             this.label16.Text = "Chi Tiết";
             // 
-            // label17
+            // cDMH
             // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(18, 13);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(34, 40);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "0";
+            this.cDMH.AutoSize = true;
+            this.cDMH.BackColor = System.Drawing.Color.Transparent;
+            this.cDMH.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cDMH.ForeColor = System.Drawing.Color.White;
+            this.cDMH.Location = new System.Drawing.Point(18, 13);
+            this.cDMH.Name = "cDMH";
+            this.cDMH.Size = new System.Drawing.Size(34, 40);
+            this.cDMH.TabIndex = 2;
+            this.cDMH.Text = "0";
             // 
             // label18
             // 
@@ -404,22 +327,68 @@
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(3, 63);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 30);
+            this.label18.Size = new System.Drawing.Size(144, 30);
             this.label18.TabIndex = 1;
-            this.label18.Text = "Khiếu nại";
+            this.label18.Text = "Đã mua hàng";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
-            // guna2PictureBox12
+            // guna2CustomGradientPanel5
             // 
-            this.guna2PictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox12.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox12.Image")));
-            this.guna2PictureBox12.ImageRotate = 0F;
-            this.guna2PictureBox12.Location = new System.Drawing.Point(132, 32);
-            this.guna2PictureBox12.Name = "guna2PictureBox12";
-            this.guna2PictureBox12.Size = new System.Drawing.Size(76, 72);
-            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox12.TabIndex = 0;
-            this.guna2PictureBox12.TabStop = false;
+            this.guna2CustomGradientPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2CustomGradientPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel5.BorderRadius = 20;
+            this.guna2CustomGradientPanel5.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.guna2CustomGradientPanel5.Controls.Add(this.cDBHH);
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2PictureBox9);
+            this.guna2CustomGradientPanel5.Controls.Add(this.label13);
+            this.guna2CustomGradientPanel5.Controls.Add(this.cDBH);
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2PictureBox10);
+            this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2CustomGradientPanel5.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.guna2CustomGradientPanel5.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(249, 514);
+            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(211, 159);
+            this.guna2CustomGradientPanel5.TabIndex = 24;
+            this.guna2CustomGradientPanel5.Click += new System.EventHandler(this.guna2CustomGradientPanel5_Click);
+            // 
+            // cDBHH
+            // 
+            this.cDBHH.AutoSize = true;
+            this.cDBHH.BackColor = System.Drawing.Color.Transparent;
+            this.cDBHH.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cDBHH.ForeColor = System.Drawing.Color.White;
+            this.cDBHH.Location = new System.Drawing.Point(21, 13);
+            this.cDBHH.Name = "cDBHH";
+            this.cDBHH.Size = new System.Drawing.Size(34, 40);
+            this.cDBHH.TabIndex = 5;
+            this.cDBHH.Text = "0";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(45, 129);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 25);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Chi Tiết";
+            // 
+            // cDBH
+            // 
+            this.cDBH.AutoSize = true;
+            this.cDBH.BackColor = System.Drawing.Color.Transparent;
+            this.cDBH.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cDBH.ForeColor = System.Drawing.Color.White;
+            this.cDBH.Location = new System.Drawing.Point(6, 63);
+            this.cDBH.Name = "cDBH";
+            this.cDBH.Size = new System.Drawing.Size(138, 30);
+            this.cDBH.TabIndex = 1;
+            this.cDBH.Text = "Đã bán hàng";
+            this.cDBH.Click += new System.EventHandler(this.label15_Click);
             // 
             // panelcustomer
             // 
@@ -441,19 +410,6 @@
             this.panelcustomer.Size = new System.Drawing.Size(211, 159);
             this.panelcustomer.TabIndex = 19;
             this.panelcustomer.Click += new System.EventHandler(this.panelcustomer_Click_1);
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 4;
-            this.guna2PictureBox2.TabStop = false;
             // 
             // label3
             // 
@@ -491,19 +447,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Khách hàng";
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(132, 32);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(76, 72);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // guna2CustomGradientPanel7
             // 
             this.guna2CustomGradientPanel7.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -512,7 +455,7 @@
             this.guna2CustomGradientPanel7.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.guna2CustomGradientPanel7.Controls.Add(this.guna2PictureBox13);
             this.guna2CustomGradientPanel7.Controls.Add(this.label19);
-            this.guna2CustomGradientPanel7.Controls.Add(this.label20);
+            this.guna2CustomGradientPanel7.Controls.Add(this.countBDV);
             this.guna2CustomGradientPanel7.Controls.Add(this.label21);
             this.guna2CustomGradientPanel7.Controls.Add(this.guna2PictureBox14);
             this.guna2CustomGradientPanel7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -523,19 +466,7 @@
             this.guna2CustomGradientPanel7.Name = "guna2CustomGradientPanel7";
             this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(211, 159);
             this.guna2CustomGradientPanel7.TabIndex = 25;
-            // 
-            // guna2PictureBox13
-            // 
-            this.guna2PictureBox13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox13.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox13.Image")));
-            this.guna2PictureBox13.ImageRotate = 0F;
-            this.guna2PictureBox13.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox13.Name = "guna2PictureBox13";
-            this.guna2PictureBox13.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox13.TabIndex = 4;
-            this.guna2PictureBox13.TabStop = false;
+            this.guna2CustomGradientPanel7.Click += new System.EventHandler(this.guna2CustomGradientPanel7_Click);
             // 
             // label19
             // 
@@ -549,17 +480,17 @@
             this.label19.TabIndex = 3;
             this.label19.Text = "Chi Tiết";
             // 
-            // label20
+            // countBDV
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(18, 13);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(34, 40);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "0";
+            this.countBDV.AutoSize = true;
+            this.countBDV.BackColor = System.Drawing.Color.Transparent;
+            this.countBDV.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countBDV.ForeColor = System.Drawing.Color.White;
+            this.countBDV.Location = new System.Drawing.Point(18, 13);
+            this.countBDV.Name = "countBDV";
+            this.countBDV.Size = new System.Drawing.Size(34, 40);
+            this.countBDV.TabIndex = 2;
+            this.countBDV.Text = "0";
             // 
             // label21
             // 
@@ -567,24 +498,11 @@
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(3, 63);
+            this.label21.Location = new System.Drawing.Point(20, 53);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(130, 30);
+            this.label21.Size = new System.Drawing.Size(25, 30);
             this.label21.TabIndex = 1;
-            this.label21.Text = "Khuyến mãi";
-            // 
-            // guna2PictureBox14
-            // 
-            this.guna2PictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox14.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox14.Image")));
-            this.guna2PictureBox14.ImageRotate = 0F;
-            this.guna2PictureBox14.Location = new System.Drawing.Point(132, 32);
-            this.guna2PictureBox14.Name = "guna2PictureBox14";
-            this.guna2PictureBox14.Size = new System.Drawing.Size(76, 72);
-            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox14.TabIndex = 0;
-            this.guna2PictureBox14.TabStop = false;
+            this.label21.Text = "1";
             // 
             // panelgem
             // 
@@ -606,19 +524,6 @@
             this.panelgem.Size = new System.Drawing.Size(211, 159);
             this.panelgem.TabIndex = 21;
             this.panelgem.Click += new System.EventHandler(this.panelgem_Click);
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 4;
-            this.guna2PictureBox3.TabStop = false;
             // 
             // label4
             // 
@@ -656,19 +561,6 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Đá quý";
             // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(132, 32);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(76, 72);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox4.TabIndex = 0;
-            this.guna2PictureBox4.TabStop = false;
-            // 
             // panelservice
             // 
             this.panelservice.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -689,19 +581,6 @@
             this.panelservice.Size = new System.Drawing.Size(211, 159);
             this.panelservice.TabIndex = 20;
             this.panelservice.Click += new System.EventHandler(this.panelservice_Click);
-            // 
-            // guna2PictureBox7
-            // 
-            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox7.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
-            this.guna2PictureBox7.ImageRotate = 0F;
-            this.guna2PictureBox7.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox7.Name = "guna2PictureBox7";
-            this.guna2PictureBox7.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox7.TabIndex = 4;
-            this.guna2PictureBox7.TabStop = false;
             // 
             // label10
             // 
@@ -739,19 +618,6 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "Dịch vụ";
             // 
-            // guna2PictureBox8
-            // 
-            this.guna2PictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox8.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox8.Image")));
-            this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(132, 32);
-            this.guna2PictureBox8.Name = "guna2PictureBox8";
-            this.guna2PictureBox8.Size = new System.Drawing.Size(76, 72);
-            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox8.TabIndex = 0;
-            this.guna2PictureBox8.TabStop = false;
-            // 
             // paneljewelry
             // 
             this.paneljewelry.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -772,19 +638,6 @@
             this.paneljewelry.Size = new System.Drawing.Size(211, 159);
             this.paneljewelry.TabIndex = 22;
             this.paneljewelry.Click += new System.EventHandler(this.paneljewelry_Click);
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(123, 130);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(29, 24);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox5.TabIndex = 4;
-            this.guna2PictureBox5.TabStop = false;
             // 
             // label7
             // 
@@ -822,6 +675,231 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Trang sức";
             // 
+            // guna2CustomGradientPanel8
+            // 
+            this.guna2CustomGradientPanel8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2CustomGradientPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel8.BorderRadius = 20;
+            this.guna2CustomGradientPanel8.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.guna2CustomGradientPanel8.Controls.Add(this.guna2PictureBox15);
+            this.guna2CustomGradientPanel8.Controls.Add(this.label22);
+            this.guna2CustomGradientPanel8.Controls.Add(this.cBCT);
+            this.guna2CustomGradientPanel8.Controls.Add(this.label24);
+            this.guna2CustomGradientPanel8.Controls.Add(this.guna2PictureBox16);
+            this.guna2CustomGradientPanel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2CustomGradientPanel8.FillColor2 = System.Drawing.Color.Fuchsia;
+            this.guna2CustomGradientPanel8.FillColor3 = System.Drawing.Color.Yellow;
+            this.guna2CustomGradientPanel8.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.guna2CustomGradientPanel8.Location = new System.Drawing.Point(26, 349);
+            this.guna2CustomGradientPanel8.Name = "guna2CustomGradientPanel8";
+            this.guna2CustomGradientPanel8.Size = new System.Drawing.Size(211, 159);
+            this.guna2CustomGradientPanel8.TabIndex = 23;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.White;
+            this.label22.Location = new System.Drawing.Point(45, 129);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(78, 25);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Chi Tiết";
+            // 
+            // cBCT
+            // 
+            this.cBCT.AutoSize = true;
+            this.cBCT.BackColor = System.Drawing.Color.Transparent;
+            this.cBCT.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBCT.ForeColor = System.Drawing.Color.White;
+            this.cBCT.Location = new System.Drawing.Point(18, 13);
+            this.cBCT.Name = "cBCT";
+            this.cBCT.Size = new System.Drawing.Size(34, 40);
+            this.cBCT.TabIndex = 2;
+            this.cBCT.Text = "0";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(3, 63);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(130, 30);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "Báo cáo tồn";
+            // 
+            // guna2PictureBox11
+            // 
+            this.guna2PictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox11.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox11.Image")));
+            this.guna2PictureBox11.ImageRotate = 0F;
+            this.guna2PictureBox11.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox11.Name = "guna2PictureBox11";
+            this.guna2PictureBox11.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox11.TabIndex = 4;
+            this.guna2PictureBox11.TabStop = false;
+            // 
+            // guna2PictureBox12
+            // 
+            this.guna2PictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox12.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox12.Image")));
+            this.guna2PictureBox12.ImageRotate = 0F;
+            this.guna2PictureBox12.Location = new System.Drawing.Point(141, 41);
+            this.guna2PictureBox12.Name = "guna2PictureBox12";
+            this.guna2PictureBox12.Size = new System.Drawing.Size(76, 72);
+            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox12.TabIndex = 0;
+            this.guna2PictureBox12.TabStop = false;
+            // 
+            // guna2PictureBox9
+            // 
+            this.guna2PictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox9.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox9.Image")));
+            this.guna2PictureBox9.ImageRotate = 0F;
+            this.guna2PictureBox9.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox9.Name = "guna2PictureBox9";
+            this.guna2PictureBox9.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox9.TabIndex = 4;
+            this.guna2PictureBox9.TabStop = false;
+            // 
+            // guna2PictureBox10
+            // 
+            this.guna2PictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox10.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox10.Image")));
+            this.guna2PictureBox10.ImageRotate = 0F;
+            this.guna2PictureBox10.Location = new System.Drawing.Point(138, 41);
+            this.guna2PictureBox10.Name = "guna2PictureBox10";
+            this.guna2PictureBox10.Size = new System.Drawing.Size(76, 72);
+            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox10.TabIndex = 0;
+            this.guna2PictureBox10.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 4;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(132, 32);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(76, 72);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox13
+            // 
+            this.guna2PictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox13.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox13.Image")));
+            this.guna2PictureBox13.ImageRotate = 0F;
+            this.guna2PictureBox13.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox13.Name = "guna2PictureBox13";
+            this.guna2PictureBox13.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox13.TabIndex = 4;
+            this.guna2PictureBox13.TabStop = false;
+            // 
+            // guna2PictureBox14
+            // 
+            this.guna2PictureBox14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox14.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox14.Image")));
+            this.guna2PictureBox14.ImageRotate = 0F;
+            this.guna2PictureBox14.Location = new System.Drawing.Point(132, 32);
+            this.guna2PictureBox14.Name = "guna2PictureBox14";
+            this.guna2PictureBox14.Size = new System.Drawing.Size(76, 72);
+            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox14.TabIndex = 0;
+            this.guna2PictureBox14.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 4;
+            this.guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(132, 32);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(76, 72);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox4.TabIndex = 0;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // guna2PictureBox7
+            // 
+            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox7.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox7.Image")));
+            this.guna2PictureBox7.ImageRotate = 0F;
+            this.guna2PictureBox7.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox7.Name = "guna2PictureBox7";
+            this.guna2PictureBox7.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox7.TabIndex = 4;
+            this.guna2PictureBox7.TabStop = false;
+            // 
+            // guna2PictureBox8
+            // 
+            this.guna2PictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox8.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox8.Image")));
+            this.guna2PictureBox8.ImageRotate = 0F;
+            this.guna2PictureBox8.Location = new System.Drawing.Point(132, 32);
+            this.guna2PictureBox8.Name = "guna2PictureBox8";
+            this.guna2PictureBox8.Size = new System.Drawing.Size(76, 72);
+            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox8.TabIndex = 0;
+            this.guna2PictureBox8.TabStop = false;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(123, 130);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(29, 24);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 4;
+            this.guna2PictureBox5.TabStop = false;
+            // 
             // guna2PictureBox6
             // 
             this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
@@ -834,26 +912,6 @@
             this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox6.TabIndex = 0;
             this.guna2PictureBox6.TabStop = false;
-            // 
-            // guna2CustomGradientPanel8
-            // 
-            this.guna2CustomGradientPanel8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2CustomGradientPanel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel8.BorderRadius = 20;
-            this.guna2CustomGradientPanel8.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
-            this.guna2CustomGradientPanel8.Controls.Add(this.guna2PictureBox15);
-            this.guna2CustomGradientPanel8.Controls.Add(this.label22);
-            this.guna2CustomGradientPanel8.Controls.Add(this.label23);
-            this.guna2CustomGradientPanel8.Controls.Add(this.label24);
-            this.guna2CustomGradientPanel8.Controls.Add(this.guna2PictureBox16);
-            this.guna2CustomGradientPanel8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2CustomGradientPanel8.FillColor2 = System.Drawing.Color.Fuchsia;
-            this.guna2CustomGradientPanel8.FillColor3 = System.Drawing.Color.Yellow;
-            this.guna2CustomGradientPanel8.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel8.Location = new System.Drawing.Point(26, 349);
-            this.guna2CustomGradientPanel8.Name = "guna2CustomGradientPanel8";
-            this.guna2CustomGradientPanel8.Size = new System.Drawing.Size(211, 159);
-            this.guna2CustomGradientPanel8.TabIndex = 23;
             // 
             // guna2PictureBox15
             // 
@@ -868,42 +926,6 @@
             this.guna2PictureBox15.TabIndex = 4;
             this.guna2PictureBox15.TabStop = false;
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(45, 129);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 25);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "Chi Tiết";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(18, 13);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(34, 40);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "0";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(3, 63);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(130, 30);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "Báo cáo tồn";
-            // 
             // guna2PictureBox16
             // 
             this.guna2PictureBox16.BackColor = System.Drawing.Color.Transparent;
@@ -916,6 +938,39 @@
             this.guna2PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox16.TabIndex = 0;
             this.guna2PictureBox16.TabStop = false;
+            // 
+            // findcusBtn
+            // 
+            this.findcusBtn.BackColor = System.Drawing.Color.Transparent;
+            this.findcusBtn.BorderRadius = 20;
+            this.findcusBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.findcusBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.findcusBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.findcusBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.findcusBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.findcusBtn.FillColor = System.Drawing.Color.Yellow;
+            this.findcusBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findcusBtn.ForeColor = System.Drawing.Color.Black;
+            this.findcusBtn.Image = ((System.Drawing.Image)(resources.GetObject("findcusBtn.Image")));
+            this.findcusBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.findcusBtn.Location = new System.Drawing.Point(954, 0);
+            this.findcusBtn.Name = "findcusBtn";
+            this.findcusBtn.Size = new System.Drawing.Size(195, 52);
+            this.findcusBtn.TabIndex = 10;
+            this.findcusBtn.Text = "Tìm SĐT";
+            this.findcusBtn.Click += new System.EventHandler(this.findcusBtn_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.backBtn.Image = ((System.Drawing.Image)(resources.GetObject("backBtn.Image")));
+            this.backBtn.Location = new System.Drawing.Point(42, 0);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(49, 52);
+            this.backBtn.TabIndex = 4;
+            this.backBtn.TabStop = false;
+            this.backBtn.Visible = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // mainForm
             // 
@@ -935,41 +990,44 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).EndInit();
             this.mainPanel.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ChartBDT)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.guna2CustomGradientPanel5.ResumeLayout(false);
-            this.guna2CustomGradientPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
             this.guna2CustomGradientPanel6.ResumeLayout(false);
             this.guna2CustomGradientPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
+            this.guna2CustomGradientPanel5.ResumeLayout(false);
+            this.guna2CustomGradientPanel5.PerformLayout();
             this.panelcustomer.ResumeLayout(false);
             this.panelcustomer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2CustomGradientPanel7.ResumeLayout(false);
             this.guna2CustomGradientPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
             this.panelgem.ResumeLayout(false);
             this.panelgem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.panelservice.ResumeLayout(false);
             this.panelservice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
             this.paneljewelry.ResumeLayout(false);
             this.paneljewelry.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             this.guna2CustomGradientPanel8.ResumeLayout(false);
             this.guna2CustomGradientPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.backBtn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -987,8 +1045,7 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label cDBH;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelcustomer;
@@ -1018,22 +1075,26 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox11;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label cDMH;
         private System.Windows.Forms.Label label18;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox12;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel7;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox13;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label countBDV;
         private System.Windows.Forms.Label label21;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox14;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel8;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox15;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label cBCT;
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox16;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartBDT;
+        private System.Windows.Forms.Label cDBHH;
     }
 }
 

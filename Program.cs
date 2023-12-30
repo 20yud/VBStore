@@ -16,7 +16,7 @@ namespace VBStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new banhangForm("1"));
+            Application.Run(new mainForm());
         }
     }
 }

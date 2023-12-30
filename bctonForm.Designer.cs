@@ -1,6 +1,6 @@
 ﻿namespace VBStore
 {
-    partial class qrcodeForm
+    partial class bctonForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.SuspendLayout();
             // 
-            // qrcodeForm
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(953, 552);
+            this.guna2GradientPanel1.TabIndex = 0;
+            // 
+            // bctonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 708);
+            this.ClientSize = new System.Drawing.Size(953, 552);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "qrcodeForm";
-            this.Text = "qrcodeForm";
+            this.Name = "bctonForm";
+            this.Text = "bctonForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
     }
 }

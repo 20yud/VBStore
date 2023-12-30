@@ -30,7 +30,7 @@
         {
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnMuahang = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.dichvuBtn = new Guna.UI2.WinForms.Guna2Button();
             this.capnhapBtn = new Guna.UI2.WinForms.Guna2Button();
             this.muahangBtn = new Guna.UI2.WinForms.Guna2Button();
             this.addressTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -48,7 +48,7 @@
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.Controls.Add(this.btnMuahang);
-            this.guna2GradientPanel1.Controls.Add(this.guna2Button3);
+            this.guna2GradientPanel1.Controls.Add(this.dichvuBtn);
             this.guna2GradientPanel1.Controls.Add(this.capnhapBtn);
             this.guna2GradientPanel1.Controls.Add(this.muahangBtn);
             this.guna2GradientPanel1.Controls.Add(this.addressTextBox);
@@ -61,8 +61,8 @@
             this.guna2GradientPanel1.Controls.Add(this.label2);
             this.guna2GradientPanel1.Controls.Add(this.label1);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1240, 708);
@@ -78,28 +78,29 @@
             this.btnMuahang.FillColor = System.Drawing.Color.Orange;
             this.btnMuahang.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMuahang.ForeColor = System.Drawing.Color.Black;
-            this.btnMuahang.Location = new System.Drawing.Point(941, 467);
+            this.btnMuahang.Location = new System.Drawing.Point(865, 517);
             this.btnMuahang.Name = "btnMuahang";
             this.btnMuahang.Size = new System.Drawing.Size(153, 71);
-            this.btnMuahang.TabIndex = 38;
+            this.btnMuahang.TabIndex = 77;
             this.btnMuahang.Text = "BÁN HÀNG";
             this.btnMuahang.Click += new System.EventHandler(this.btnMuahang_Click);
             // 
-            // guna2Button3
+            // dichvuBtn
             // 
-            this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.LightYellow;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(750, 467);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(153, 71);
-            this.guna2Button3.TabIndex = 37;
-            this.guna2Button3.Text = "MUA HÀNG";
+            this.dichvuBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dichvuBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dichvuBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dichvuBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dichvuBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dichvuBtn.FillColor = System.Drawing.Color.LightYellow;
+            this.dichvuBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dichvuBtn.ForeColor = System.Drawing.Color.Black;
+            this.dichvuBtn.Location = new System.Drawing.Point(645, 517);
+            this.dichvuBtn.Name = "dichvuBtn";
+            this.dichvuBtn.Size = new System.Drawing.Size(153, 71);
+            this.dichvuBtn.TabIndex = 76;
+            this.dichvuBtn.Text = "DỊCH VỤ";
+            this.dichvuBtn.Click += new System.EventHandler(this.dichvuBtn_Click);
             // 
             // capnhapBtn
             // 
@@ -111,10 +112,10 @@
             this.capnhapBtn.FillColor = System.Drawing.Color.Aquamarine;
             this.capnhapBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.capnhapBtn.ForeColor = System.Drawing.Color.Black;
-            this.capnhapBtn.Location = new System.Drawing.Point(564, 467);
+            this.capnhapBtn.Location = new System.Drawing.Point(443, 517);
             this.capnhapBtn.Name = "capnhapBtn";
             this.capnhapBtn.Size = new System.Drawing.Size(153, 71);
-            this.capnhapBtn.TabIndex = 36;
+            this.capnhapBtn.TabIndex = 75;
             this.capnhapBtn.Text = "CẬP NHẬP";
             this.capnhapBtn.Click += new System.EventHandler(this.capnhapBtn_Click);
             // 
@@ -128,10 +129,10 @@
             this.muahangBtn.FillColor = System.Drawing.Color.Lime;
             this.muahangBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.muahangBtn.ForeColor = System.Drawing.Color.Black;
-            this.muahangBtn.Location = new System.Drawing.Point(362, 467);
+            this.muahangBtn.Location = new System.Drawing.Point(240, 517);
             this.muahangBtn.Name = "muahangBtn";
             this.muahangBtn.Size = new System.Drawing.Size(153, 71);
-            this.muahangBtn.TabIndex = 35;
+            this.muahangBtn.TabIndex = 74;
             this.muahangBtn.Text = "MUA HÀNG";
             this.muahangBtn.Click += new System.EventHandler(this.muahangBtn_Click);
             // 
@@ -147,14 +148,15 @@
             this.addressTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.addressTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addressTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.addressTextBox.Location = new System.Drawing.Point(492, 377);
+            this.addressTextBox.Location = new System.Drawing.Point(506, 427);
+            this.addressTextBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.PasswordChar = '\0';
             this.addressTextBox.PlaceholderText = "";
             this.addressTextBox.ReadOnly = true;
             this.addressTextBox.SelectedText = "";
             this.addressTextBox.Size = new System.Drawing.Size(483, 48);
-            this.addressTextBox.TabIndex = 8;
+            this.addressTextBox.TabIndex = 73;
             // 
             // emailTextBox
             // 
@@ -168,14 +170,15 @@
             this.emailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.emailTextBox.Location = new System.Drawing.Point(492, 298);
+            this.emailTextBox.Location = new System.Drawing.Point(506, 348);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.PasswordChar = '\0';
             this.emailTextBox.PlaceholderText = "";
             this.emailTextBox.ReadOnly = true;
             this.emailTextBox.SelectedText = "";
             this.emailTextBox.Size = new System.Drawing.Size(483, 48);
-            this.emailTextBox.TabIndex = 7;
+            this.emailTextBox.TabIndex = 72;
             // 
             // phoneNumberTextBox
             // 
@@ -189,14 +192,15 @@
             this.phoneNumberTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNumberTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phoneNumberTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.phoneNumberTextBox.Location = new System.Drawing.Point(492, 222);
+            this.phoneNumberTextBox.Location = new System.Drawing.Point(506, 272);
+            this.phoneNumberTextBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.phoneNumberTextBox.Name = "phoneNumberTextBox";
             this.phoneNumberTextBox.PasswordChar = '\0';
             this.phoneNumberTextBox.PlaceholderText = "";
             this.phoneNumberTextBox.ReadOnly = true;
             this.phoneNumberTextBox.SelectedText = "";
             this.phoneNumberTextBox.Size = new System.Drawing.Size(483, 48);
-            this.phoneNumberTextBox.TabIndex = 6;
+            this.phoneNumberTextBox.TabIndex = 71;
             // 
             // nameTextBox
             // 
@@ -210,14 +214,15 @@
             this.nameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameTextBox.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.nameTextBox.Location = new System.Drawing.Point(492, 155);
+            this.nameTextBox.Location = new System.Drawing.Point(506, 205);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.PasswordChar = '\0';
             this.nameTextBox.PlaceholderText = "";
             this.nameTextBox.ReadOnly = true;
             this.nameTextBox.SelectedText = "";
             this.nameTextBox.Size = new System.Drawing.Size(483, 48);
-            this.nameTextBox.TabIndex = 5;
+            this.nameTextBox.TabIndex = 70;
             // 
             // label5
             // 
@@ -225,10 +230,10 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(209, 400);
+            this.label5.Location = new System.Drawing.Point(223, 450);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 25);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 69;
             this.label5.Text = "Địa chỉ:";
             // 
             // label4
@@ -237,10 +242,10 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(209, 298);
+            this.label4.Location = new System.Drawing.Point(223, 348);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 25);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 68;
             this.label4.Text = "Email:";
             // 
             // label3
@@ -249,10 +254,10 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(209, 205);
+            this.label3.Location = new System.Drawing.Point(223, 255);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 25);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 67;
             this.label3.Text = "SĐT:";
             // 
             // label2
@@ -261,10 +266,10 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(209, 155);
+            this.label2.Location = new System.Drawing.Point(223, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 25);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 66;
             this.label2.Text = "Tên Khách Hàng:";
             // 
             // label1
@@ -273,10 +278,10 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(398, 70);
+            this.label1.Location = new System.Drawing.Point(412, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(424, 42);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 65;
             this.label1.Text = "Thông Tin Khách Hàng";
             // 
             // findcusForm
@@ -299,9 +304,8 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnMuahang;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button dichvuBtn;
         private Guna.UI2.WinForms.Guna2Button capnhapBtn;
         private Guna.UI2.WinForms.Guna2Button muahangBtn;
         private Guna.UI2.WinForms.Guna2TextBox addressTextBox;
@@ -312,5 +316,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

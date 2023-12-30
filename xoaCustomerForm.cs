@@ -16,6 +16,8 @@ namespace VBStore
         private string maKhachHang;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        public delegate void DataChangedEventHandler(string deletedCustomerId);
+        public event DataChangedEventHandler DataChanged;
         public xoaCustomerForm(string maKH)
         {
             InitializeComponent();
@@ -84,21 +86,33 @@ namespace VBStore
                 return false; // Trả về false nếu có lỗi xảy ra
             }
         }
+        private void ReloadParentForm(string deletedCustomerId)
+        {
+            // Kiểm tra xem sự kiện DataChanged đã được đăng ký hay chưa
+            if (DataChanged != null)
+            {
+                // Gọi sự kiện để thông báo cho form cha biết rằng dữ liệu đã thay đổi
+                DataChanged.Invoke(deletedCustomerId);
+            }
+        }
+
 
         private void editBtn_Click_1(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 // Thực hiện câu lệnh SQL để xóa sản phẩm
                 if (DeleteCustomerData(maKhachHang))
                 {
                     MessageBox.Show("Xóa sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ReloadParentForm(maKhachHang);
                     this.Close(); // Đóng Form XoaTSForm sau khi xóa thành công
+
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xóa sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi khi xóa khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

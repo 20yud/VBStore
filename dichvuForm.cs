@@ -50,14 +50,46 @@ namespace VBStore
             }
         }
 
-        private void createBtn_Click(object sender, EventArgs e)
+      
+
+        private void createBtn_Click_1(object sender, EventArgs e)
         {
             themDVForm themDV = new themDVForm();
             themDV.ShowDialog();
             dis();
         }
 
-        private void delBtn_Click(object sender, EventArgs e)
+        private void detailBtn_Click_1(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                string maDichVu = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
+                chitietDVForm chiTietForm = new chitietDVForm(maDichVu);
+                chiTietForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dịch vụ để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                string maSanPham = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
+                suaDVForm suaDV = new suaDVForm(maSanPham);
+                suaDV.ShowDialog();
+                dis(); // Sau khi sửa thông tin, load lại dữ liệu
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
         {
             if (guna2DataGridView1.SelectedRows.Count > 0)
             {
@@ -75,37 +107,44 @@ namespace VBStore
             }
         }
 
-        private void detailBtn_Click(object sender, EventArgs e)
+        private void findTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
+            try
             {
-                string maDichVu = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
-                chitietDVForm chiTietForm = new chitietDVForm(maDichVu);
-                chiTietForm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một dịch vụ để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
-        private void guna2DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+                    // Dynamically adjust the SQL query based on the entered text
+                    string query = "SELECT MALOAIDICHVU AS 'Mã dịch vụ', TENDICHVU AS 'Tên dịch vụ', DONGIA AS 'Đơn giá' FROM DICHVU";
 
-        }
+                    if (!string.IsNullOrEmpty(findTextBox.Text))
+                    {
+                        string searchText = findTextBox.Text.Trim();
 
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            if (guna2DataGridView1.SelectedRows.Count > 0)
-            {
-                string maSanPham = guna2DataGridView1.SelectedRows[0].Cells["Mã dịch vụ"].Value.ToString();
-                suaDVForm suaDV = new suaDVForm(maSanPham);
-                suaDV.ShowDialog();
-                dis(); // Sau khi sửa thông tin, load lại dữ liệu
+                        // Add a condition to filter based on Mã dịch vụ or Tên dịch vụ
+                        query += $@" WHERE MALOAIDICHVU LIKE '%{searchText}%' OR TENDICHVU LIKE N'%{searchText}%'";
+                    }
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            guna2DataGridView1.DataSource = dataTable;
+
+                            // Set column headers as before
+                            guna2DataGridView1.Columns[0].HeaderText = "Mã dịch vụ";
+                            guna2DataGridView1.Columns[1].HeaderText = "Tên dịch vụ";
+                            guna2DataGridView1.Columns[2].HeaderText = "Đơn giá";
+                        }
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn một sản phẩm để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
