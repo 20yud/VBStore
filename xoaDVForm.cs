@@ -59,11 +59,9 @@ namespace VBStore
 
         private void createBtn_Click(object sender, EventArgs e)
         {
-
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn dịch vụ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa dịch vụ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                // Thực hiện câu lệnh SQL để xóa sản phẩm
                 if (DeleteProduct(maLoaiDV))
                 {
                     MessageBox.Show("Xóa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,7 +69,7 @@ namespace VBStore
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xóa dịch vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Không cần hiển thị thông báo ở đây, vì thông báo đã được xử lý trong hàm DeleteProduct
                 }
             }
         }
@@ -84,7 +82,23 @@ namespace VBStore
                 {
                     connection.Open();
 
-                    // Thực hiện câu lệnh SQL để xóa dịch vụ
+                    // Kiểm tra xem có ràng buộc khóa ngoại với bảng CT_PHIEUDICHVU hay không
+                    string checkForeignKeyQuery = "SELECT COUNT(*) FROM CT_PHIEUDICHVU WHERE MALOAIDICHVU = @MaLoaiDV";
+                    using (SqlCommand checkForeignKeyCommand = new SqlCommand(checkForeignKeyQuery, connection))
+                    {
+                        checkForeignKeyCommand.Parameters.AddWithValue("@MaLoaiDV", maLoaiDV);
+
+                        int relatedDataCount = (int)checkForeignKeyCommand.ExecuteScalar();
+
+                        if (relatedDataCount > 0)
+                        {
+                            // Nếu có dữ liệu liên quan, hiển thị thông báo và không xóa dịch vụ
+                            MessageBox.Show("Không thể xóa dịch vụ vì có dữ liệu liên quan trong phiếu dịch vụ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return false; // Trả về false để thông báo rằng xóa không thành công
+                        }
+                    }
+
+                    // Nếu không có dữ liệu liên quan, thực hiện câu lệnh SQL để xóa dịch vụ
                     string query = "DELETE FROM DICHVU WHERE MALOAIDICHVU = @MaLoaiDV";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

@@ -184,6 +184,7 @@ namespace VBStore
         {
             ThemTSForm themTSForm = new ThemTSForm();
             themTSForm.ShowDialog();
+            LoadProducts();
         }
 
         private void detailBtn_Click_1(object sender, EventArgs e)
@@ -225,6 +226,7 @@ namespace VBStore
                 // Truyền mã sản phẩm vào Form XoaTSForm khi mở Form này
                 XoaTSForm xoaTSForm = new XoaTSForm(maSanPham);
                 xoaTSForm.ShowDialog();
+                LoadProducts();
             }
             else
             {

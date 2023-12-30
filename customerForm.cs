@@ -85,6 +85,7 @@ namespace VBStore
         {
             themCustomerForm themCustomerForm = new themCustomerForm();
             themCustomerForm.ShowDialog();
+            loadCustomer();
         }
 
 
@@ -131,6 +132,7 @@ namespace VBStore
                 // Truyền mã sản phẩm vào Form XoaTSForm khi mở Form này
                 xoaCustomerForm xoaCustomerForm = new xoaCustomerForm(maKhachHang);
                 xoaCustomerForm.ShowDialog();
+                loadCustomer();
             }
             else
             {

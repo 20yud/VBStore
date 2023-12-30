@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Globalization;
 
 namespace VBStore
 {
@@ -104,6 +105,7 @@ namespace VBStore
             countDQTS();
             countDVF();
             pie_load();
+            SetupLineChart();
             countDVBb();
             countDMH();
             countDBH();
@@ -112,58 +114,140 @@ namespace VBStore
 
 
         }
-            void pie_load()
+        void pie_load()
+        {
+            DataTable dataTable = new DataTable();
+            Random rand = new Random(); // Create a Random object
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = @"
+                 SELECT
+                     CASE WHEN MALOAISANPHAM = 'LSP001' THEN N'Đá Quý'
+                          WHEN MALOAISANPHAM = 'LSP002' THEN N'Vàng'
+                          WHEN MALOAISANPHAM = 'LSP003' THEN N'Bạc'
+                          WHEN MALOAISANPHAM = 'LSP004' THEN N'Kim Cương'
+                          WHEN MALOAISANPHAM = 'LSP005' THEN N'Trang Sức'
+                     END AS ProductType,
+                     SUM(SOLUONGTON) AS TOTAL_SOLUONGTON
+                 FROM
+                     SANPHAM
+                 WHERE
+                     MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004', 'LSP005')
+                 GROUP BY
+                     CASE WHEN MALOAISANPHAM = 'LSP001' THEN N'Đá Quý'
+                          WHEN MALOAISANPHAM = 'LSP002' THEN N'Vàng'
+                          WHEN MALOAISANPHAM = 'LSP003' THEN N'Bạc'
+                          WHEN MALOAISANPHAM = 'LSP004' THEN N'Kim Cương'         
+                          WHEN MALOAISANPHAM = 'LSP005' THEN N'Trang Sức'
+                     END";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dataTable);
+                        }
+                    }
+                }
+
+                Series pieSeries = new Series("DoanhThuTheoThang_Tron");
+                pieSeries.ChartType = SeriesChartType.Pie;
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    string productType = row["ProductType"].ToString();
+                    double totalQuantity = Convert.ToDouble(row["TOTAL_SOLUONGTON"]);
+
+                    DataPoint dataPoint = pieSeries.Points.Add(totalQuantity);
+                    dataPoint.LegendText = $"{productType}";
+
+                    // Tùy chỉnh màu sắc cho từng phần tử Pie
+                    dataPoint.Color = Color.FromArgb(255, rand.Next(256), rand.Next(256), rand.Next(256));
+                }
+
+                ChartBDT.Series.Add(pieSeries);
+                ChartBDT.Titles.Add("\tBiểu Đồ Số Lượng Thống Kê Số Lượng Tồn Kho");
+
+                // In đậm title
+                ChartBDT.Titles[0].Font = new Font("Arial", 12, FontStyle.Bold);
+
+                // In đậm chú thích
+                ChartBDT.Legends[0].Font = new Font("Arial", 10, FontStyle.Bold);
+
+                pieSeries.BorderWidth = 2;
+                pieSeries.BorderColor = Color.WhiteSmoke;
+                pieSeries.ShadowOffset = 2;
+
+                // Set the background color to transparent
+                ChartBDT.BackColor = Color.Transparent;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void SetupLineChart()
+        {
+            try
             {
                 DataTable dataTable = new DataTable();
 
-                try
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    string query = @"
+        SELECT
+            BC.NGAYLAPBAOCAO AS [ngày],
+            SUM(BC.SOLUONGMUAVAO * SP.DONGIAMUA) AS [tổng số tiền mua vào],
+            SUM(BC.SOLUONGBANRA * SP.DONGIABAN) AS [tổng số tiền bán ra]
+        FROM
+            BAOCAOTON BC
+        JOIN
+            SANPHAM SP ON BC.MASANPHAM = SP.MASANPHAM
+        WHERE
+            BC.NGAYLAPBAOCAO BETWEEN DATEADD(DAY, -8    , GETDATE()) AND GETDATE()
+        GROUP BY
+            BC.NGAYLAPBAOCAO
+        ORDER BY
+            BC.NGAYLAPBAOCAO";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        connection.Open();
-
-                        string query = @"
-                            SELECT
-                                CASE WHEN MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004') THEN N'Đá Quý'
-                                     WHEN MALOAISANPHAM = 'LSP005' THEN N'Trang Sức'
-                                END AS ProductType,
-                                SUM(SOLUONGTON) AS TOTAL_SOLUONGTON
-                            FROM
-                                SANPHAM
-                            WHERE
-                                MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004', 'LSP005')
-                            GROUP BY
-                                CASE WHEN MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004') THEN N'Đá Quý'
-                                     WHEN MALOAISANPHAM = 'LSP005' THEN N'Trang Sức'
-                                END";
-
-                        using (SqlCommand command = new SqlCommand(query, connection))
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
-                            using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                            {
-                                adapter.Fill(dataTable);
-                            }
+                            adapter.Fill(dataTable);
                         }
                     }
-
-                    Series pieSeries = new Series("DoanhThuTheoThang_Tron");
-                    pieSeries.ChartType = SeriesChartType.Pie;
-
-                    foreach (DataRow row in dataTable.Rows)
-                    {
-                        string productType = row["ProductType"].ToString();
-                        double totalQuantity = Convert.ToDouble(row["TOTAL_SOLUONGTON"]);
-
-                        pieSeries.Points.AddXY(productType, totalQuantity);
-                    }
-
-                    ChartBDT.Series.Add(pieSeries);
                 }
-                catch (Exception ex)
+
+                chart1.Titles.Add("Biểu đồ thống kê");
+
+                // Định dạng trục x để chỉ hiển thị phần ngày
+                chart1.ChartAreas[0].AxisX.LabelStyle.Format = "dd/MM/yyyy";
+                chart1.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+                chart1.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                // Thêm dữ liệu từ dataTable vào biểu đồ
+                foreach (DataRow row in dataTable.Rows)
                 {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string ngayString = row["ngày"].ToString();
+                    DateTime ngay = DateTime.Parse(ngayString);
+                    double tongTienMuaVao = Convert.ToDouble(row["tổng số tiền mua vào"]);
+                    double tongTienBanRa = Convert.ToDouble(row["tổng số tiền bán ra"]);
+
+                    chart1.Series["Tổng số tiền mua vào"].Points.AddXY(ngay, tongTienMuaVao);
+                    chart1.Series["Tổng số tiền bán ra"].Points.AddXY(ngay, tongTienBanRa);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         void coutnKH()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -446,6 +530,13 @@ namespace VBStore
                     }
                 }
             }
+        }
+
+        private void guna2CustomGradientPanel8_Click(object sender, EventArgs e)
+        {
+            bctonForm dbhform = new bctonForm();
+            OpenChildFrom(dbhform);
+            backBtn.Visible = true;
         }
     }
 }

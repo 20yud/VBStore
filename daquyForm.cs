@@ -204,6 +204,7 @@ namespace VBStore
         {
             themDQFrom themDQ = new themDQFrom();
             themDQ.ShowDialog();
+            LoadProducts();
         }
 
         private void detailBtn_Click_1(object sender, EventArgs e)
@@ -213,6 +214,7 @@ namespace VBStore
                 string maSanPham = guna2DataGridView1.SelectedRows[0].Cells["Mã sản phẩm"].Value.ToString();
                 chitietDQForm chiTietForm = new chitietDQForm(maSanPham);
                 chiTietForm.ShowDialog();
+                LoadProducts();
             }
             else
             {
@@ -245,6 +247,7 @@ namespace VBStore
                 // Truyền mã sản phẩm vào Form XoaTSForm khi mở Form này
                 xoaDQForm xoaTSForm = new xoaDQForm(maSanPham);
                 xoaTSForm.ShowDialog();
+                LoadProducts();
             }
             else
             {

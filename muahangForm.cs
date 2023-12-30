@@ -160,6 +160,11 @@ namespace VBStore
 
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
+            if (dtGioHang.Rows.Count == 0)
+            {
+                MessageBox.Show("Giỏ hàng đang trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             xacnhanmuaForm thanhToanForm = new xacnhanmuaForm(sdt);
 
             // Gán giỏ hàng từ muahangForm sang thanhtoanForm
@@ -324,6 +329,39 @@ namespace VBStore
 
             // Bắt đầu lại Timer1 để tiếp tục đọc mã QR
             timer1.Start();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu không có dòng nào trong dtGioHang thì hiển thị thông báo
+            if (dtGioHang.Rows.Count == 0)
+            {
+                MessageBox.Show("Giỏ hàng đang trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Lấy dòng được chọn trong DataGridView dgvGioHang
+            if (dgvGioHang.SelectedRows.Count > 0)
+            {
+                // Lấy chỉ số của dòng được chọn
+                int selectedIndex = dgvGioHang.SelectedRows[0].Index;
+
+                // Xóa dòng được chọn khỏi DataTable dtGioHang
+                dtGioHang.Rows.RemoveAt(selectedIndex);
+
+                // Tính lại tổng tiền sau khi xóa
+                decimal tongTien = 0;
+                foreach (DataRow row in dtGioHang.Rows)
+                {
+                    tongTien += Convert.ToDecimal(row["THANHTIEN"]);
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm từ giỏ hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

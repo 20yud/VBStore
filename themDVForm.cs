@@ -41,19 +41,53 @@ namespace VBStore
         }
 
         private void createBtn_Click(object sender, EventArgs e)
-        {
-            // Lấy thông tin từ các controls trên form
+        {// Lấy thông tin từ các controls trên form
             string maDV = txtMaDV.Text;
             string tenDV = txtTenDV.Text;
-            decimal donGia = decimal.Parse(txtDonGia.Text);
+            string donGiaText = txtDonGia.Text;
+            if (!decimal.TryParse(donGiaText, out decimal donGia))
+            {
+                // Nếu không thể chuyển đổi thành số decimal, hiển thị thông báo lỗi và không thực hiện thêm dịch vụ
+                MessageBox.Show("Đơn giá không hợp lệ. Vui lòng nhập một số hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Không thực hiện thêm dịch vụ
+            }
 
             // Thực hiện kiểm tra dữ liệu đầu vào nếu cần
+
+            // Kiểm tra xem có nhập đầy đủ thông tin hay không
+            if (string.IsNullOrWhiteSpace(maDV) || string.IsNullOrWhiteSpace(tenDV) || donGia <= 0)
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin dịch vụ và đảm bảo giá trị đơn giá lớn hơn 0.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện thêm dịch vụ
+            }
+
+            // Kiểm tra xem mã dịch vụ có bắt đầu bằng "DV" hay không
+            if (!maDV.StartsWith("DV"))
+            {
+                MessageBox.Show("Mã dịch vụ phải bắt đầu bằng 'DV'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện thêm dịch vụ
+            }
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+
+                    // Kiểm tra xem mã dịch vụ đã tồn tại trong cơ sở dữ liệu hay chưa
+                    string checkMaDVQuery = "SELECT COUNT(*) FROM DICHVU WHERE MALOAIDICHVU = @MaDV";
+                    using (SqlCommand checkMaDVCommand = new SqlCommand(checkMaDVQuery, connection))
+                    {
+                        checkMaDVCommand.Parameters.AddWithValue("@MaDV", maDV);
+
+                        int existingCount = (int)checkMaDVCommand.ExecuteScalar();
+
+                        if (existingCount > 0)
+                        {
+                            MessageBox.Show("Mã dịch vụ đã tồn tại trong cơ sở dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return; // Không thực hiện thêm dịch vụ
+                        }
+                    }
 
                     // Câu lệnh SQL để thêm dịch vụ
                     string query = "INSERT INTO DICHVU (MALOAIDICHVU, TENDICHVU, DONGIA) " +

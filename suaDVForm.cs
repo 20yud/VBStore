@@ -80,7 +80,11 @@ namespace VBStore
                         command.Parameters.AddWithValue("@MaLoaiDV", txtMaDV.Text);
 
                         int rowsAffected = command.ExecuteNonQuery();
-
+                        if (!decimal.TryParse(txtDonGia.Text, out decimal donGia))
+                        {
+                            MessageBox.Show("Đơn giá phải là một số hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return; // Không tiếp tục nếu đơn giá không hợp lệ
+                        }
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Sửa thông tin dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

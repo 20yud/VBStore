@@ -54,9 +54,19 @@ namespace VBStore
         {
             string maSP = txtMaSP.Text;
             string tenSP = txtTenSP.Text;
+            string donGiaBanText = txtDonGiaBan.Text;
+            string donGiaMuaText = txtDonGiaMua.Text;
+            string soLuongTonText = txtSoLuongTon.Text;
+
+            if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(tenSP) || string.IsNullOrWhiteSpace(donGiaBanText) || string.IsNullOrWhiteSpace(donGiaMuaText) || string.IsNullOrWhiteSpace(soLuongTonText))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện thêm sản phẩm
+            }
+            
 
             // Check if an item is selected in the ComboBox cmbLoaiSP
-            if (cmbLoaiSP.SelectedItem != null)
+            if (cmbLoaiSP.SelectedIndex == 4)
             {
                 string maLoaiSP = ((LoaiSanPhamItem)cmbLoaiSP.SelectedItem).MaLoai;
                 decimal dongiaBan = decimal.Parse(txtDonGiaBan.Text);
@@ -71,7 +81,20 @@ namespace VBStore
 
                         string query = "INSERT INTO SANPHAM (MASANPHAM, TENSP, MALOAISANPHAM, DONGIABAN, DONGIAMUA, SOLUONGTON, MAQR) " +
                                        "VALUES (@MaSP, @TenSP, @MaLoaiSP, @DonGiaBan, @DonGiaMua, @SoLuongTon, @MaQR)";
+                        string checkMaSPQuery = "SELECT COUNT(*) FROM SANPHAM WHERE MASANPHAM = @MaSP";
+                        using (SqlCommand checkMaSPCommand = new SqlCommand(checkMaSPQuery, connection))
+                        {
+                            checkMaSPCommand.Parameters.AddWithValue("@MaSP", maSP);
 
+                            int existingCount = (int)checkMaSPCommand.ExecuteScalar();
+
+                            if (existingCount > 0)
+                            {
+                                MessageBox.Show("Mã sản phẩm đã tồn tại trong cơ sở dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return; // Không thực hiện thêm sản phẩm
+                            }
+
+                        }
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
                             command.Parameters.AddWithValue("@MaSP", maSP);
@@ -136,7 +159,7 @@ namespace VBStore
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn loại sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn loại sản phẩm phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

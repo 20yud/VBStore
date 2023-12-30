@@ -130,3 +130,6 @@ C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.capnhapdvForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dmhForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.dbhForm.resources
 C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.bctonForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.thembtcForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.suabtcForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.xoabctForm.resources

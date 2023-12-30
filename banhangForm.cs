@@ -192,6 +192,11 @@ namespace VBStore
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
+            if (dtGioHang.Rows.Count == 0)
+            {
+                MessageBox.Show("Giỏ hàng đang trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             // Truyền dữ liệu từ dtGioHang sang xacnhanbanForm
             xacnhanbanForm xacNhanBanForm = new xacnhanbanForm(sdt);
             xacNhanBanForm.GioHangThanhToan = dtGioHang.Copy(); // Copy dữ liệu từ dtGioHang sang GioHangData của xacnhanbanForm
@@ -207,6 +212,40 @@ namespace VBStore
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra nếu không có dòng nào trong dtGioHang thì hiển thị thông báo
+            if (dtGioHang.Rows.Count == 0)
+            {
+                MessageBox.Show("Giỏ hàng đang trống.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Lấy dòng được chọn trong DataGridView dtgh
+            if (dtgh.SelectedRows.Count > 0)
+            {
+                // Lấy chỉ số của dòng được chọn
+                int selectedIndex = dtgh.SelectedRows[0].Index;
+
+                // Xóa dòng được chọn khỏi DataTable dtGioHang
+                dtGioHang.Rows.RemoveAt(selectedIndex);
+
+                // Tính lại tổng tiền sau khi xóa
+                tongTien = 0;
+                foreach (DataRow row in dtGioHang.Rows)
+                {
+                    tongTien += Convert.ToDecimal(row["THANHTIEN"]);
+                }
+
+                // Cập nhật hiển thị tổng tiền
+                tongtienlb.Text = "Tổng tiền: " + tongTien.ToString("N0") + " VNĐ";
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm từ giỏ hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
