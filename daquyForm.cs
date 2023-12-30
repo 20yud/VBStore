@@ -94,53 +94,7 @@ namespace VBStore
         
         private void findTextBox_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
 
-                    // Dynamically adjust the SQL query based on the entered text
-                    string query = "SELECT SANPHAM.MASANPHAM AS 'Mã sản phẩm', " +
-                                   "TENSP AS 'Tên sản phẩm', " +
-                                   "DONGIABAN AS 'Đơn giá bán', " +
-                                   "DONGIAMUA AS 'Đơn giá mua', " +
-                                   "SOLUONGTON AS 'Số lượng tồn' " +
-                                   "FROM SANPHAM INNER JOIN LOAISANPHAM ON SANPHAM.MALOAISANPHAM = LOAISANPHAM.MALOAISANPHAM " +
-                                   "WHERE SANPHAM.MALOAISANPHAM IN ('LSP001', 'LSP002', 'LSP003', 'LSP004')";
-
-                    // Check if the findTextBox is not empty
-                    if (!string.IsNullOrEmpty(findTextBox.Text))
-                    {
-                        // Add a condition to filter based on the product name
-                        query += $" AND TENSP LIKE '%{findTextBox.Text}%'";
-                    }
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                        {
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-                            guna2DataGridView1.DataSource = dataTable;
-
-                            // Set column headers as before
-                            if (guna2DataGridView1.Columns.Count >= 5)
-                            {
-                                guna2DataGridView1.Columns[0].HeaderText = "Mã sản phẩm";
-                                guna2DataGridView1.Columns[1].HeaderText = "Tên sản phẩm";
-                                guna2DataGridView1.Columns[2].HeaderText = "Đơn giá bán";
-                                guna2DataGridView1.Columns[3].HeaderText = "Đơn giá mua";
-                                guna2DataGridView1.Columns[4].HeaderText = "Số lượng tồn";
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
         private void btnQR_Click(object sender, EventArgs e)
         {

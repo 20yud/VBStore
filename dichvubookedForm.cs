@@ -90,7 +90,7 @@ namespace VBStore
                                    "CT_PHIEUDICHVU.MALOAIDICHVU, CT_PHIEUDICHVU.DONGIADICHVU, " +
                                    "CT_PHIEUDICHVU.DONGIADUOCTINH, CT_PHIEUDICHVU.SOLUONG, " +
                                    "CT_PHIEUDICHVU.THANHTIEN, CT_PHIEUDICHVU.TRATRUOC, " +
-                                   "CT_PHIEUDICHVU.CONLAI, CT_PHIEUDICHVU.NGAYGIAO" +
+                                   "CT_PHIEUDICHVU.CONLAI, CT_PHIEUDICHVU.NGAYGIAO " +
                                    "FROM PHIEUDICHVU " +
                                    "INNER JOIN CT_PHIEUDICHVU ON PHIEUDICHVU.SOPHIEUDICHVU = CT_PHIEUDICHVU.SOPHIEUDICHVU";
 
