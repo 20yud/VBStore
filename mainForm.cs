@@ -81,7 +81,7 @@ namespace VBStore
                         findcusForm cusForm = new findcusForm(sdt);
                         OpenChildFrom(cusForm);
                         backBtn.Visible = true;
-                        titlelabel.Text = "Thông tin khách hàng";
+                        titlelabel.Text = "Thao tác trên khách hàng";
 
                     }
                     else
@@ -456,6 +456,7 @@ namespace VBStore
             dichvubookedForm dichvubookedForm = new dichvubookedForm();
             OpenChildFrom(dichvubookedForm); 
             backBtn.Visible = true;
+            titlelabel.Text = "Dịch vụ đã đặt";
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -473,6 +474,7 @@ namespace VBStore
             dmhForm dmhform = new dmhForm();
             OpenChildFrom(dmhform);
             backBtn.Visible = true;
+            titlelabel.Text = "Đã mua hàng";
         }
 
         private void guna2CustomGradientPanel5_Paint(object sender, PaintEventArgs e)
@@ -485,6 +487,7 @@ namespace VBStore
             dbhForm dbhform = new dbhForm();
             OpenChildFrom(dbhform);
             backBtn.Visible = true;
+            titlelabel.Text = "Đã bán hàng";
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

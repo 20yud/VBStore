@@ -10,6 +10,7 @@ namespace VBStore
         private string maLoaiDV;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+
         public xoaDVForm(string maDV)
         {
             InitializeComponent();
@@ -62,19 +63,19 @@ namespace VBStore
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa dịch vụ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                if (DeleteProduct(maLoaiDV))
+                if (DeleteService(maLoaiDV))
                 {
                     MessageBox.Show("Xóa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Đóng Form XoaTSForm sau khi xóa thành công
+                    this.Close(); // Đóng Form xoaDVForm sau khi xóa thành công
                 }
                 else
                 {
-                    // Không cần hiển thị thông báo ở đây, vì thông báo đã được xử lý trong hàm DeleteProduct
+                    // Không cần hiển thị thông báo ở đây, vì thông báo đã được xử lý trong hàm DeleteService
                 }
             }
         }
 
-        private bool DeleteProduct(string maLoaiDV)
+        private bool DeleteService(string maLoaiDV)
         {
             try
             {

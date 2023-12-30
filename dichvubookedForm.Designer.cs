@@ -33,16 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.findTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.updateBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.findTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.detailBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -64,6 +63,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(999, 57);
             this.panel1.TabIndex = 14;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.findTextBox);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(375, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(624, 57);
+            this.panel4.TabIndex = 0;
+            // 
+            // findTextBox
+            // 
+            this.findTextBox.BorderRadius = 20;
+            this.findTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.findTextBox.DefaultText = "";
+            this.findTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.findTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.findTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.findTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.findTextBox.Location = new System.Drawing.Point(247, 9);
+            this.findTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.findTextBox.Name = "findTextBox";
+            this.findTextBox.PasswordChar = '\0';
+            this.findTextBox.PlaceholderText = "Số phiếu dịch vụ";
+            this.findTextBox.SelectedText = "";
+            this.findTextBox.Size = new System.Drawing.Size(364, 44);
+            this.findTextBox.TabIndex = 15;
+            this.findTextBox.TextChanged += new System.EventHandler(this.findTextBox_TextChanged);
             // 
             // panel3
             // 
@@ -147,53 +177,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.findTextBox);
-            this.panel4.Controls.Add(this.detailBtn);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(375, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(624, 57);
-            this.panel4.TabIndex = 0;
-            // 
-            // findTextBox
-            // 
-            this.findTextBox.BorderRadius = 20;
-            this.findTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.findTextBox.DefaultText = "";
-            this.findTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.findTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.findTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.findTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.findTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.findTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.findTextBox.Location = new System.Drawing.Point(247, 9);
-            this.findTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.findTextBox.Name = "findTextBox";
-            this.findTextBox.PasswordChar = '\0';
-            this.findTextBox.PlaceholderText = "Số phiếu dịch vụ";
-            this.findTextBox.SelectedText = "";
-            this.findTextBox.Size = new System.Drawing.Size(364, 44);
-            this.findTextBox.TabIndex = 15;
-            this.findTextBox.TextChanged += new System.EventHandler(this.findTextBox_TextChanged);
-            // 
-            // detailBtn
-            // 
-            this.detailBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.detailBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.detailBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.detailBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.detailBtn.FillColor = System.Drawing.Color.Gray;
-            this.detailBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.detailBtn.ForeColor = System.Drawing.Color.White;
-            this.detailBtn.Location = new System.Drawing.Point(92, 12);
-            this.detailBtn.Name = "detailBtn";
-            this.detailBtn.Size = new System.Drawing.Size(104, 32);
-            this.detailBtn.TabIndex = 14;
-            this.detailBtn.Text = "XEM";
-            // 
             // dichvubookedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,9 +190,9 @@
             this.Name = "dichvubookedForm";
             this.Text = "dichvubookedForm";
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -223,6 +206,5 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2TextBox findTextBox;
-        private Guna.UI2.WinForms.Guna2Button detailBtn;
     }
 }
