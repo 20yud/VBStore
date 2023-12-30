@@ -50,6 +50,9 @@
     <Reference Include="BarcodeLib">
       <HintPath>..\..\test\BarCode-QRCode\BarcodeLib.dll</HintPath>
     </Reference>
+    <Reference Include="CloudinaryDotNet, Version=1.24.0.0, Culture=neutral, PublicKeyToken=c8234dc617ae7841, processorArchitecture=MSIL">
+      <HintPath>packages\CloudinaryDotNet.1.24.0\lib\net452\CloudinaryDotNet.dll</HintPath>
+    </Reference>
     <Reference Include="Emgu.CV">
       <HintPath>..\..\test\Camera\Emgu.CV.dll</HintPath>
     </Reference>
@@ -95,8 +98,16 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
-    <Reference Include="QRCoder">
-      <HintPath>..\..\test\BarCode-QRCode\QRCoder.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCodeDecoderLibrary, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\QRCodeDecoderLibrary.2.0.1\lib\net462\QRCodeDecoderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -192,6 +203,11 @@
     <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -200,6 +216,7 @@
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -217,11 +234,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="banhangForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="banhangForm.Designer.cs">
+      <DependentUpon>banhangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bctonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bctonForm.Designer.cs">
+      <DependentUpon>bctonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="capnhapdvForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="capnhapdvForm.Designer.cs">
+      <DependentUpon>capnhapdvForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildFormUtility.cs" />
+    <Compile Include="chitietCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chitietCustomerForm.designer.cs">
+      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="chitietDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="chitietDQForm.Designer.cs">
       <DependentUpon>chitietDQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chitietDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chitietDVForm.designer.cs">
+      <DependentUpon>chitietDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="chitietTSForm.cs">
       <SubType>Form</SubType>
@@ -242,6 +290,42 @@
       <DependentUpon>daquyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dbhelper.cs" />
+    <Compile Include="dbhForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dbhForm.Designer.cs">
+      <DependentUpon>dbhForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dichvubookedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dichvubookedForm.Designer.cs">
+      <DependentUpon>dichvubookedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dichvuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dichvuForm.designer.cs">
+      <DependentUpon>dichvuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dmhForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dmhForm.Designer.cs">
+      <DependentUpon>dmhForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dungDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dungDVForm.Designer.cs">
+      <DependentUpon>dungDVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="findcusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="findcusForm.Designer.cs">
+      <DependentUpon>findcusForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,17 +346,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="qrcodeForm.cs">
+    <Compile Include="suabtcForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="qrcodeForm.Designer.cs">
-      <DependentUpon>qrcodeForm.cs</DependentUpon>
+    <Compile Include="suabtcForm.Designer.cs">
+      <DependentUpon>suabtcForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="suaCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suaCustomerForm.designer.cs">
+      <DependentUpon>suaCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="suaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="suaDQForm.Designer.cs">
       <DependentUpon>suaDQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="suaDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="suaDVForm.designer.cs">
+      <DependentUpon>suaDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SuaTSForm.cs">
       <SubType>Form</SubType>
@@ -286,11 +382,29 @@
     <Compile Include="thanhtoanForm.Designer.cs">
       <DependentUpon>thanhtoanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="thembtcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thembtcForm.Designer.cs">
+      <DependentUpon>thembtcForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="themCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themCustomerForm.designer.cs">
+      <DependentUpon>themCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="themDQFrom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="themDQFrom.Designer.cs">
       <DependentUpon>themDQFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="themDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themDVForm.designer.cs">
+      <DependentUpon>themDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="themTSForm.cs">
       <SubType>Form</SubType>
@@ -304,11 +418,47 @@
     <Compile Include="trangsucForm.Designer.cs">
       <DependentUpon>trangsucForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="xacnhanbanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xacnhanbanForm.Designer.cs">
+      <DependentUpon>xacnhanbanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xacnhanDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xacnhanDVForm.Designer.cs">
+      <DependentUpon>xacnhanDVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xacnhanmuaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xacnhanmuaForm.Designer.cs">
+      <DependentUpon>xacnhanmuaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xoabctForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xoabctForm.Designer.cs">
+      <DependentUpon>xoabctForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xoaCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xoaCustomerForm.designer.cs">
+      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="xoaDQForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="xoaDQForm.Designer.cs">
       <DependentUpon>xoaDQForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xoaDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xoaDVForm.designer.cs">
+      <DependentUpon>xoaDVForm.cs</DependentUpon>
     </Compile>
     <Compile Include="XoaTSForm.cs">
       <SubType>Form</SubType>
@@ -316,8 +466,23 @@
     <Compile Include="XoaTSForm.Designer.cs">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="banhangForm.resx">
+      <DependentUpon>banhangForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bctonForm.resx">
+      <DependentUpon>bctonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="capnhapdvForm.resx">
+      <DependentUpon>capnhapdvForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chitietCustomerForm.resx">
+      <DependentUpon>chitietCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chitietDQForm.resx">
       <DependentUpon>chitietDQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chitietDVForm.resx">
+      <DependentUpon>chitietDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="chitietTSForm.resx">
       <DependentUpon>chitietTSForm.cs</DependentUpon>
@@ -327,6 +492,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="daquyForm.resx">
       <DependentUpon>daquyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dbhForm.resx">
+      <DependentUpon>dbhForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dichvubookedForm.resx">
+      <DependentUpon>dichvubookedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dichvuForm.resx">
+      <DependentUpon>dichvuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dmhForm.resx">
+      <DependentUpon>dmhForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dungDVForm.resx">
+      <DependentUpon>dungDVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="findcusForm.resx">
+      <DependentUpon>findcusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
@@ -345,12 +528,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="qrcodeForm.resx">
-      <DependentUpon>qrcodeForm.cs</DependentUpon>
+    <EmbeddedResource Include="suabtcForm.resx">
+      <DependentUpon>suabtcForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suaCustomerForm.resx">
+      <DependentUpon>suaCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="suaDQForm.resx">
       <DependentUpon>suaDQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="suaDVForm.resx">
+      <DependentUpon>suaDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuaTSForm.resx">
       <DependentUpon>SuaTSForm.cs</DependentUpon>
@@ -358,8 +548,17 @@
     <EmbeddedResource Include="thanhtoanForm.resx">
       <DependentUpon>thanhtoanForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="thembtcForm.resx">
+      <DependentUpon>thembtcForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="themCustomerForm.resx">
+      <DependentUpon>themCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="themDQFrom.resx">
       <DependentUpon>themDQFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="themDVForm.resx">
+      <DependentUpon>themDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="themTSForm.resx">
       <DependentUpon>themTSForm.cs</DependentUpon>
@@ -367,8 +566,26 @@
     <EmbeddedResource Include="trangsucForm.resx">
       <DependentUpon>trangsucForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="xacnhanbanForm.resx">
+      <DependentUpon>xacnhanbanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xacnhanDVForm.resx">
+      <DependentUpon>xacnhanDVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xacnhanmuaForm.resx">
+      <DependentUpon>xacnhanmuaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xoabctForm.resx">
+      <DependentUpon>xoabctForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xoaCustomerForm.resx">
+      <DependentUpon>xoaCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xoaDQForm.resx">
       <DependentUpon>xoaDQForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xoaDVForm.resx">
+      <DependentUpon>xoaDVForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XoaTSForm.resx">
       <DependentUpon>XoaTSForm.cs</DependentUpon>
@@ -400,25 +617,33 @@
     <Content Include="images\assets\61630_i_icon.png" />
     <Content Include="images\assets\7390270_digital_payment_transfer_finance_dollar_icon.png" />
     <Content Include="images\assets\8680185_notification_fill_icon.png" />
+    <Content Include="images\assets\9004860_arrow_direction_left_back_icon %281%29.png" />
     <Content Include="images\assets\9004860_arrow_direction_left_back_icon.png" />
     <Content Include="images\assets\9042869_phone_icon.png" />
     <Content Include="images\assets\9104276_scan_barcode_qr_qr code_scanner_icon.png" />
     <Content Include="images\assets\9165585_zoom_out_1_icon.png" />
     <Content Include="images\assets\Banking and Finance Trade Show Banner in Orange Pastel Purple Dynamic Illustrative Style.png" />
+    <Content Include="images\assets\hotel.png" />
     <Content Include="images\assets\icons8-arrow-30.png" />
     <Content Include="images\assets\icons8-contact-100.png" />
     <Content Include="images\assets\icons8-coupon-100.png" />
     <Content Include="images\assets\icons8-crest-65.png" />
     <Content Include="images\assets\icons8-gem-100.png" />
+    <Content Include="images\assets\icons8-receipt-and-change-50.png" />
+    <Content Include="images\assets\icons8-sell-50.png" />
     <Content Include="images\assets\icons8-service-100.png" />
+    <Content Include="images\assets\icons8-service-64.png" />
     <Content Include="images\assets\icons8-user-100.png" />
     <Content Include="images\assets\Untitled.png" />
     <Content Include="images\assets\user.png" />
+    <Content Include="images\ico\ring_love_diamond_icon-icons.com_51094.ico" />
     <Content Include="images\poster\Brown and Gold Elegant Jewelry %28Poster%29.png" />
     <Content Include="images\poster\Jewelry Poster .png" />
     <Content Include="images\V %281%29.png" />
     <Content Include="images\V.png" />
     <Content Include="images\White Gold Elegant Jewellery %28Instagram Story%29.png" />
+    <Content Include="plus_button_icon.png" />
+    <None Include="Resources\plus_button_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

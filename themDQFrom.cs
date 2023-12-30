@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using QRCoder;
 
 namespace VBStore
 {
@@ -58,10 +61,23 @@ namespace VBStore
         {
             string maSP = txtMaSP.Text;
             string tenSP = txtTenSP.Text;
+            string donGiaBanText = txtDonGiaBan.Text;
+            string donGiaMuaText = txtDonGiaMua.Text;
+            string soLuongTonText = txtSoLuongTon.Text;
 
-            // Check if an item is selected in the ComboBox cmbLoaiSP
-            if (cmbLoaiSP.SelectedItem != null)
+            if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(tenSP) || string.IsNullOrWhiteSpace(donGiaBanText) || string.IsNullOrWhiteSpace(donGiaMuaText) || string.IsNullOrWhiteSpace(soLuongTonText))
             {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện thêm sản phẩm
+            }
+            // Check if an item is selected in the ComboBox cmbLoaiSP
+            if (cmbLoaiSP.SelectedIndex == 4)
+            {
+                MessageBox.Show("Vui lòng chọn loại sản phẩm phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                
                 string maLoaiSP = ((LoaiSanPhamItem)cmbLoaiSP.SelectedItem).MaLoai;
                 decimal dongiaBan = decimal.Parse(txtDonGiaBan.Text);
                 decimal dongiaMua = decimal.Parse(txtDonGiaMua.Text);
@@ -73,8 +89,22 @@ namespace VBStore
                     {
                         connection.Open();
 
-                        string query = "INSERT INTO SANPHAM (MASANPHAM, TENSP, MALOAISANPHAM, DONGIABAN, DONGIAMUA, SOLUONGTON) " +
-                                       "VALUES (@MaSP, @TenSP, @MaLoaiSP, @DonGiaBan, @DonGiaMua, @SoLuongTon)";
+                        string query = "INSERT INTO SANPHAM (MASANPHAM, TENSP, MALOAISANPHAM, DONGIABAN, DONGIAMUA, SOLUONGTON, MAQR) " +
+                                       "VALUES (@MaSP, @TenSP, @MaLoaiSP, @DonGiaBan, @DonGiaMua, @SoLuongTon, @MaQR)";
+                        string checkMaSPQuery = "SELECT COUNT(*) FROM SANPHAM WHERE MASANPHAM = @MaSP";
+                        using (SqlCommand checkMaSPCommand = new SqlCommand(checkMaSPQuery, connection))
+                        {
+                            checkMaSPCommand.Parameters.AddWithValue("@MaSP", maSP);
+
+                            int existingCount = (int)checkMaSPCommand.ExecuteScalar();
+
+                            if (existingCount > 0)
+                            {
+                                MessageBox.Show("Mã sản phẩm đã tồn tại trong cơ sở dữ liệu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return; // Không thực hiện thêm sản phẩm
+                            }
+
+                        }
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
@@ -85,17 +115,50 @@ namespace VBStore
                             command.Parameters.AddWithValue("@DonGiaMua", dongiaMua);
                             command.Parameters.AddWithValue("@SoLuongTon", soLuongTon);
 
-                            int rowsAffected = command.ExecuteNonQuery();
+                            // Tạo mã QR
+                            string qrCodect = maSP; // Mã SP dùng làm nội dung mã QR
+                            string qrFileName = qrCodect + ".png"; // Tên file mã QR
 
-                            if (rowsAffected > 0)
+                            // Tạo đường dẫn lưu tạm file mã QR
+                            string qrFilePath = Path.Combine(Path.GetTempPath(), qrFileName);
+
+                            // Tạo mã QR và lưu thành file ảnh
+                            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                            QRCodeData qrCodeData = qrGenerator.CreateQrCode(qrCodect, QRCodeGenerator.ECCLevel.Q);
+                            QRCode qrCode = new QRCode(qrCodeData);
+                            Bitmap qrImage = qrCode.GetGraphic(10);
+                            qrImage.Save(qrFilePath, System.Drawing.Imaging.ImageFormat.Png);
+
+                            // Tải ảnh lên Cloudinary
+                            Account cloudinaryAccount = new Account("deayc8fkw", "587612639861316", "x7CCykyQrvK58ZI9J9-67J_4A8E"); // Thay thế bằng thông tin tài khoản Cloudinary của bạn
+                            Cloudinary cloudinary = new Cloudinary(cloudinaryAccount);
+
+                            var uploadParams = new ImageUploadParams()
                             {
-                                MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                // Đóng Form khi thêm thành công (tùy theo yêu cầu của bạn)
-                                this.Close();
-                            }
-                            else
+                                File = new FileDescription(qrFilePath),
+                                PublicId = "VBStore/" + qrCodect, // Tên public ID của ảnh trên Cloudinary
+                            };
+
+                            var uploadResult = cloudinary.Upload(uploadParams);
+
+                            if (uploadResult != null)
                             {
-                                MessageBox.Show("Thêm sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                string qrImageUrl = uploadResult.SecureUri.ToString();
+
+                                command.Parameters.AddWithValue("@MaQR", qrImageUrl);
+
+                                int rowsAffected = command.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    // Đóng Form khi thêm thành công (tùy theo yêu cầu của bạn)
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Thêm sản phẩm thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                     }
@@ -104,10 +167,6 @@ namespace VBStore
                 {
                     MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn loại sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

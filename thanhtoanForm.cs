@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Drawing.Printing;
+using System.Transactions;
 
 namespace VBStore
 {
@@ -18,6 +20,9 @@ namespace VBStore
         private string sdt;
         private string tenKH;
         private DataTable dtGioHangThanhToan;
+        private string makh;
+        private decimal thanhtien;
+        private string sophieuBanHang;
 
         public DataTable GioHangThanhToan
         {
@@ -27,15 +32,17 @@ namespace VBStore
         public thanhtoanForm()
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
         }
         public thanhtoanForm(string sdt, string tenkh)
         {
             InitializeComponent();
+            connectionString = dbHelper.ConnectionString;
             this.sdt = sdt;
             this.tenKH = tenkh;
             tenkhlabel.Text = tenKH;
             sdtlabel.Text = sdt;
-            connectionString = dbHelper.ConnectionString;
+            
         }
 
         protected override void OnLoad(EventArgs e)
@@ -52,94 +59,105 @@ namespace VBStore
 
         private void btnDaThanhToan_Click(object sender, EventArgs e)
         {
-           
-        }
-        private string GenerateNewMaPhieuBanHangMain()
-        {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
+                SqlTransaction transaction = connection.BeginTransaction();
+                bool phieuBanHangCreated = false;
 
-                // Determine the maximum invoice number
-                string query = "SELECT MAX(CAST(SUBSTRING(SOPHIEUBANHANG, 4, LEN(SOPHIEUBANHANG)) AS INT)) FROM PHIEUBANHANG";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                try
                 {
-                    object result = command.ExecuteScalar();
-                    int maxNumber = (result != DBNull.Value) ? Convert.ToInt32(result) : 0;
+                    if (GioHangThanhToan != null)
+                    {
+                        SqlCommand getMAKHCommand = new SqlCommand("SELECT MAKHACHHANG FROM KHACHHANG WHERE SDT = @SDT", connection, transaction);
+                        getMAKHCommand.Parameters.AddWithValue("@SDT", sdt);
+                        makh = getMAKHCommand.ExecuteScalar() as string;
 
-                    // Increment the maximum number and create the new invoice ID
-                    int newNumber = maxNumber + 1;
-                    string newInvoiceID = $"PBH{newNumber:D6}";
+                        // Insert a new PHIEUBANHANG record
+                        SqlCommand insertPhieuBanHangCommand = new SqlCommand("SP_INSERT_PHIEUBANHANG", connection, transaction);
+                        insertPhieuBanHangCommand.CommandType = CommandType.StoredProcedure;
+                        insertPhieuBanHangCommand.Parameters.AddWithValue("@MAKHACHHANG", makh);
+                        insertPhieuBanHangCommand.Parameters.AddWithValue("@NGAYLAP", DateTime.Now.Date);
+                        insertPhieuBanHangCommand.Parameters.AddWithValue("@TONGTIEN", TinhTongTien(GioHangThanhToan));
 
-                    return newInvoiceID;
+                        // Execute the stored procedure to insert the new PHIEUBANHANG record
+                        insertPhieuBanHangCommand.ExecuteNonQuery();
+                        phieuBanHangCreated = true;
+
+                        // Get the SOPHIEUBANHANG of the newly inserted PHIEUBANHANG
+                        SqlCommand getMaxSophieuBanHangCommand = new SqlCommand("select max(sophieubanhang) from phieubanhang", connection, transaction);
+                        sophieuBanHang = getMaxSophieuBanHangCommand.ExecuteScalar().ToString();
+                    }
+
+                    if (phieuBanHangCreated)
+                    {
+                        // Gọi hàm addCT_PBH và truyền vào kết nối và giao dịch hiện tại
+                        addCT_PBH(connection, transaction);
+
+                        // Cập nhật số lượng tồn của các sản phẩm
+                        foreach (DataRow row in GioHangThanhToan.Rows)
+                        {
+                            string maSanPham = row["MASANPHAM"].ToString();
+                            int soLuongMua = Convert.ToInt32(row["SOLUONG"]);
+
+                            // Thực hiện truy vấn để cập nhật số lượng tồn
+                            SqlCommand updateSoLuongTonCommand = new SqlCommand("UPDATE SANPHAM SET SOLUONGTON = SOLUONGTON - @SoLuongMua WHERE MASANPHAM = @MaSanPham", connection, transaction);
+                            updateSoLuongTonCommand.Parameters.AddWithValue("@SoLuongMua", soLuongMua);
+                            updateSoLuongTonCommand.Parameters.AddWithValue("@MaSanPham", maSanPham);
+                            updateSoLuongTonCommand.ExecuteNonQuery();
+                        }
+                    }
+
+                    
+                    transaction.Commit();
+                    MessageBox.Show("Thanh toán thành công!");
                 }
-            }
-        }
-        private void UpdateQuantityInDatabase(SqlConnection connection, SqlTransaction transaction)
-        {
-            if (GioHangThanhToan.Columns.Contains("MASANPHAM") &&
-                GioHangThanhToan.Columns.Contains("SOLUONG"))
-            {
-                foreach (DataRow row in GioHangThanhToan.Rows)
+                catch (Exception ex)
                 {
-                    string maSanPham = row["MASANPHAM"].ToString();
-                    int soLuongBan = Convert.ToInt32(row["SOLUONG"]);
-
-                    string updateQuery = $"UPDATE SANPHAM SET SOLUONGTON = SOLUONGTON - {soLuongBan} WHERE MASANPHAM = '{maSanPham}'";
-
-                    // Use the existing connection and transaction
-                    ExecuteNonQuery(updateQuery, connection, transaction);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Columns 'MASANPHAM' and 'SOLUONG' do not exist in the DataTable.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
-        private string GetMaKHFromSDT(string sdt)
-        {
-            // Execute a query to get maKH from the database based on the provided sdt
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = $"SELECT MAKHACHHANG FROM KHACHHANG WHERE SDT = '{sdt}'";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    object result = command.ExecuteScalar();
-                    return result != null ? result.ToString() : null;
-                }
-            }
-        }
-
-        private void InsertPhieuBanHang(SqlConnection connection, SqlTransaction transaction, string maPhieuBanHang)
-        {
-            string maKH = GetMaKHFromSDT(sdt);
-
-            // Check if the record already exists
-            string checkExistQuery = $"SELECT COUNT(*) FROM PHIEUBANHANG WHERE SOPHIEUBANHANG = '{maPhieuBanHang}' AND MAKHACHHANG = '{maKH}'";
-            using (SqlCommand checkExistCommand = new SqlCommand(checkExistQuery, connection, transaction))
-            {
-                int count = Convert.ToInt32(checkExistCommand.ExecuteScalar());
-                if (count == 0)
-                {
-                    // Execute an INSERT query to add a new record to the PHIEUBANHANG table
-                    string insertQuery = $"INSERT INTO PHIEUBANHANG (SOPHIEUBANHANG, MAKHACHHANG, NGAYLAP, TONGTIEN) VALUES ('{maPhieuBanHang}', '{maKH}', GETDATE(), 0)";
-                    ExecuteNonQuery(insertQuery, connection, transaction);
+                    
+                    transaction.Rollback();
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
             }
         }
 
-        private void InsertCTPhieuBanHang(SqlConnection connection, SqlTransaction transaction, string maPhieuBanHang, string maSanPham, int soLuongBan, decimal donGiaBan, decimal thanhTien)
-        {
-            // Execute an INSERT query to add a new record to the CT_PHIEUBANHANG table
-            string insertQuery = $"INSERT INTO CT_PHIEUBANHANG (SOPHIEUBANHANG, MASANPHAM, SOLUONGBAN, DONGIABAN, THANHTIEN) " +
-                $"VALUES ('{maPhieuBanHang}', '{maSanPham}', {soLuongBan}, {donGiaBan}, {thanhTien})";
 
-            // Use the existing connection and transaction
-            ExecuteNonQuery(insertQuery, connection, transaction);
+
+        void addCT_PBH(SqlConnection connection, SqlTransaction transaction)
+        {
+            // Loop through the shopping cart items and insert them into CT_PHIEUBANHANG
+            foreach (DataRow row in GioHangThanhToan.Rows)
+            {
+                string masanpham = row["MASANPHAM"].ToString();
+                int soluongban = int.Parse(row["SOLUONG"].ToString());
+                decimal dongiaban = decimal.Parse(row["DONGIABAN"].ToString());
+                
+
+                // Insert a new CT_PHIEUBANHANG record for each product
+                SqlCommand insertCTPhieuBanHangCommand = new SqlCommand("INSERT INTO CT_PHIEUBANHANG (SOPHIEUBANHANG, MASANPHAM, SOLUONGBAN, DONGIABAN, THANHTIEN) VALUES (@SOPHIEUBANHANG, @MASANPHAM, @SOLUONGBAN, @DONGIABAN, @THANHTIEN)", connection, transaction);
+                insertCTPhieuBanHangCommand.Parameters.AddWithValue("@SOPHIEUBANHANG", sophieuBanHang);
+                insertCTPhieuBanHangCommand.Parameters.AddWithValue("@MASANPHAM", masanpham);
+                insertCTPhieuBanHangCommand.Parameters.AddWithValue("@SOLUONGBAN", soluongban);
+                insertCTPhieuBanHangCommand.Parameters.AddWithValue("@DONGIABAN", dongiaban);
+                insertCTPhieuBanHangCommand.Parameters.AddWithValue("@THANHTIEN", soluongban * dongiaban);
+
+                // Execute the command to insert the CT_PHIEUBANHANG record
+                insertCTPhieuBanHangCommand.ExecuteNonQuery();
+            }
+        }
+
+
+
+        private decimal TinhTongTien(DataTable gioHang)
+        {
+            decimal tongTien = 0;
+            foreach (DataRow row in gioHang.Rows)
+            {
+                int soluongban = int.Parse(row["SOLUONG"].ToString());
+                decimal dongiaban = decimal.Parse(row["DONGIABAN"].ToString());
+                tongTien += soluongban * dongiaban;
+            }
+            return tongTien;
         }
 
         private void ExecuteNonQuery(string query, SqlConnection connection, SqlTransaction transaction)
