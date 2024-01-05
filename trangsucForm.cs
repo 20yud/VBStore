@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Net;
+using Guna.UI2.AnimatorNS;
 
 namespace VBStore
 {
@@ -13,16 +14,29 @@ namespace VBStore
         private string sdt;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private decimal flag;
 
-        public trangsucForm()
+        public trangsucForm(decimal flag)
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
+            this.flag = flag;
         }
 
         private void trangsucForm_Load(object sender, EventArgs e)
         {
             LoadProducts(); // Gọi phương thức để load dữ liệu sản phẩm
+            role_load();
+        }
+        void role_load()
+        {
+            if (flag == 0)
+            {
+                createBtn.Visible = false;
+
+                guna2Button1.Visible = false;
+                guna2Button2.Visible = false;
+            }
         }
 
         private void LoadProducts()

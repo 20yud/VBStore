@@ -326,6 +326,12 @@
     <Compile Include="findcusForm.Designer.cs">
       <DependentUpon>findcusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="loaidichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loaidichvu.Designer.cs">
+      <DependentUpon>loaidichvu.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +349,30 @@
     </Compile>
     <Compile Include="muahangForm.Designer.cs">
       <DependentUpon>muahangForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhanvienForm.Designer.cs">
+      <DependentUpon>nhanvienForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phieuchitiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="phieuchitiet.Designer.cs">
+      <DependentUpon>phieuchitiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phieudichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="phieudichvu.Designer.cs">
+      <DependentUpon>phieudichvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phieumuahang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="phieumuahang.Designer.cs">
+      <DependentUpon>phieumuahang.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -369,6 +399,12 @@
     </Compile>
     <Compile Include="suaDVForm.designer.cs">
       <DependentUpon>suaDVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sualoaidv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sualoaidv.Designer.cs">
+      <DependentUpon>sualoaidv.cs</DependentUpon>
     </Compile>
     <Compile Include="SuaTSForm.cs">
       <SubType>Form</SubType>
@@ -406,11 +442,29 @@
     <Compile Include="themDVForm.designer.cs">
       <DependentUpon>themDVForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="themloaidv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themloaidv.Designer.cs">
+      <DependentUpon>themloaidv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="themNVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themNVForm.Designer.cs">
+      <DependentUpon>themNVForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="themTSForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="themTSForm.Designer.cs">
       <DependentUpon>themTSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongke.Designer.cs">
+      <DependentUpon>thongke.cs</DependentUpon>
     </Compile>
     <Compile Include="trangsucForm.cs">
       <SubType>Form</SubType>
@@ -511,6 +565,9 @@
     <EmbeddedResource Include="findcusForm.resx">
       <DependentUpon>findcusForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="loaidichvu.resx">
+      <DependentUpon>loaidichvu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -519,6 +576,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="muahangForm.resx">
       <DependentUpon>muahangForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhanvienForm.resx">
+      <DependentUpon>nhanvienForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phieuchitiet.resx">
+      <DependentUpon>phieuchitiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phieudichvu.resx">
+      <DependentUpon>phieudichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phieumuahang.resx">
+      <DependentUpon>phieumuahang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -542,6 +611,9 @@
     <EmbeddedResource Include="suaDVForm.resx">
       <DependentUpon>suaDVForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sualoaidv.resx">
+      <DependentUpon>sualoaidv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuaTSForm.resx">
       <DependentUpon>SuaTSForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -560,8 +632,17 @@
     <EmbeddedResource Include="themDVForm.resx">
       <DependentUpon>themDVForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="themloaidv.resx">
+      <DependentUpon>themloaidv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="themNVForm.resx">
+      <DependentUpon>themNVForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="themTSForm.resx">
       <DependentUpon>themTSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thongke.resx">
+      <DependentUpon>thongke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="trangsucForm.resx">
       <DependentUpon>trangsucForm.cs</DependentUpon>
@@ -605,6 +686,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\20297_door_exit_sign in_icon.png" />
     <Content Include="images\assets\1054931_zoom out_minimize_reduce_icon.png" />
     <Content Include="images\assets\10559954_flood_relief_funding_emergency_fund_icon.png" />
     <Content Include="images\assets\1282956_close_delete_deny_no_out_icon.png" />
@@ -620,6 +702,7 @@
     <Content Include="images\assets\9004860_arrow_direction_left_back_icon %281%29.png" />
     <Content Include="images\assets\9004860_arrow_direction_left_back_icon.png" />
     <Content Include="images\assets\9042869_phone_icon.png" />
+    <Content Include="images\assets\9068738_update_rotation_icon.png" />
     <Content Include="images\assets\9104276_scan_barcode_qr_qr code_scanner_icon.png" />
     <Content Include="images\assets\9165585_zoom_out_1_icon.png" />
     <Content Include="images\assets\Banking and Finance Trade Show Banner in Orange Pastel Purple Dynamic Illustrative Style.png" />

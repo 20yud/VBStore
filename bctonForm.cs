@@ -48,6 +48,8 @@ namespace VBStore
         private void findTextBox_TextChanged(object sender, EventArgs e)
         {
             string keyword = findTextBox.Text.Trim();
+            DateTime fromDate = fromDateTimePicker.Value.Date;
+            DateTime toDate = toDateTimePicker.Value.Date.AddDays(1); // Add one day to include the entire end date.
 
             try
             {
@@ -56,9 +58,11 @@ namespace VBStore
                     connection.Open();
 
                     // Truy vấn SQL để lấy dữ liệu từ bảng BAOCAOTON với điều kiện tìm kiếm
-                    string query = "SELECT * FROM BAOCAOTON WHERE MABAOCAO LIKE @keyword OR MASANPHAM LIKE @keyword";
+                    string query = "SELECT * FROM BAOCAOTON WHERE (MABAOCAO LIKE @keyword OR MASANPHAM LIKE @keyword) AND NGAYLAPBAOCAO >= @fromDate AND NGAYLAPBAOCAO < @toDate";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
                     adapter.SelectCommand.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+                    adapter.SelectCommand.Parameters.AddWithValue("@fromDate", fromDate);
+                    adapter.SelectCommand.Parameters.AddWithValue("@toDate", toDate);
 
                     // Tạo một DataTable để lưu trữ dữ liệu
                     DataTable dataTable = new DataTable();
@@ -112,6 +116,59 @@ namespace VBStore
             else
             {
                 MessageBox.Show("Vui lòng chọn một khách hàng để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            thongke thongke1 = new thongke();
+            thongke1.Show();
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            dis();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = findTextBox.Text.Trim();
+                DateTime fromDate = fromDateTimePicker.Value.Date;
+                DateTime toDate = toDateTimePicker.Value.Date.AddDays(1); // Add one day to include the entire end date.
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // SQL query to get data from the BAOCAOTON table based on the date range
+                    string query = "SELECT * FROM BAOCAOTON WHERE NGAYLAPBAOCAO >= @fromDate AND NGAYLAPBAOCAO < @toDate";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@fromDate", fromDate);
+                    adapter.SelectCommand.Parameters.AddWithValue("@toDate", toDate);
+
+                    // If a keyword is provided, add it to the query
+                    if (!string.IsNullOrEmpty(keyword))
+                    {
+                        query += " AND (MABAOCAO LIKE @keyword OR MASANPHAM LIKE @keyword)";
+                        adapter.SelectCommand.Parameters.AddWithValue("@keyword", "%" + keyword + "%");
+                    }
+
+                    // Create a DataTable to store the data
+                    DataTable dataTable = new DataTable();
+
+                    // Fill the DataTable with data from the database
+                    adapter.Fill(dataTable);
+
+                    // Set the DataTable as the data source for the DataGridView or other UI component
+                    guna2DataGridView1.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

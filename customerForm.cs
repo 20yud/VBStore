@@ -13,18 +13,21 @@ namespace VBStore
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
         private ChildFormUtility childFormUtility;
+        private decimal flag;
         public customerForm()
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
 
         }
-        public customerForm(string sdt)
+        public customerForm(string sdt, decimal flag)
         {
             InitializeComponent();
             this.sdt = sdt;
             connectionString = dbHelper.ConnectionString;
             childFormUtility = new ChildFormUtility(this);
+            this.flag = flag;
+
         }
 
         private void customerForm_Load(object sender, EventArgs e)

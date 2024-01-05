@@ -9,6 +9,7 @@ namespace VBStore
     {
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private string sophieumuahang;
 
         public dmhForm()
         {
@@ -27,7 +28,7 @@ namespace VBStore
 
                     // SQL query to join CT_PHIEUMUAHANG with PHIEUMUAHANG to get the desired data
                     string query = @"
-                SELECT CT.MASANPHAM, CT.SOLUONGMUA, CT.DONGIAMUA, CT.THANHTIEN, P.MAKHACHHANG, P.NGAYLAP
+                SELECT CT.SOPHIEUMUAHANG, CT.MASANPHAM, CT.SOLUONGMUA, CT.DONGIAMUA, CT.THANHTIEN, P.MAKHACHHANG, P.NGAYLAP
                 FROM CT_PHIEUMUAHANG CT
                 INNER JOIN PHIEUMUAHANG P ON CT.SOPHIEUMUAHANG = P.SOPHIEUMUAHANG";
 
@@ -46,6 +47,7 @@ namespace VBStore
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void findTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -83,6 +85,20 @@ namespace VBStore
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void detailBtn_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                sophieumuahang = guna2DataGridView1.SelectedRows[0].Cells["SOPHIEUMUAHANG"].Value.ToString();
+                phieumuahang Phieubh = new phieumuahang(sophieumuahang);
+                Phieubh.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

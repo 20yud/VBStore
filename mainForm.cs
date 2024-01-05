@@ -25,12 +25,18 @@ namespace VBStore
         private List<string> imagePaths = new List<string>();
         private int currentImageIndex = 0;
         private ChildFormUtility childFormUtility;
-        public mainForm()
+        private decimal flag;
+        public mainForm(decimal FLAG)
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
-            label21.Text = "Dịch Vụ \n Đã Đặt";
+            this.flag = FLAG;
             childFormUtility = new ChildFormUtility(this);
+            if(flag == 0)
+            {
+                guna2Button1.Visible = false;
+                guna2Button2.Visible = false;
+            }
            
         }
 
@@ -82,6 +88,7 @@ namespace VBStore
                         OpenChildFrom(cusForm);
                         backBtn.Visible = true;
                         titlelabel.Text = "Thao tác trên khách hàng";
+                        guna2Button2.Visible = false;
 
                     }
                     else
@@ -389,18 +396,20 @@ namespace VBStore
         }
         private void panelgem_Click(object sender, EventArgs e)
         {
-            daquyForm gemForm = new daquyForm();
+            daquyForm gemForm = new daquyForm(flag);
             OpenChildFrom(gemForm);
             backBtn.Visible = true;
             titlelabel.Text = "Đá Quý";
+            guna2Button2.Visible = false;
         }
 
         private void paneljewelry_Click(object sender, EventArgs e)
         {
-            trangsucForm trangsuc = new trangsucForm();
+            trangsucForm trangsuc = new trangsucForm(flag);
             OpenChildFrom(trangsuc);
             backBtn.Visible = true;
             titlelabel.Text = "Trang Sức";
+            guna2Button2.Visible = false;
         }
 
         private void mainForm_ClientSizeChanged(object sender, EventArgs e)
@@ -428,6 +437,7 @@ namespace VBStore
             coutnKH();
             countDQTS();
             countDVF();
+            guna2Button2.Visible = true;
         }
 
         private void panelcustomer_Paint(object sender, PaintEventArgs e)
@@ -437,18 +447,20 @@ namespace VBStore
 
         private void panelcustomer_Click_1(object sender, EventArgs e)
         {
-            customerForm customerForm = new customerForm(sdt);
+            customerForm customerForm = new customerForm(sdt,flag);
             OpenChildFrom(customerForm);
             backBtn.Visible = true;
             titlelabel.Text = "Danh sách khách hàng";
+            guna2Button2.Visible = false;
         }
 
         private void panelservice_Click(object sender, EventArgs e)
         {
-            dichvuForm dichVu = new dichvuForm();
+            dichvuForm dichVu = new dichvuForm(flag);
             OpenChildFrom(dichVu);
             backBtn.Visible = true;
             titlelabel.Text = "Dịch Vụ";
+            guna2Button2.Visible = false;
         }
 
         private void guna2CustomGradientPanel7_Click(object sender, EventArgs e)
@@ -456,7 +468,8 @@ namespace VBStore
             dichvubookedForm dichvubookedForm = new dichvubookedForm();
             OpenChildFrom(dichvubookedForm); 
             backBtn.Visible = true;
-            titlelabel.Text = "Dịch vụ đã đặt";
+            titlelabel.Text = "Phiếu dịch vụ";
+            guna2Button2.Visible = false;
         }
 
         private void label18_Click(object sender, EventArgs e)
@@ -474,7 +487,8 @@ namespace VBStore
             dmhForm dmhform = new dmhForm();
             OpenChildFrom(dmhform);
             backBtn.Visible = true;
-            titlelabel.Text = "Đã mua hàng";
+            titlelabel.Text = "Phiếu mua hàng";
+            guna2Button2.Visible = false;
         }
 
         private void guna2CustomGradientPanel5_Paint(object sender, PaintEventArgs e)
@@ -487,7 +501,8 @@ namespace VBStore
             dbhForm dbhform = new dbhForm();
             OpenChildFrom(dbhform);
             backBtn.Visible = true;
-            titlelabel.Text = "Đã bán hàng";
+            titlelabel.Text = "Phiếu bán hàng";
+            guna2Button2.Visible = false;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -539,7 +554,39 @@ namespace VBStore
         {
             bctonForm dbhform = new bctonForm();
             OpenChildFrom(dbhform);
+            titlelabel.Text = "Báo cáo tồn";
             backBtn.Visible = true;
+            guna2Button2.Visible = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            loginForm login = new loginForm();
+            login.Show();
+            this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            nhanvienForm nhanvien = new nhanvienForm();
+            OpenChildFrom(nhanvien);
+            backBtn.Visible = true;
+            titlelabel.Text = "Quản lí nhân viên";
+            guna2Button2.Visible = false;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            loaidichvu loaidichvu = new loaidichvu();
+            OpenChildFrom(loaidichvu);
+            backBtn.Visible = true;
+            titlelabel.Text = "Quản lí loại sản phẩm";
+            guna2Button2.Visible = false;
+        }
+
+        private void guna2CustomGradientPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

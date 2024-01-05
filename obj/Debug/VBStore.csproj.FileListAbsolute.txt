@@ -261,3 +261,12 @@ C:\Users\oldD\Downloads\Compressed\VBStore-duy\obj\Debug\VBStore.csproj.CoreComp
 C:\Users\oldD\Downloads\Compressed\VBStore-duy\obj\Debug\VBStore.csproj.CopyComplete
 C:\Users\oldD\Downloads\Compressed\VBStore-duy\obj\Debug\VBStore.exe
 C:\Users\oldD\Downloads\Compressed\VBStore-duy\obj\Debug\VBStore.pdb
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.nhanvienForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themNVForm.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.thongke.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.phieubanhang.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.phieumuahang.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.phieudichvu.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.loaidichvu.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.themloaidv.resources
+C:\Workspace\c#\cnpm\VBStore\obj\Debug\VBStore.sualoaidv.resources

@@ -9,12 +9,26 @@ namespace VBStore
     {
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private decimal flag;
 
-        public dichvuForm()
+        public dichvuForm(decimal flag)
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
             dis();
+            this.flag = flag;
+            role_load();
+
+        }
+        void role_load()
+        {
+            if (flag == 0)
+            {
+                createBtn.Visible = false;
+
+                guna2Button1.Visible = false;
+                guna2Button2.Visible = false;
+            }
         }
 
         private void dis()

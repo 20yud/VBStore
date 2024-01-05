@@ -26,26 +26,31 @@ namespace VBStore
         private decimal tongTien;
         private decimal tiennhan;
         private decimal tiencuoicung;
+        private decimal tcc;
         private int startPoint = 0;
+        private DateTime ngayGiao;  // Added variable to store selected delivery date
 
         public DataTable GioHangThanhToan
         {
             get { return dtGioHangThanhToan; }
             set { dtGioHangThanhToan = value; }
         }
+
         public xacnhanDVForm()
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
+            // Initialize with the current date as default
         }
+
         public xacnhanDVForm(string sdt)
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
             this.sdt = sdt;
-
-
+            // Initialize with the current date as default
         }
+
         private void GetTenVaMaKH()
         {
             try
@@ -74,10 +79,8 @@ namespace VBStore
         {
             base.OnLoad(e);
 
-            
             if (GioHangThanhToan != null)
             {
-                
                 guna2DataGridView1.DataSource = GioHangThanhToan;
             }
         }
@@ -87,29 +90,26 @@ namespace VBStore
             decimal tongTien = 0;
             foreach (DataRow row in gioHang.Rows)
             {
-                
                 decimal dongiaban = decimal.Parse(row["DONGIA"].ToString());
-                tongTien +=  dongiaban;
+                tongTien += dongiaban;
             }
             return tongTien;
         }
 
         private void ExecuteNonQuery(string query, SqlConnection connection, SqlTransaction transaction)
         {
-
             using (SqlCommand command = new SqlCommand(query, connection, transaction))
             {
                 command.ExecuteNonQuery();
             }
         }
 
-
         private void xacnhanmuaForm_Load(object sender, EventArgs e)
         {
-
             GetTenVaMaKH();
 
-
+            decimal giaTriMacDinh = 100000;
+            label9.Text = "Phí:" + (giaTriMacDinh).ToString("N0") + " VNĐ";
             guna2DataGridView1.DataSource = GioHangThanhToan;
             tongTien = 0;
 
@@ -125,6 +125,7 @@ namespace VBStore
                 }
             }
 
+            tcc = giaTriMacDinh + tongTien;
             tongtienlb.Text = "Tổng tiền: " + tongTien.ToString("N0") + " VNĐ";
             label5.Text = tenKH;
             label6.Text = sdt;
@@ -135,9 +136,9 @@ namespace VBStore
         {
             startPoint += 5;
             guna2CircleProgressBar1.Value = startPoint;
+
             if (guna2CircleProgressBar1.Value == 100)
             {
-
                 guna2CircleProgressBar1.Value = 0;
                 timer1.Stop();
                 guna2CircleProgressBar1.Visible = false;
@@ -149,13 +150,11 @@ namespace VBStore
 
                     try
                     {
-                        // Lấy thông tin từ biến tiennhan và tiencuoicung
                         decimal tongTien = TinhTongTien(GioHangThanhToan);
                         decimal tienTratruoc = tiennhan;
                         decimal tienConLai = tiencuoicung;
                         string trangThai = "Chưa Hoàn Thành";
 
-                        // Gọi stored procedure SP_INSERT_PHIEUDICHVU để thêm dữ liệu vào PHIEUDICHVU
                         SqlCommand insertPhieuDichVuCommand = new SqlCommand("SP_INSERT_PHIEUDICHVU", connection, transaction);
                         insertPhieuDichVuCommand.CommandType = CommandType.StoredProcedure;
                         insertPhieuDichVuCommand.Parameters.AddWithValue("@MAKHACHHANG", makh);
@@ -182,27 +181,26 @@ namespace VBStore
                 }
             }
         }
+
         void add_PDV(SqlConnection connection, SqlTransaction transaction)
         {
             foreach (DataRow row in GioHangThanhToan.Rows)
             {
-                string sophieudichvu = sophieuBanHang; // Lấy SOPHIEUDICHVU từ biến sophieuBanHang
+                string sophieudichvu = sophieuBanHang;
                 string maloaidichvu = row["MALOAIDICHVU"].ToString();
                 decimal dongiadichvu = decimal.Parse(row["DONGIA"].ToString());
-                int soluong = 1; // Mặc định số lượng là 1
-                decimal dongiaduoctinh = 100000; // Mặc định DONGIADUOCTINH là 100000
-                decimal thanhtien = dongiadichvu * soluong + dongiaduoctinh; // Tính THANHTIEN
-                decimal tratruoc = tiennhan; // Lấy TRATRUOC từ biến tiennhan
-                decimal conlai = thanhtien - tratruoc; // Tính CONLAI
-                DateTime ngaygiao = DateTime.Now; // Lấy ngày hiện tại
+                int soluong = 1;
+                decimal dongiaduoctinh = 100000;
+                decimal thanhtien = dongiadichvu * soluong + dongiaduoctinh;
+                decimal tratruoc = tiennhan;
+                decimal conlai = thanhtien - tratruoc;
 
-                string tinhtrang = "Chưa Giao"; // Mặc định là Chưa Giao
+                string tinhtrang = "Chưa Giao";
                 if (conlai <= 0)
                 {
                     tinhtrang = "Đã Giao";
                 }
 
-                // Insert a new CT_PHIEUDICHVU record
                 SqlCommand insertCTPhieuDichVuCommand = new SqlCommand("INSERT INTO CT_PHIEUDICHVU (SOPHIEUDICHVU, MALOAIDICHVU, DONGIADICHVU, DONGIADUOCTINH, SOLUONG, THANHTIEN, TRATRUOC, CONLAI, NGAYGIAO, TINHTRANG) VALUES (@SOPHIEUDICHVU, @MALOAIDICHVU, @DONGIADICHVU, @DONGIADUOCTINH, @SOLUONG, @THANHTIEN, @TRATRUOC, @CONLAI, @NGAYGIAO, @TINHTRANG)", connection, transaction);
                 insertCTPhieuDichVuCommand.Parameters.AddWithValue("@SOPHIEUDICHVU", sophieudichvu);
                 insertCTPhieuDichVuCommand.Parameters.AddWithValue("@MALOAIDICHVU", maloaidichvu);
@@ -212,15 +210,12 @@ namespace VBStore
                 insertCTPhieuDichVuCommand.Parameters.AddWithValue("@THANHTIEN", thanhtien);
                 insertCTPhieuDichVuCommand.Parameters.AddWithValue("@TRATRUOC", tratruoc);
                 insertCTPhieuDichVuCommand.Parameters.AddWithValue("@CONLAI", conlai);
-                insertCTPhieuDichVuCommand.Parameters.AddWithValue("@NGAYGIAO", ngaygiao);
+                insertCTPhieuDichVuCommand.Parameters.AddWithValue("@NGAYGIAO", ngayGiao);  // Use the selected delivery date
                 insertCTPhieuDichVuCommand.Parameters.AddWithValue("@TINHTRANG", tinhtrang);
 
-                // Execute the command to insert the CT_PHIEUDICHVU record
                 insertCTPhieuDichVuCommand.ExecuteNonQuery();
             }
         }
-
-
 
         private void btnXacthuc_Click(object sender, EventArgs e)
         {
@@ -228,28 +223,36 @@ namespace VBStore
             {
                 if (tiennhanlb.Visible == true)
                 {
-                    guna2CircleProgressBar1.Visible = true;
-                    timer1.Start();
-                }else
+                   if(tiennhan <= (tongTien / 2))
+                    {
+                        MessageBox.Show("Tổng tiền cần trả phải nhỏ hơn hoặc bằng 50% giá tiền tổng");
+                        return;
+                    }
+                    else
+                    {
+                        ngayGiao = deliveryDate.Value;
+                        guna2CircleProgressBar1.Visible = true;
+                        timer1.Start();
+                    }
+                }
+                else
                 {
                     MessageBox.Show("Vui lòng ấn nút xác thực đã nhận tiền.");
-                }    
+                }
             }
             else
             {
                 MessageBox.Show("Vui lòng nhập tiền đã nhận.");
             }
-
         }
+
         private void tienNhanTB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Kiểm tra xem ký tự đã nhập có phải là số hoặc dấu chấm không
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true; // Ngăn ký tự không hợp lệ xuất hiện trong textbox
+                e.Handled = true;
             }
 
-            // Kiểm tra nếu đã có dấu chấm thì không cho nhập thêm dấu chấm nữa
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
@@ -260,15 +263,14 @@ namespace VBStore
         {
             if (!string.IsNullOrEmpty(tienNhanTB.Text))
             {
-                // Chuyển đổi giá trị từ textbox sang decimal
                 if (decimal.TryParse(tienNhanTB.Text, out tiennhan))
                 {
                     tienNhanTB.Text = tiennhan.ToString();
-                    tiencuoicung = tongTien - tiennhan;
+                    tiencuoicung = tcc - tiennhan;
                     tiennhanlb.Visible = true;
                     tonglb.Visible = true;
                     tiennhanlb.Text = "Tổng nhận: " + tiennhan.ToString("N0") + " VNĐ";
-                    tonglb.Text = "Tổng trả: " + tiencuoicung.ToString("N0") + " VNĐ";
+                    tonglb.Text = "Tổng cần trả: " + tiencuoicung.ToString("N0") + " VNĐ";
                 }
                 else
                 {

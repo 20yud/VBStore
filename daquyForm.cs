@@ -13,18 +13,32 @@ namespace VBStore
         private string sdt;
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private decimal flag;
         
-        public daquyForm()
+        public daquyForm(decimal flag)
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
+            this.flag = flag;
         }
 
         private void daquyForm_Load(object sender, EventArgs e)
         {
             
-            LoadProducts(); // Gọi phương thức để load dữ liệu sản phẩm
-            
+            LoadProducts();
+            role_load();// Gọi phương thức để load dữ liệu sản phẩm
+
+
+        }
+        void role_load()
+        {
+            if(flag == 0)
+            {
+                createBtn.Visible = false;
+ 
+                guna2Button1.Visible = false;
+                guna2Button2.Visible = false;
+            }
         }
 
         private void LoadProducts()

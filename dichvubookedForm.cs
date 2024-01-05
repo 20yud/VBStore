@@ -9,13 +9,28 @@ namespace VBStore
     {
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private string sophieudichvu;
+        private string selectedTrangThai = "";
 
         public dichvubookedForm()
         {
             InitializeComponent();
             connectionString = dbHelper.ConnectionString;
             dis();
+            
+            comboBoxTrangThai.Items.AddRange(new string[] { "Hoàn thành", "Chưa hoàn thành" });
+            comboBoxTrangThai.SelectedIndexChanged += ComboBoxTrangThai_SelectedIndexChanged;
         }
+
+        private void ComboBoxTrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lưu trạng thái được chọn
+            selectedTrangThai = comboBoxTrangThai.SelectedItem.ToString();
+
+            // Gọi phương thức để làm mới dữ liệu
+            dis();
+        }
+        
 
         private void dis()
         {
@@ -35,6 +50,20 @@ namespace VBStore
                                    "FROM PHIEUDICHVU " +
                                    "INNER JOIN CT_PHIEUDICHVU ON PHIEUDICHVU.SOPHIEUDICHVU = CT_PHIEUDICHVU.SOPHIEUDICHVU";
 
+                    // Thêm điều kiện WHERE nếu trạng thái được chọn khác rỗng
+                    if (!string.IsNullOrEmpty(selectedTrangThai))
+                    {
+                        if(selectedTrangThai=="Hoàn thành")
+                        {
+                            query += $" WHERE PHIEUDICHVU.TINHTRANG = '{selectedTrangThai}'";
+                        }
+                        else
+                        {
+                            query += $" WHERE PHIEUDICHVU.TINHTRANG != 'Hoàn thành'";
+                        }
+                            
+                    }
+
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
                     {
                         DataTable dataTable = new DataTable();
@@ -43,6 +72,9 @@ namespace VBStore
                         // Đặt dữ liệu từ DataTable cho guna2DataGridView1
                         guna2DataGridView1.DataSource = dataTable;
                     }
+
+                    // Gọi stored procedure để cập nhật trạng thái
+                    UpdateTinhTrangCTPhieuDichVu(connection);
                 }
             }
             catch (Exception ex)
@@ -50,6 +82,27 @@ namespace VBStore
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void UpdateTinhTrangCTPhieuDichVu(SqlConnection connection)
+        {
+            try
+            {
+                using (SqlCommand command = new SqlCommand("UpdateTinhTrangCTPhieuDichVu", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Thêm tham số ngày vào stored procedure
+                    command.Parameters.Add("@NgayTruyenVao", SqlDbType.Date).Value = DateTime.Now;
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi cập nhật trạng thái: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
 
         private void updateBtn_Click(object sender, EventArgs e)
@@ -115,6 +168,20 @@ namespace VBStore
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void detailBtn_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                sophieudichvu = guna2DataGridView1.SelectedRows[0].Cells["SOPHIEUDICHVU"].Value.ToString();
+                phieudichvu Phieubh = new phieudichvu(sophieudichvu);
+                Phieubh.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

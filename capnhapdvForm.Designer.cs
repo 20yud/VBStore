@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -35,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDONGIADUOCTINH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDONGIADICHVU = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTRATRUOC = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTHANHTIEN = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,6 +54,9 @@
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.txtDONGIADUOCTINH = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel1
@@ -143,26 +146,6 @@
             this.label1.TabIndex = 85;
             this.label1.Text = "Ngày lập:";
             // 
-            // txtDONGIADUOCTINH
-            // 
-            this.txtDONGIADUOCTINH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDONGIADUOCTINH.DefaultText = "";
-            this.txtDONGIADUOCTINH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDONGIADUOCTINH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDONGIADUOCTINH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDONGIADUOCTINH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDONGIADUOCTINH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDONGIADUOCTINH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDONGIADUOCTINH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDONGIADUOCTINH.Location = new System.Drawing.Point(272, 254);
-            this.txtDONGIADUOCTINH.Name = "txtDONGIADUOCTINH";
-            this.txtDONGIADUOCTINH.PasswordChar = '\0';
-            this.txtDONGIADUOCTINH.PlaceholderText = "";
-            this.txtDONGIADUOCTINH.ReadOnly = true;
-            this.txtDONGIADUOCTINH.SelectedText = "";
-            this.txtDONGIADUOCTINH.Size = new System.Drawing.Size(391, 40);
-            this.txtDONGIADUOCTINH.TabIndex = 93;
-            // 
             // txtDONGIADICHVU
             // 
             this.txtDONGIADICHVU.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -174,7 +157,7 @@
             this.txtDONGIADICHVU.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDONGIADICHVU.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDONGIADICHVU.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDONGIADICHVU.Location = new System.Drawing.Point(272, 208);
+            this.txtDONGIADICHVU.Location = new System.Drawing.Point(272, 238);
             this.txtDONGIADICHVU.Name = "txtDONGIADICHVU";
             this.txtDONGIADICHVU.PasswordChar = '\0';
             this.txtDONGIADICHVU.PlaceholderText = "";
@@ -194,7 +177,7 @@
             this.txtTRATRUOC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTRATRUOC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTRATRUOC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTRATRUOC.Location = new System.Drawing.Point(272, 392);
+            this.txtTRATRUOC.Location = new System.Drawing.Point(272, 422);
             this.txtTRATRUOC.Name = "txtTRATRUOC";
             this.txtTRATRUOC.PasswordChar = '\0';
             this.txtTRATRUOC.PlaceholderText = "";
@@ -214,7 +197,7 @@
             this.txtTHANHTIEN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTHANHTIEN.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTHANHTIEN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTHANHTIEN.Location = new System.Drawing.Point(272, 346);
+            this.txtTHANHTIEN.Location = new System.Drawing.Point(272, 376);
             this.txtTHANHTIEN.Name = "txtTHANHTIEN";
             this.txtTHANHTIEN.PasswordChar = '\0';
             this.txtTHANHTIEN.PlaceholderText = "";
@@ -234,7 +217,7 @@
             this.txtSOLUONG.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSOLUONG.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSOLUONG.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSOLUONG.Location = new System.Drawing.Point(272, 300);
+            this.txtSOLUONG.Location = new System.Drawing.Point(272, 330);
             this.txtSOLUONG.Name = "txtSOLUONG";
             this.txtSOLUONG.PasswordChar = '\0';
             this.txtSOLUONG.PlaceholderText = "";
@@ -254,7 +237,7 @@
             this.txtCONLAI.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCONLAI.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtCONLAI.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCONLAI.Location = new System.Drawing.Point(272, 438);
+            this.txtCONLAI.Location = new System.Drawing.Point(272, 468);
             this.txtCONLAI.Name = "txtCONLAI";
             this.txtCONLAI.PasswordChar = '\0';
             this.txtCONLAI.PlaceholderText = "";
@@ -268,7 +251,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label3.Location = new System.Drawing.Point(91, 162);
+            this.label3.Location = new System.Drawing.Point(91, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(141, 21);
             this.label3.TabIndex = 99;
@@ -279,7 +262,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label5.Location = new System.Drawing.Point(91, 208);
+            this.label5.Location = new System.Drawing.Point(91, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 21);
             this.label5.TabIndex = 100;
@@ -290,7 +273,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label6.Location = new System.Drawing.Point(91, 254);
+            this.label6.Location = new System.Drawing.Point(91, 284);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 21);
             this.label6.TabIndex = 101;
@@ -301,7 +284,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label7.Location = new System.Drawing.Point(91, 300);
+            this.label7.Location = new System.Drawing.Point(91, 330);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 21);
             this.label7.TabIndex = 102;
@@ -313,7 +296,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label8.Location = new System.Drawing.Point(91, 346);
+            this.label8.Location = new System.Drawing.Point(91, 376);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 21);
             this.label8.TabIndex = 103;
@@ -324,7 +307,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label9.Location = new System.Drawing.Point(91, 392);
+            this.label9.Location = new System.Drawing.Point(91, 422);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 21);
             this.label9.TabIndex = 104;
@@ -335,7 +318,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label11.Location = new System.Drawing.Point(91, 438);
+            this.label11.Location = new System.Drawing.Point(91, 468);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(68, 21);
             this.label11.TabIndex = 105;
@@ -346,7 +329,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DarkViolet;
-            this.label12.Location = new System.Drawing.Point(91, 484);
+            this.label12.Location = new System.Drawing.Point(91, 514);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 21);
             this.label12.TabIndex = 106;
@@ -383,7 +366,7 @@
             this.guna2DateTimePicker2.CustomFormat = "yyyy-MM-dd";
             this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(272, 484);
+            this.guna2DateTimePicker2.Location = new System.Drawing.Point(272, 514);
             this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
@@ -396,7 +379,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(268, 162);
+            this.label13.Location = new System.Drawing.Point(268, 192);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(146, 21);
             this.label13.TabIndex = 111;
@@ -413,11 +396,43 @@
             this.label14.TabIndex = 112;
             this.label14.Text = "Số Phiếu Dịch Vụ:";
             // 
+            // txtDONGIADUOCTINH
+            // 
+            this.txtDONGIADUOCTINH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDONGIADUOCTINH.DefaultText = "";
+            this.txtDONGIADUOCTINH.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDONGIADUOCTINH.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDONGIADUOCTINH.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDONGIADUOCTINH.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDONGIADUOCTINH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDONGIADUOCTINH.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDONGIADUOCTINH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDONGIADUOCTINH.Location = new System.Drawing.Point(272, 284);
+            this.txtDONGIADUOCTINH.Name = "txtDONGIADUOCTINH";
+            this.txtDONGIADUOCTINH.PasswordChar = '\0';
+            this.txtDONGIADUOCTINH.PlaceholderText = "";
+            this.txtDONGIADUOCTINH.ReadOnly = true;
+            this.txtDONGIADUOCTINH.SelectedText = "";
+            this.txtDONGIADUOCTINH.Size = new System.Drawing.Size(391, 40);
+            this.txtDONGIADUOCTINH.TabIndex = 93;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.Location = new System.Drawing.Point(268, 148);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 21);
+            this.label16.TabIndex = 114;
+            this.label16.Text = "Số Phiếu Dịch Vụ:";
+            // 
             // capnhapdvForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 593);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.guna2DateTimePicker2);
@@ -461,7 +476,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtDONGIADUOCTINH;
         private Guna.UI2.WinForms.Guna2TextBox txtDONGIADICHVU;
         private Guna.UI2.WinForms.Guna2TextBox txtTRATRUOC;
         private Guna.UI2.WinForms.Guna2TextBox txtTHANHTIEN;
@@ -480,5 +494,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2TextBox txtDONGIADUOCTINH;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -28,13 +28,12 @@ namespace VBStore
                 {
                     connection.Open();
 
-                    // Câu truy vấn SQL để lấy thông tin cụ thể dựa trên SOPHIEUDICHVU
                     string query = "SELECT " +
                                    "PHIEUDICHVU.SOPHIEUDICHVU, PHIEUDICHVU.NGAYLAP, PHIEUDICHVU.TINHTRANG, " +
                                    "CT_PHIEUDICHVU.MALOAIDICHVU, CT_PHIEUDICHVU.DONGIADICHVU, " +
                                    "CT_PHIEUDICHVU.DONGIADUOCTINH, CT_PHIEUDICHVU.SOLUONG, " +
                                    "CT_PHIEUDICHVU.THANHTIEN, CT_PHIEUDICHVU.TRATRUOC, " +
-                                   "CT_PHIEUDICHVU.CONLAI, CT_PHIEUDICHVU.NGAYGIAO, CT_PHIEUDICHVU.TINHTRANG " +
+                                   "CT_PHIEUDICHVU.CONLAI, CT_PHIEUDICHVU.NGAYGIAO, CT_PHIEUDICHVU.TINHTRANG AS TRANGTHAI " +
                                    "FROM PHIEUDICHVU " +
                                    "INNER JOIN CT_PHIEUDICHVU ON PHIEUDICHVU.SOPHIEUDICHVU = CT_PHIEUDICHVU.SOPHIEUDICHVU " +
                                    "WHERE PHIEUDICHVU.SOPHIEUDICHVU = @SOPHIEUDICHVU";
@@ -47,10 +46,9 @@ namespace VBStore
                         {
                             DataTable dataTable = new DataTable();
                             adapter.Fill(dataTable);
-      // Check if any rows are returned
+
                             if (dataTable.Rows.Count > 0)
                             {
-                                // Assuming your TextBox controls are named txtSOPHIEUDICHVU, txtNGAYLAP, txtTINHTRANG, etc.
                                 label10.Text = dataTable.Rows[0]["SOPHIEUDICHVU"].ToString();
                                 guna2DateTimePicker1.Value = Convert.ToDateTime(dataTable.Rows[0]["NGAYLAP"]);
                                 label14.Text = dataTable.Rows[0]["TINHTRANG"].ToString();
@@ -64,8 +62,7 @@ namespace VBStore
                                 txtCONLAI.Text = dataTable.Rows[0]["CONLAI"].ToString();
 
                                 guna2DateTimePicker2.Value = Convert.ToDateTime(dataTable.Rows[0]["NGAYGIAO"]);
-                               
-                                // Set other TextBox controls with corresponding column values
+                                label16.Text = dataTable.Rows[0]["TRANGTHAI"].ToString();  // Display TRANGTHAI in label16
                             }
                             else
                             {
@@ -163,11 +160,7 @@ namespace VBStore
 
                     try
                     {
-                        if (guna2DateTimePicker1.Value >= guna2DateTimePicker2.Value)
-                        {
-                            MessageBox.Show("Ngày lập phải trễ hơn ngày giao.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return; // Không thực hiện lưu dữ liệu
-                        }
+                        
                         // Update data in the PHIEUDICHVU table
                         string updatePhieuDichVuQuery = "UPDATE PHIEUDICHVU " +
                                                         "SET NGAYLAP = @NGAYLAP, TONGTIEN = @TONGTIEN, " +

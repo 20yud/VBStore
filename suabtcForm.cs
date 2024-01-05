@@ -132,5 +132,9 @@ namespace VBStore
         {
             this.Close();
         }
+        private decimal CalculateProfit(int soLuongMua, int soLuongBan, decimal donGiaMua, decimal donGiaBan)
+        {
+            return (soLuongBan * donGiaBan) - (soLuongMua * donGiaMua);
+        }
     }
 }

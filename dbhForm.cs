@@ -9,6 +9,8 @@ namespace VBStore
     {
         private string connectionString;
         dbhelper dbHelper = new dbhelper();
+        private string sophieubanhang;
+        private string sophieumuahang;
 
         public dbhForm()
         {
@@ -27,9 +29,9 @@ namespace VBStore
 
                     // SQL query to join CT_PHIEUBANHANG with PHIEUBANHANG to get the desired data
                     string query = @"
-                SELECT CT.MASANPHAM, CT.SOLUONGBAN, CT.DONGIABAN, CT.THANHTIEN, P.MAKHACHHANG, P.NGAYLAP
-                FROM CT_PHIEUBANHANG CT
-                INNER JOIN PHIEUBANHANG P ON CT.SOPHIEUBANHANG = P.SOPHIEUBANHANG";
+            SELECT CT.SOPHIEUBANHANG, CT.MASANPHAM, CT.SOLUONGBAN, CT.DONGIABAN, CT.THANHTIEN, P.MAKHACHHANG, P.NGAYLAP
+            FROM CT_PHIEUBANHANG CT
+            INNER JOIN PHIEUBANHANG P ON CT.SOPHIEUBANHANG = P.SOPHIEUBANHANG";
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
                     {
@@ -46,6 +48,7 @@ namespace VBStore
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void findTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -84,6 +87,21 @@ namespace VBStore
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void detailBtn_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                sophieubanhang = guna2DataGridView1.SelectedRows[0].Cells["SOPHIEUBANHANG"].Value.ToString();
+                phieubanhang Phieubh = new phieubanhang(sophieubanhang);
+                Phieubh.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một sản phẩm để xem chi tiết.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

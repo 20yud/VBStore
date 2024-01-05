@@ -61,13 +61,18 @@ namespace VBStore
         {
             string maSP = txtMaSP.Text;
             string tenSP = txtTenSP.Text;
-            string donGiaBanText = txtDonGiaBan.Text;
             string donGiaMuaText = txtDonGiaMua.Text;
             string soLuongTonText = txtSoLuongTon.Text;
+           
 
-            if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(tenSP) || string.IsNullOrWhiteSpace(donGiaBanText) || string.IsNullOrWhiteSpace(donGiaMuaText) || string.IsNullOrWhiteSpace(soLuongTonText))
+            if (string.IsNullOrWhiteSpace(maSP) || string.IsNullOrWhiteSpace(tenSP) || string.IsNullOrWhiteSpace(donGiaMuaText) || string.IsNullOrWhiteSpace(soLuongTonText))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Không thực hiện thêm sản phẩm
+            }
+            if (!maSP.StartsWith("SP"))
+            {
+                MessageBox.Show("Mã sản phẩm phải bắt đầu bằng 'SP'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Không thực hiện thêm sản phẩm
             }
             // Check if an item is selected in the ComboBox cmbLoaiSP
@@ -79,9 +84,13 @@ namespace VBStore
             {
                 
                 string maLoaiSP = ((LoaiSanPhamItem)cmbLoaiSP.SelectedItem).MaLoai;
-                decimal dongiaBan = decimal.Parse(txtDonGiaBan.Text);
                 decimal dongiaMua = decimal.Parse(txtDonGiaMua.Text);
                 int soLuongTon = int.Parse(txtSoLuongTon.Text);
+                if(soLuongTon == 0|| soLuongTon <0)
+                {
+                    MessageBox.Show("Vui lòng nhập số lượng tồn phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 try
                 {
@@ -89,8 +98,8 @@ namespace VBStore
                     {
                         connection.Open();
 
-                        string query = "INSERT INTO SANPHAM (MASANPHAM, TENSP, MALOAISANPHAM, DONGIABAN, DONGIAMUA, SOLUONGTON, MAQR) " +
-                                       "VALUES (@MaSP, @TenSP, @MaLoaiSP, @DonGiaBan, @DonGiaMua, @SoLuongTon, @MaQR)";
+                        string query = "INSERT INTO SANPHAM (MASANPHAM, TENSP, MALOAISANPHAM, DONGIAMUA, SOLUONGTON, MAQR) " +
+                                       "VALUES (@MaSP, @TenSP, @MaLoaiSP, @DonGiaMua, @SoLuongTon, @MaQR)";
                         string checkMaSPQuery = "SELECT COUNT(*) FROM SANPHAM WHERE MASANPHAM = @MaSP";
                         using (SqlCommand checkMaSPCommand = new SqlCommand(checkMaSPQuery, connection))
                         {
@@ -111,7 +120,6 @@ namespace VBStore
                             command.Parameters.AddWithValue("@MaSP", maSP);
                             command.Parameters.AddWithValue("@TenSP", tenSP);
                             command.Parameters.AddWithValue("@MaLoaiSP", maLoaiSP);
-                            command.Parameters.AddWithValue("@DonGiaBan", dongiaBan);
                             command.Parameters.AddWithValue("@DonGiaMua", dongiaMua);
                             command.Parameters.AddWithValue("@SoLuongTon", soLuongTon);
 

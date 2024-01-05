@@ -149,7 +149,7 @@
             this.passwordTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordTextBox.Location = new System.Drawing.Point(134, 209);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '\0';
+            this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.PlaceholderText = "Mật Khẩu";
             this.passwordTextBox.SelectedText = "";
             this.passwordTextBox.Size = new System.Drawing.Size(218, 38);

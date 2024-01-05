@@ -121,7 +121,7 @@
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABDgAAAeACAYAAAArYecKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/fuvZdm2pQfFvwpGSCAhoULCAoT4ASEQKhsJbFFgY6i6tstQpcIX
+        wQAADsEBuJFr7QAA/7JJREFUeF7s/fuvZdm2pQfFvwpGSCAhoULCAoT4ASEQKhsJbFFgY6i6tstQpcIX
         lapslw23XHXrvh/nnnPPM/Nk5sn3+/3Ok5toK+OL06Jl72OMOddca++I3Ev6NEdvvY8x53rMOcdosfaK
         B7/6xU9vfvnzvz2hdkKuoqrv8PrnfvmzKV3t87/6+YnUj2TlGLsajm127LSJ0bK2QnnGr/IO43ltxs4o
         dy6/fu4XpS48p7Yzq/O2a+KF53/5mKypdI/Je12neZ/UiEd47Ur9Fl789a9OVPpLLzz3OO9x1lU1VVzl
@@ -17103,7 +17103,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABfFJREFUaEPNmltsFFUYx/uiPivx7hO3KkTx3figFi+U3hCIBLRVIqBAqwIFG9+8
+        EAAACxABrSO9dQAABfFJREFUaEPNmltsFFUYx/uiPivx7hO3KkTx3figFi+U3hCIBLRVIqBAqwIFG9+8
         vJSlVeONqPigoq8IXgiURKXUgPKise20s9vudrvJtt2ZXhIFw/H/Pz2zO1tPtzM7012/5Jfdnf3Od75v
         58x3zvnOVoQh09PTt09NTT01OTn5DvgBmGDCtu2r4ArfAwN8DzqhuxltblPNyyNwbAlohkM9QPgFba/h
         tduyrD3gRmV28WVmZuZOdPw2mHacIVY8KdInzopk5FMRb3lTxLbtF7FNzbNs3Sev8Tvq2InRvGDAFOiA
@@ -17134,7 +17134,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAADp0RVh0Q29tbWVudAB4cjpkOkRBRjNUMHBQTy1VOjQsajo4MzEzMjY3ODg5MDk1
+        wQAADsEBuJFr7QAAADp0RVh0Q29tbWVudAB4cjpkOkRBRjNUMHBQTy1VOjQsajo4MzEzMjY3ODg5MDk1
         MzEzNzcsdDoyMzEyMTgwNwzAfM8AADDZSURBVHhe7d0JsCV1efdxnZdQUlAYVPBFCyEEKVwwqFQcX9Sg
         JoyJlmIMSoyWgKhIXHDHCAJqdFQ2UcggIsMmA4IMIAqILIrssslqZBVBVlkEWee8v1/3002fpc92u/uc
         e+/3U/XUPf3v7dxzZ/o5/e//8jQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
