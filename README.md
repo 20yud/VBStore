@@ -1,8 +1,8 @@
-    Project: Dự án cửa hàng vàng bạc đá quý VBStore C# - SE104
+Project: Dự án cửa hàng vàng bạc đá quý VBStore C# - SE104
     
-    Board: https://trello.com/b/JAgA4SS8/btthcnpm
+Board: https://trello.com/b/JAgA4SS8/btthcnpm
 
-    Members: 
+Members: 
     
 21520910-Bùi Minh Huy
 
